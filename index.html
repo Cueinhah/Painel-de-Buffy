@@ -7,13 +7,13 @@
     <style>
         /* Backgrounds */
         .background1 {
-            background-image: url('https://imgur.com/t2LRzeo.png'); /* Adicione o link da imagem */
-            background-size: cover; /* Faz a imagem cobrir toda a área */
-            background-position: center; /* Centraliza a imagem */
-            background-repeat: no-repeat; /* Evita a repetição da imagem */
-            min-height: 100vh; /* Garante que o fundo ocupe a altura total da tela */
+            background-image: url('https://imgur.com/t2LRzeo.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            min-height: 100vh; 
             display: flex;
-            justify-content: center; /* Centraliza o conteúdo */
+            justify-content: center;
             align-items: center;
             padding: 80px 0px;
         }
@@ -22,16 +22,16 @@
             border: 1px solid #A020F0;
             border-radius: 30px;
             padding: 50px; 
-            background-image: url('https://imgur.com/jHwtm72.png'); /* Adicione o link da imagem */
+            background-image: url('https://imgur.com/jHwtm72.png'); 
             background-color: rgba(0, 0, 0, 0.85);
             background-blend-mode: overlay;
-            background-size: cover; /* Faz a imagem cobrir toda a área */
-            background-position: center; /* Centraliza a imagem */
-            background-repeat: no-repeat; /* Evita a repetição da imagem */
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
             width: 100%;
-            max-width: 995px; /* Define um tamanho máximo para telas grandes */
+            max-width: 995px; 
             box-sizing: border-box;
-            min-height: 100vh; /* Garante que o fundo ocupe a altura total da tela */
+            min-height: 100vh;
         }
 
         /* Títulos e textos */
@@ -112,7 +112,7 @@
         }
 
         .janela-musica {
-            display: none; /* Oculta por padrão */
+            display: none; 
             position: absolute;
             top: 190px;
             left: 40px;
@@ -123,7 +123,7 @@
             border-radius: 10px;
             padding: 15px;
             color: #FFFFFF;
-            z-index: 10; /* Garantir que fique sobre outros elementos */
+            z-index: 10; 
         }
 
         .janela-musica h3 {
@@ -154,8 +154,8 @@
         .cab-doll {
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             background-image: url('https://imgur.com/Pj0uMuI.png');
-                background-repeat: no-repeat; /* Evita a repetição da imagem */
-            width: 300px; /* Ajuste o tamanho conforme necessário */
+                background-repeat: no-repeat;
+            width: 300px; 
             height: 300px;
             background-size: cover;
             border: 2px solid #FFFFFF;
@@ -178,14 +178,14 @@
             border-radius: 50%;
             overflow: hidden;
             border: 1px solid #FFFFFF;
-            margin-left: 10px; /* Espaço entre o título e o círculo */
-            vertical-align: middle; /* Alinha verticalmente com o texto */
+            margin-left: 10px;
+            vertical-align: middle;
         }
 
         .circulo-aura img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Garante que o GIF seja ajustado ao círculo */
+            object-fit: cover; 
         }
 
         /* Raça e Sub-raça */
@@ -226,8 +226,8 @@
             width: 100%;
             max-width: 894px;
             position: absolute;
-            top: 443px; /* Ajusta a posição da barra abaixo do cabeçalho */
-            z-index: 1; /* Faz a barra de nível ficar atrás do cabeçalho */
+            top: 443px; 
+            z-index: 1; 
         }
 
         .barra-progresso {
@@ -263,14 +263,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: -40px; /* Espaço entre a barra de progresso e os círculos */
+            margin-top: -40px;
         }
 
         .circulo-com-texto {
             display: flex;
             align-items: center;
-            gap: 6px; /* Espaço entre o círculo e o texto */
-            width: 33%; /* Cada conjunto ocupa um terço do espaço total */
+            gap: 6px; 
+            width: 33%;
         }
 
         .moedas {
@@ -298,13 +298,13 @@
         .carrossel-imagens {
             display: flex;
             width: 900px;
-            padding: 10px; /* Adicione um padding para dar mais espaço */
-            overflow-x: auto; /* Permite rolagem horizontal */
-            scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+            padding: 10px; 
+            overflow-x: auto; 
+            scrollbar-width: none; 
         }
 
         .carrossel-imagens::-webkit-scrollbar {
-            display: none; /* Esconde a barra de rolagem no Chrome/Safari */
+            display: none; 
         }
 
         .titulo-item {
@@ -312,13 +312,13 @@
             flex-direction: column;
             align-items: center;
             margin-right: 75px;
-            transition: transform 0.3s; /* Animação suave */
-            z-index: 1; /* Garante que o item expandido fique sobre os outros */
-            overflow: visible; /* Permite que o efeito 'pump' se expanda fora dos limites */
+            transition: transform 0.3s; 
+            z-index: 1; 
+            overflow: visible; 
         }
 
         .titulo-item:hover {
-            transform: scale(1.1); /* Efeito "pump" ao passar o mouse */
+            transform: scale(1.1);
         }
 
         .circulo-carrossel {
@@ -327,7 +327,7 @@
             border: 1px solid #FFFFFF;
             border-radius: 50%;
             background-size: cover;
-            background-image: url('URL_DA_IMAGEM_CARROSSEL'); /* Link da imagem */
+            background-image: url('URL_DA_IMAGEM_CARROSSEL'); 
         }
 
         .texto-carrossel {
@@ -356,8 +356,8 @@
         /* Necessidades Básicas */
         .necessidades-basicas-container {
             display: flex;
-            gap: 10px; /* Espaçamento entre os blocos */
-            justify-content: space-around; /* Distribuição dos blocos */
+            gap: 10px; 
+            justify-content: space-around; 
             flex-wrap: wrap;
         }
 
@@ -365,13 +365,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 30px; /* Espaço entre os blocos de Necessidades Básicas */
+            margin-bottom: 30px;
         }
 
         .circulo-nbasico {
-            width: 80px; /* Defina o tamanho do círculo */
+            width: 80px; 
             height: 80px;
-            border: 1px solid white; /* Define a cor e a espessura do círculo */
+            border: 1px solid white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -380,7 +380,7 @@
 
         .circulo-texto-nbasico {
             color: #A020F0;
-            font-size: 45px; /* Defina o tamanho da letra 'A' */
+            font-size: 45px;
         }
 
         .status-nbasico {
@@ -399,7 +399,7 @@
         }
 
         .bar-nbasico {
-            width: 160px; /* Defina o tamanho da barra de progresso */
+            width: 160px;
             height: 20px;
             border: 1px solid white;
             position: relative;
@@ -409,8 +409,8 @@
 
         .fill-nbasico {
             height: 100%;
-            background-color: green; /* A cor será ajustada conforme a porcentagem */
-            transition: width 0.3s, background-color 0.3s; /* Transição suave para largura e cor */
+            background-color: green; 
+            transition: width 0.3s, background-color 0.3s; 
         }
 
         .progresso-texto-nbasico {
@@ -455,10 +455,10 @@
 
         /* Linha de separação */
         .linha-separadora {
-            width: 80%; /* Comprimento ajustável */
-            height: 0.5px; /* Grossura da linha */
+            width: 80%;
+            height: 0.5px; 
             background-color: rgba(255, 255, 255, 0.3);
-            margin: 40px auto; /* Centraliza a linha no background */
+            margin: 40px auto; 
         }
 
         /* Características */
@@ -466,9 +466,9 @@
             display: flex;
             gap: 50px;
             padding: 0px;
-            align-items: center; /* Centraliza verticalmente os blocos */
-            max-width: 100%; /* Impede que o conteúdo ultrapasse o background */
-            overflow: hidden; /* Garante que o conteúdo extra não ultrapasse */
+            align-items: center; 
+            max-width: 100%;
+            overflow: hidden; 
             margin-top: 0px;
             margin-bottom: 0px;
         }
@@ -479,8 +479,8 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            align-items: flex-start; /* Alinha as barras à esquerda */
-            margin-left: 0; /* Remove margem lateral */
+            align-items: flex-start; 
+            margin-left: 0;
         }
 
         .status-fama {
@@ -558,7 +558,7 @@
         }
 
         .imagem-central {
-            width: 100px; /* Defina a largura da imagem */
+            width: 100px; 
             height: auto;
         }
 
@@ -568,13 +568,13 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            justify-content: center; /* Centraliza verticalmente os textos */
+            justify-content: center; 
         }
 
         .linha-texto {
             display: flex;
             align-items: center;
-            gap: 5px; /* Espaço entre o título e o conteúdo */
+            gap: 5px; 
         }
 
         /* Estilo do Carrossel de Bençãos/Maldições */
@@ -726,14 +726,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 60px; /* Ajuste para sobrepor a barra */
-            overflow: visible; /* Permite que GIFs se movam sem serem cortados */
+            margin-right: 60px; 
+            overflow: visible;
         }
 
         .titulo-e-marcacao {
             display: flex;
             align-items: center;
-            gap: 5px; /* Espaço entre a caixa e o título */
+            gap: 5px;
             margin-bottom: 5px;
         }
 
