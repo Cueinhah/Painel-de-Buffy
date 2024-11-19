@@ -685,8 +685,24 @@
             overflow: hidden;
             overflow-y: auto;
             cursor: move;
+            scrollbar-width: thin; 
+            scrollbar-color: #FFD700 transparent; 
         }
 
+        /* Para navegadores baseados em Webkit */
+        .janela-bencao::-webkit-scrollbar {
+            width: 8px; 
+        }
+
+        .janela-bencao::-webkit-scrollbar-thumb {
+            background-color: #FFD700; 
+            border-radius: 4px; 
+        }
+
+        .janela-bencao::-webkit-scrollbar-track {
+            background-color: transparent; 
+        }
+        
         /* Botões da Janela */
         .janela-botoes {
             display: flex;
