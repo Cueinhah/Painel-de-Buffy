@@ -1926,6 +1926,14 @@
         carrossel.scrollLeft = posicaoCarrossel * tamanhoItem - (carrossel.clientWidth - tamanhoItem) / 2;
     }
 
+    // Diamante do Meio
+    document.addEventListener("DOMContentLoaded", () => {
+        const diamantes = document.querySelectorAll('.diamante-item');
+        const meio = Math.floor(diamantes.length / 2);
+        diamantes[meio].classList.add('ativo');
+    });
+
+    
     // Abrir Janela Flutuante
     function abrirJanela(idJanela) {
         console.log(`Janela ${idJanela} aberta`); // Para teste
