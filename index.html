@@ -1919,16 +1919,16 @@
     function moverCarrossel(direcao) {
         const carrossel = document.querySelector('.carrossel-diamantes');
         const itens = carrossel.querySelectorAll('.diamante-item');
-
-        // Remove a classe ativa do item atual
-        itens[posicaoCarrossel].classList.remove('ativo');
-
+    
+        // Remove a classe 'ativo' de todos os itens
+        itens.forEach(item => item.classList.remove('ativo'));
+    
         // Atualiza a posição
         posicaoCarrossel = (posicaoCarrossel + direcao + itens.length) % itens.length;
-
-        // Adiciona a classe ativa ao novo item central
+    
+        // Adiciona a classe 'ativo' ao novo item central
         itens[posicaoCarrossel].classList.add('ativo');
-
+    
         // Faz o scroll horizontal para manter o item central visível
         const tamanhoItem = itens[posicaoCarrossel].offsetWidth + 10; // Inclui o gap
         carrossel.scrollLeft = posicaoCarrossel * tamanhoItem - (carrossel.clientWidth - tamanhoItem) / 2;
