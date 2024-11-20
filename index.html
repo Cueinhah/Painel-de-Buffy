@@ -108,45 +108,47 @@
             display: none;
         }
 
-        /* Estilo para a seção de Taxa de Assimilação */
-        .taxa-assimilacao {
-            position: absolute; /* Flutua sobre os elementos */
-            top: 10px; /* Distância do topo do background2 */
+        /* Container do título flutuante */
+        .titulo-assimilacao {
+            position: absolute; /* Flutua sobre o conteúdo */
+            top: 20px; /* Distância do topo */
             left: 50%; /* Centraliza horizontalmente */
             transform: translateX(-50%); /* Ajusta para o centro exato */
             z-index: 10; /* Garante que fique acima de outros elementos */
         }
         
-        /* Estilo para a forma geométrica */
-        .forma-geometrica {
+        /* Bloco retangular do título */
+        .bloco-retangular {
             position: relative;
-            width: 300px; /* Ajuste para o tamanho desejado */
-            height: 150px;
-            background: radial-gradient(circle, rgba(128,0,128,0.8), transparent); /* Efeito de brilho roxo */
-            border: 2px solid rgba(128,0,128,0.9); /* Borda roxa brilhante */
-            border-radius: 50%; /* Deixa arredondado como o design da referência */
-            box-shadow: 0 0 15px rgba(128, 0, 128, 0.9), inset 0 0 10px rgba(255, 255, 255, 0.3); /* Efeito de brilho */
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Impede que o texto saia dos limites */
+            background: linear-gradient(145deg, #4b3621, #705438); /* Fundo em tons de marrom */
+            border: 3px solid #D4AF37; /* Borda dourada */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra e efeito interno */
+            padding: 10px 30px; /* Espaçamento interno */
+            border-radius: 0; /* Sem bordas arredondadas */
+            min-width: 350px; /* Tamanho mínimo */
+            height: 80px; /* Altura fixa */
         }
         
-        /* Estilo do texto */
-        .texto-assimilacao {
-            font-family: 'Arial', sans-serif;
-            color: #FFFFFF; /* Branco para contraste */
-            font-size: 18px; /* Ajuste o tamanho para ficar proporcional */
+        /* Estilo do texto principal */
+        .texto-titulo {
+            font-family: 'Arial Black', sans-serif;
+            color: #F5DEB3; /* Dourado claro */
+            font-size: 20px;
             font-weight: bold;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(128,0,128,1); /* Efeito de brilho */
+            text-transform: uppercase;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Sombra no texto */
+            margin-right: 10px;
         }
         
-        /* Destaque para a porcentagem */
-        .porcentagem {
-            color: #A020F0; /* Roxo brilhante */
-            font-size: 22px; /* Maior que o restante do texto */
-            text-shadow: 0 0 15px rgba(160,32,240,1); /* Intensifica o brilho */
+        /* Estilo do texto da porcentagem */
+        .texto-porcentagem {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px; /* Maior que o título */
+            color: #9400D3; /* Roxo neon */
+            text-shadow: 0 0 10px rgba(148, 0, 211, 1), 0 0 20px rgba(148, 0, 211, 0.8); /* Efeito neon */
         }
                 
         /* Música Aura */
@@ -1111,9 +1113,10 @@
 <div class="background1">
     <div class="background2">
         <!-- Arte de Título: Taxa de Assimilação -->
-        <div class="taxa-assimilacao">
-            <div class="forma-geometrica">
-                <span class="texto-assimilacao">Taxa de Assimilação: <span class="porcentagem">52.81%</span></span>
+        <div class="titulo-assimilacao">
+            <div class="bloco-retangular">
+                <span class="texto-titulo">Taxa de Assimilação:</span>
+                <span class="texto-porcentagem">52.81%</span>
             </div>
         </div>
         
