@@ -2090,9 +2090,10 @@
         const offsetX = window.pageXOffset || document.documentElement.scrollLeft;
         const offsetY = window.pageYOffset || document.documentElement.scrollTop;
     
-        janela.style.display = "block";
-        janela.style.left = `${rect.right + offsetX}px`;
+        // Define a posição da janela flutuante
+        janela.style.left = `${rect.right + offsetX + 10}px`; // Ajuste para evitar sobreposição
         janela.style.top = `${rect.top + offsetY}px`;
+        janela.style.display = "block"; // Torna a janela visível
     }
     
     // Controla a posição do carrossel
