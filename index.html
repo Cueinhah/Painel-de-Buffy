@@ -746,6 +746,102 @@
             text-decoration: underline;
             cursor: pointer;
         }
+
+        /* Categoria de Chaves */
+        .circulo-base {
+            position: relative;
+            width: 300px; /* Define o tamanho do círculo base */
+            height: 300px;
+            border-radius: 50%;
+            margin: 0 auto; /* Centraliza no background2 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: visible;
+        }
+        
+        /* Círculos Menores */
+        .circulo-pequeno {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #808080; /* Cor padrão da borda (cinza) */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .circulo-pequeno.ativo {
+            border-color: #1E90FF; /* Azul quando ativo */
+        }
+        
+        /* Imagem dentro dos círculos menores */
+        .circulo-pequeno img {
+            width: 70%; /* Ajusta a proporção da imagem */
+            height: 70%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        /* Texto Central */
+        .titulo-chave {
+            position: absolute;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+        
+        /* Janela Flutuante */
+        .janela-chave {
+            display: none;
+            position: absolute;
+            bottom: 70px; /* Ajusta a posição acima do círculo */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 1px solid #1E90FF;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: center;
+            color: #FFFFFF;
+            white-space: nowrap; /* Impede quebra de linha */
+        }
+        
+        .janela-chave .quantidade {
+            color: #1E90FF;
+            font-weight: bold;
+            text-shadow: 0 0 5px #1E90FF; /* Efeito de brilho */
+        }
+        
+        /* Efeito de expansão */
+        .circulo-pequeno:hover {
+            transform: scale(1.2); /* Expande ao passar o mouse */
+        }
+        
+        .circulo-pequeno:hover .janela-chave {
+            display: block; /* Mostra a janela flutuante */
+        }
+
+        #circulo1 {
+            top: 0; /* Topo */
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #circulo2 {
+            top: 50%;
+            right: 0; /* Direita */
+            transform: translate(50%, -50%);
+        }
+        
+        /* Adicione mais círculos com posições semelhantes: 
+            - Bottom, Left, e combinações de Top-Left, etc. */
         
         /* Estilo do Carrossel de Bençãos/Maldições */
         .carrossel-selos {
@@ -1531,6 +1627,32 @@
         </p>
 
         <div class="linha-separadora"></div>
+        
+        <!-- Categoria de Chaves -->
+        <div class="circulo-base">
+            <div class="titulo-chave">Chaves de Pendragon</div>
+        
+            <!-- Círculo 1 -->
+            <div class="circulo-pequeno" id="circulo1" onclick="toggleCirculo('circulo1')">
+                <img src="https://imgur.com/key1.png" alt="Key of Souls">
+                <div class="janela-chave">
+                    Key of Souls <span class="quantidade">(1x)</span>
+                </div>
+            </div>
+        
+            <!-- Círculo 2 -->
+            <div class="circulo-pequeno" id="circulo2" onclick="toggleCirculo('circulo2')">
+                <img src="https://imgur.com/key2.png" alt="Key of Dreams">
+                <div class="janela-chave">
+                    Key of Dreams <span class="quantidade">(1x)</span>
+                </div>
+            </div>
+        
+            <!-- Outros círculos -->
+            <!-- Adicione círculos adicionais aqui -->
+        </div>
+        
+        <div class="linha-separadora"></div>
 
         <!-- Bençãos/Maldições -->
         <h2 class="titulo2">Bençãos e Maldições</h2>
@@ -2153,6 +2275,12 @@
     function fecharJanelaEstadoCivil() {
         const janela = document.getElementById("janelaEstadoCivil");
         janela.style.display = "none"; // Oculta a janela
+    }
+
+    // Função para ativar/desativar um círculo
+    function toggleCirculo(idCirculo) {
+        const circulo = document.getElementById(idCirculo);
+        circulo.classList.toggle('ativo'); // Alterna entre ligado/desligado
     }
     
     // Controla a posição do carrossel
