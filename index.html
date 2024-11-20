@@ -475,6 +475,14 @@
             margin: 40px auto; 
         }
 
+        /* Semente da Dungeon */
+        .gif-dungeon img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        
         /* Características */
         .nova-secao {
             display: flex;
@@ -601,7 +609,7 @@
             height: 250px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             background-image: url('https://imgur.com/suxlLBi.png'); 
-            background-size: cover;
+            background-size: 120%;
             background-position: center;
             border: 2px solid #1E90FF; /* Azul para a borda */
             border-radius: 20px;
@@ -686,6 +694,11 @@
         
         .janela-estado-civil {
             scrollbar-width: none; /* Para navegadores Firefox */
+        }
+
+        .texto-clicavel {
+            text-decoration: underline;
+            cursor: pointer;
         }
         
         /* Estilo do Carrossel de Bençãos/Maldições */
@@ -782,13 +795,14 @@
             overflow: hidden;
             overflow-y: auto;
             cursor: move;
-            scrollbar-width: thin; 
+            scrollbar-width: none; 
             scrollbar-color: #A020F0 transparent; 
         }
 
         /* Para navegadores baseados em Webkit */
         .janela-bencao::-webkit-scrollbar {
             width: 15px; 
+            display: none;
         }
 
         .janela-bencao::-webkit-scrollbar-thumb {
@@ -1148,7 +1162,7 @@
             <div class="bloco-esquerdo">
                 <div class="linha-texto">
                     <span class="subtitulo">Estado Civil:</span>
-                    <span class="texto" onclick="abrirJanelaEstadoCivil()">Casada 💍</span>
+                    <span class="texto texto-clicavel" onclick="abrirJanelaEstadoCivil()">Casada 💍</span>
                 </div>
                 <div class="linha-texto">
                     <span class="subtitulo">Sexualidade:</span> <span class="texto">Bissexual</span>
@@ -1456,7 +1470,12 @@
         <p><span class="subtitulo">Poder de Dominância:</span> <span class="texto">279 / 845.512</span></p>
         <p><span class="subtitulo">Pontos de Habilidade Disponíveis:</span> <span class="texto">351</span></p>
         <p><span class="subtitulo">Pontos de recompensa:</span> <span class="texto">272.330.324</span></p>
-        <p><span class="subtitulo">Sementes de Dungeon:</span> <span class="texto">Forest of Ruins (1x)</span></p>
+        <p><span class="subtitulo">Sementes de Dungeon:</span> 
+           <span class="texto">Forest of Ruins (1x)</span>
+           <span class="gif-dungeon">
+               <img src="https://i.imgur.com/SEU_GIF.gif" alt="GIF Dungeon">
+           </span>
+        </p>
 
         <div class="linha-separadora"></div>
 
@@ -2064,14 +2083,17 @@
     // Atualiza cor, porcentagem e status para Fama / Moral
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
 
-    // Abrir Janela Fixa de Estado Civil
+    // Estado Civil
     function abrirJanelaEstadoCivil() {
-        document.getElementById('janelaEstadoCivil').style.display = 'block';
-    }
+        const janela = document.getElementById("janelaEstadoCivil");
+        const textoCasada = document.querySelector(".texto-clicavel");
+        const rect = textoCasada.getBoundingClientRect();
+        const offsetX = window.pageXOffset || document.documentElement.scrollLeft;
+        const offsetY = window.pageYOffset || document.documentElement.scrollTop;
     
-    // Fechar Janela Fixa de Estado Civil
-    function fecharJanelaEstadoCivil() {
-        document.getElementById('janelaEstadoCivil').style.display = 'none';
+        janela.style.display = "block";
+        janela.style.left = `${rect.right + offsetX}px`;
+        janela.style.top = `${rect.top + offsetY}px`;
     }
     
     // Controla a posição do carrossel
