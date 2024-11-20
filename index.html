@@ -766,16 +766,21 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            border: 2px solid #808080; /* Cor padrão da borda (cinza) */
+            border: 2px solid #808080; 
+            transition: border-color 0.3s ease, transform 0.3s ease;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: transform 0.3s, border-color 0.3s;
             cursor: pointer;
         }
         
         .circulo-pequeno.ativo {
-            border-color: #1E90FF; /* Azul quando ativo */
+            border: 2px solid #1E90FF;
+        }
+
+        /* Efeito de expansão ao passar o mouse */
+        .circulo-pequeno:hover {
+            transform: scale(1.2); /* Expande o círculo */
         }
         
         /* Imagem dentro dos círculos menores */
@@ -2355,47 +2360,69 @@
         janela.style.display = "none"; // Oculta a janela
     }
 
-    // Função para alternar o estado de um círculo específico
+    // Define o estado inicial dos círculos (ativo ou inativo)
+    const estadosIniciais = {
+        circulo1: true,  // Ativo
+        circulo2: false, // Inativo
+        circulo3: true,  // Ativo
+        circulo4: false, // Inativo
+        circulo5: true,  // Ativo
+        circulo6: false, // Inativo
+        circulo7: true,  // Ativo
+        circulo8: false  // Inativo
+    };
+    
+    // Aplica os estados iniciais ao carregar a página
+    document.addEventListener("DOMContentLoaded", function () {
+        for (const [id, ativo] of Object.entries(estadosIniciais)) {
+            const circulo = document.getElementById(id);
+            if (ativo) {
+                circulo.classList.add('ativo');
+            } else {
+                circulo.classList.remove('ativo');
+            }
+        }
+    });
+    
+    // Funções para alternar o estado de cada círculo
     function toggleCirculo1() {
-        const circulo1 = document.getElementById('circulo1');
-        circulo1.classList.toggle('inativo');
+        toggleEstado('circulo1');
     }
     
     function toggleCirculo2() {
-        const circulo2 = document.getElementById('circulo2');
-        circulo2.classList.toggle('ativo');
+        toggleEstado('circulo2');
     }
     
     function toggleCirculo3() {
-        const circulo3 = document.getElementById('circulo3');
-        circulo3.classList.toggle('ativo');
+        toggleEstado('circulo3');
     }
     
     function toggleCirculo4() {
-        const circulo4 = document.getElementById('circulo4');
-        circulo4.classList.toggle('ativo');
+        toggleEstado('circulo4');
     }
     
     function toggleCirculo5() {
-        const circulo5 = document.getElementById('circulo5');
-        circulo5.classList.toggle('ativo');
+        toggleEstado('circulo5');
     }
     
     function toggleCirculo6() {
-        const circulo6 = document.getElementById('circulo6');
-        circulo6.classList.toggle('ativo');
+        toggleEstado('circulo6');
     }
     
     function toggleCirculo7() {
-        const circulo7 = document.getElementById('circulo7');
-        circulo7.classList.toggle('ativo');
+        toggleEstado('circulo7');
     }
     
     function toggleCirculo8() {
-        const circulo8 = document.getElementById('circulo8');
-        circulo8.classList.toggle('ativo');
+        toggleEstado('circulo8');
     }
     
+    // Função genérica para alternar estado
+    function toggleEstado(id) {
+        const circulo = document.getElementById(id);
+        circulo.classList.toggle('ativo');
+    }
+
     // Controla a posição do carrossel
     let posicaoCarrossel = 0;
 
