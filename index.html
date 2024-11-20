@@ -2095,6 +2095,11 @@
         janela.style.top = `${rect.top + offsetY}px`;
         janela.style.display = "block"; // Torna a janela visível
     }
+
+    function fecharJanelaEstadoCivil() {
+        const janela = document.getElementById("janelaEstadoCivil");
+        janela.style.display = "none"; // Oculta a janela
+    }
     
     // Controla a posição do carrossel
     let posicaoCarrossel = 0;
