@@ -829,31 +829,52 @@
         }
 
         #circulo1 {
-            top: 0; 
-            right: 50%;
+            top: 0;
+            left: 50%;
             transform: translate(-50%, -50%);
         }
         
         #circulo2 {
-            top: 50%;
-            right: 0;
-            transform: translate(50%, -50%);
-        }
-
-        #circulo3 {
-            bottom: 0;
-            left: 50%; 
-            transform: translate(50%, -50%);
-        }
-
-        #circulo4 {
-            bottom: 50%;
-            left: 0; 
-            transform: translate(50%, -50%);
+            top: 25%;
+            left: 85%;
+            transform: translate(-50%, -50%);
         }
         
-        /* Adicione mais círculos com posições semelhantes: 
-            - Bottom, Left, e combinações de Top-Left, etc. */
+        #circulo3 {
+            top: 50%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #circulo4 {
+            top: 75%;
+            left: 85%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #circulo5 {
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #circulo6 {
+            top: 75%;
+            left: 15%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #circulo7 {
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+        
+        #circulo8 {
+            top: 25%;
+            left: 15%;
+            transform: translate(-50%, -50%);
+        }
         
         /* Estilo do Carrossel de Bençãos/Maldições */
         .carrossel-selos {
@@ -1645,7 +1666,7 @@
             <div class="titulo-chave">Chaves de Pendragon</div>
         
             <!-- Círculo 1 -->
-            <div class="circulo-pequeno" id="circulo1" onclick="toggleCirculo('circulo1')">
+            <div class="circulo-pequeno" id="circulo1" onclick="toggleCirculo1()">
                 <img src="https://imgur.com/key1.png" alt="Key of Souls">
                 <div class="janela-chave">
                     Key of Souls <span class="quantidade">(1x)</span>
@@ -1653,31 +1674,60 @@
             </div>
         
             <!-- Círculo 2 -->
-            <div class="circulo-pequeno" id="circulo2" onclick="toggleCirculo('circulo2')">
+            <div class="circulo-pequeno" id="circulo2" onclick="toggleCirculo2()">
                 <img src="https://imgur.com/key2.png" alt="Key of Dreams">
                 <div class="janela-chave">
                     Key of Dreams <span class="quantidade">(1x)</span>
                 </div>
             </div>
-
+        
             <!-- Círculo 3 -->
-            <div class="circulo-pequeno" id="circulo3" onclick="toggleCirculo('circulo3')">
-                <img src="https://imgur.com/key1.png" alt="Key of Souls">
+            <div class="circulo-pequeno" id="circulo3" onclick="toggleCirculo3()">
+                <img src="https://imgur.com/key3.png" alt="Key of Infinite Moon Mansion">
                 <div class="janela-chave">
                     Key of Infinite Moon Mansion <span class="quantidade">(1x)</span>
                 </div>
             </div>
-
+        
             <!-- Círculo 4 -->
-            <div class="circulo-pequeno" id="circulo4" onclick="toggleCirculo('circulo4')">
-                <img src="https://imgur.com/key1.png" alt="Key of Souls">
+            <div class="circulo-pequeno" id="circulo4" onclick="toggleCirculo4()">
+                <img src="https://imgur.com/key4.png" alt="Key of Desires">
                 <div class="janela-chave">
                     Key of Desires <span class="quantidade">(1x)</span>
                 </div>
             </div>
-            
-            <!-- Outros círculos -->
-            <!-- Adicione círculos adicionais aqui -->
+        
+            <!-- Círculo 5 -->
+            <div class="circulo-pequeno" id="circulo5" onclick="toggleCirculo5()">
+                <img src="https://imgur.com/key5.png" alt="Key of Soul World">
+                <div class="janela-chave">
+                    Key of Soul World <span class="quantidade">(1x)</span>
+                </div>
+            </div>
+        
+            <!-- Círculo 6 -->
+            <div class="circulo-pequeno" id="circulo6" onclick="toggleCirculo6()">
+                <img src="https://imgur.com/key6.png" alt="Key of Pendragon">
+                <div class="janela-chave">
+                    Key of Pendragon <span class="quantidade">(1x)</span>
+                </div>
+            </div>
+        
+            <!-- Círculo 7 -->
+            <div class="circulo-pequeno" id="circulo7" onclick="toggleCirculo7()">
+                <img src="https://imgur.com/key7.png" alt="Key Pinnacle of Flames">
+                <div class="janela-chave">
+                    Key Pinnacle of Flames <span class="quantidade">(1x)</span>
+                </div>
+            </div>
+        
+            <!-- Círculo 8 -->
+            <div class="circulo-pequeno" id="circulo8" onclick="toggleCirculo8()">
+                <img src="https://imgur.com/key8.png" alt="Key of Isaac's Heart">
+                <div class="janela-chave">
+                    Key of Isaac's Heart <span class="quantidade">(1/2)</span>
+                </div>
+            </div>
         </div>
         
         <div class="linha-separadora"></div>
@@ -2305,12 +2355,45 @@
         janela.style.display = "none"; // Oculta a janela
     }
 
-    // Função para ativar/desativar um círculo
-    function toggleCirculo(idCirculo) {
-        const circulo = document.getElementById('circulo1');
-        circulo.classList.toggle('ativo'); // Alterna entre ligado/desligado
-        const circulo = document.getElementById('circulo2');
-        circulo.classList.toggle('desligado'); // Alterna entre ligado/desligado
+    // Função para alternar o estado de um círculo específico
+    function toggleCirculo1() {
+        const circulo1 = document.getElementById('circulo1');
+        circulo1.classList.toggle('inativo');
+    }
+    
+    function toggleCirculo2() {
+        const circulo2 = document.getElementById('circulo2');
+        circulo2.classList.toggle('ativo');
+    }
+    
+    function toggleCirculo3() {
+        const circulo3 = document.getElementById('circulo3');
+        circulo3.classList.toggle('ativo');
+    }
+    
+    function toggleCirculo4() {
+        const circulo4 = document.getElementById('circulo4');
+        circulo4.classList.toggle('ativo');
+    }
+    
+    function toggleCirculo5() {
+        const circulo5 = document.getElementById('circulo5');
+        circulo5.classList.toggle('ativo');
+    }
+    
+    function toggleCirculo6() {
+        const circulo6 = document.getElementById('circulo6');
+        circulo6.classList.toggle('ativo');
+    }
+    
+    function toggleCirculo7() {
+        const circulo7 = document.getElementById('circulo7');
+        circulo7.classList.toggle('ativo');
+    }
+    
+    function toggleCirculo8() {
+        const circulo8 = document.getElementById('circulo8');
+        circulo8.classList.toggle('ativo');
     }
     
     // Controla a posição do carrossel
