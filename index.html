@@ -594,7 +594,7 @@
         /* Janela Flutuante - Estado Civil */
         .janela-estado-civil {
             position: fixed;
-            top: 40%; /* Ajuste para a posição desejada */
+            top: 40%; 
             left: 50%;
             transform: translate(-50%, -20%);
             width: 400px;
@@ -603,10 +603,10 @@
             background-image: url('https://imgur.com/6kfZ5aI.png'); 
             background-size: cover;
             background-position: center;
-            border: 2px solid #FFFFFF;
+            border: 2px solid #1E90FF; /* Azul para a borda */
             border-radius: 20px;
             font-family: Arial;
-            overflow: auto;
+            overflow: auto; /* Permite o scroll */
             z-index: 1000;
             display: none; 
         }
@@ -618,39 +618,31 @@
             position: relative;
         }
         
-        /* Botão de Fechar */
         .janela-estado-civil .botao-fechar {
             position: absolute;
             top: 10px;
             right: 10px;
             background: none;
             border: none;
-            color: #FFD700;
+            color: #1E90FF; /* Azul do botão */
             font-size: 18px;
             cursor: pointer;
         }
         
-        /* Diamante com a Foto do Marido */
-        .bloco-diamante {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .diamante-marido {
+        /* Círculo com a Foto do Marido */
+        .circulo-marido {
             width: 100px;
             height: 100px;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            border-radius: 50%; /* Define o formato circular */
             background-color: #FFFFFF;
             overflow: hidden;
-            border: 2px solid #FFD700;
+            border: 2px solid #1E90FF; /* Azul da borda */
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .diamante-marido img {
+        .circulo-marido img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -660,7 +652,7 @@
         .info-marido h3 {
             margin: 0 0 10px;
             font-size: 14px;
-            color: #FFD700;
+            color: #1E90FF; /* Azul do texto */
         }
         
         .info-marido p {
@@ -669,23 +661,31 @@
             color: #FFFFFF;
         }
         
-        /* Bloco com Informações Detalhadas */
+        /* Bloco Detalhado */
         .detalhes-marido {
             background-color: rgba(0, 0, 0, 0.9);
             padding: 10px;
             border-radius: 8px;
             border: 1px solid #FFFFFF;
         }
-
-        .detalhes-marido p {
+        
+        .detalhes-marido p, .detalhes-marido ul {
             margin: 10px 0;
             font-size: 14px;
         }
         
         .detalhes-marido ul {
-            margin: 5px 0;
             padding-left: 20px;
             list-style: disc;
+        }
+        
+        /* Barra de Scroll Invisível */
+        .janela-estado-civil::-webkit-scrollbar {
+            display: none; /* Esconde a barra */
+        }
+        
+        .janela-estado-civil {
+            scrollbar-width: none; /* Para navegadores Firefox */
         }
         
         /* Estilo do Carrossel de Bençãos/Maldições */
@@ -1194,11 +1194,10 @@
         <!-- Janela Flutuante para Estado Civil -->
         <div class="janela-estado-civil" id="janelaEstadoCivil">
             <div class="conteudo-janela">
-                <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">X</button>
-                
-                <!-- Bloco com Diamante e Informações Básicas -->
-                <div class="bloco-diamante">
-                    <div class="diamante-marido">
+                <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
+                <!-- Bloco com Círculo e Informações Básicas -->
+                <div class="bloco-circulo">
+                    <div class="circulo-marido">
                         <img src="https://imgur.com/SXnUVc9.png" alt="Foto do Marido">
                     </div>
                     <div class="info-marido">
@@ -1207,7 +1206,6 @@
                         <p><strong>Local do Casamento:</strong> Capela Real de Luminous</p>
                     </div>
                 </div>
-                
                 <!-- Bloco com Informações Detalhadas -->
                 <div class="detalhes-marido">
                     <p><strong>Missões em Conjunto:</strong></p>
@@ -1223,7 +1221,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="linha-separadora"></div>
 
         <!-- Títulos -->
