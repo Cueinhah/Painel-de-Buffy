@@ -1706,69 +1706,66 @@
 
         <!-- Chaves -->
         <div class="container-chaves">
-            <!-- Bloco Esquerdo: Círculo Base e Pequenos Círculos -->
+            <!-- Bloco Esquerdo -->
             <div class="bloco-esquerdo">
                 <div class="circulo-base">
                     <div class="circulo-decorativo menor"></div>
                     <div class="circulo-decorativo maior"></div>
+                    
+                    <!-- Círculos Pequenos -->
                     <div class="circulo-pequeno" id="circulo1">
-                        <img src="https://imgur.com/zHQo8sh.png" alt="Key of Souls">
-                        <div class="janela-chave">Key of Souls (1x)</div>
+                        <img src="https://imgur.com/Key1.png" alt="Key of Souls">
                     </div>
                     <div class="circulo-pequeno" id="circulo2">
-                        <img src="https://imgur.com/lKXdgwT.png" alt="Key of Dreams">
-                        <div class="janela-chave">Key of Dreams (1x)</div>
+                        <img src="https://imgur.com/Key2.png" alt="Key of Dreams">
                     </div>
                     <div class="circulo-pequeno" id="circulo3">
-                        <img src="https://imgur.com/Hf705GX.png" alt="Key of Infinite Moon Mansion">
-                        <div class="janela-chave">Key of Infinite Moon Mansion (1x)</div>
+                        <img src="https://imgur.com/Key3.png" alt="Key of Infinite Moon Mansion">
                     </div>
                     <div class="circulo-pequeno" id="circulo4">
-                        <img src="https://imgur.com/L2bLSl2.png" alt="Key of Desires">
-                        <div class="janela-chave">Key of Desires (1x)</div>
+                        <img src="https://imgur.com/Key4.png" alt="Key of Desires">
                     </div>
                     <div class="circulo-pequeno" id="circulo5">
-                        <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Soul World">
-                        <div class="janela-chave">Key of Soul World (1x)</div>
+                        <img src="https://imgur.com/Key5.png" alt="Key of Soul World">
                     </div>
                     <div class="circulo-pequeno" id="circulo6">
-                        <img src="https://imgur.com/QaNq2NX.png" alt="Key of Pendragon">
-                        <div class="janela-chave">Key of Pendragon (1x)</div>
+                        <img src="https://imgur.com/Key6.png" alt="Key of Pendragon">
                     </div>
                     <div class="circulo-pequeno" id="circulo7">
-                        <img src="https://imgur.com/46Dh8W2.png" alt="Key Pinnacle of Flames">
-                        <div class="janela-chave">Key Pinnacle of Flames (1x)</div>
+                        <img src="https://imgur.com/Key7.png" alt="Key Pinnacle of Flames">
                     </div>
                     <div class="circulo-pequeno" id="circulo8">
-                        <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Isaac's Heart">
-                        <div class="janela-chave">Key of Isaac's Heart (1/2)</div>
+                        <img src="https://imgur.com/Key8.png" alt="Key of Isaac's Heart">
                     </div>
                 </div>
             </div>
         
-            <!-- Bloco Direito: Retângulos -->
+            <!-- Bloco Direito -->
             <div class="bloco-direito">
-                <div class="retangulo" id="retangulo-item">
+                <!-- Retângulo Item -->
+                <div class="retangulo item">
                     <div class="topo-retangulo">
-                        <span class="titulo-item">Key of Souls</span>
+                        <h4 class="titulo-item">Key of Souls</h4>
                         <span class="descricao-secao">ITEM</span>
                     </div>
-                    <p>Esta é a descrição da Key of Souls.</p>
+                    <p class="descricao-detalhada">Uma chave misteriosa que conecta almas perdidas aos seus destinos.</p>
                     <p class="clicavel">Clique para Ativar</p>
                 </div>
         
-                <div class="retangulo" id="retangulo-efeitos">
+                <!-- Retângulo Efeitos -->
+                <div class="retangulo efeitos">
                     <div class="topo-retangulo">
-                        <img src="URL_ICONE" alt="Efeito">
-                        <span class="titulo-efeito">Efeito da Key of Souls</span>
+                        <img src="https://imgur.com/Efeito1.png" alt="Efeito Ícone">
+                        <h4 class="titulo-efeito">Efeito da Chave</h4>
                         <span class="descricao-secao">EFEITOS</span>
                     </div>
-                    <p>Descrição do efeito da Key of Souls.</p>
+                    <p class="descricao-detalhada">Concede proteção contra ataques espirituais por 5 minutos.</p>
                 </div>
         
+                <!-- Navegação -->
                 <div class="navegacao">
-                    <button onclick="navegar(-1)">◄</button>
-                    <button onclick="navegar(1)">►</button>
+                    <button onclick="trocarChave(-1)">◄</button>
+                    <button onclick="trocarChave(1)">►</button>
                 </div>
             </div>
         </div>
