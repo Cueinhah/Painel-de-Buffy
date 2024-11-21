@@ -769,6 +769,35 @@
             height: 300px;
             border: 1px solid #444;
             border-radius: 50%;
+            margin: auto;
+        }
+
+        .circulo-pequeno {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid gray;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .circulo-pequeno img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .circulo-pequeno.active {
+            border-color: #1E90FF;
+        }
+        
+        .circulo-pequeno:hover {
+            transform: scale(1.2);
         }
         
         .circulo-decorativo {
@@ -790,6 +819,33 @@
             top: -20px;
             left: -20px;
         }
+
+        .janela-chave {
+            display: none;
+            position: absolute;
+            bottom: 60px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .circulo-pequeno:hover .janela-chave {
+            display: block;
+        }
+        
+        /* Posicionamento dos 8 Círculos */
+        .circulo-pequeno:nth-child(1) { top: 0; left: 125px; }
+        .circulo-pequeno:nth-child(2) { top: 50px; left: 230px; }
+        .circulo-pequeno:nth-child(3) { top: 125px; left: 275px; }
+        .circulo-pequeno:nth-child(4) { top: 200px; left: 230px; }
+        .circulo-pequeno:nth-child(5) { top: 250px; left: 125px; }
+        .circulo-pequeno:nth-child(6) { top: 200px; left: 20px; }
+        .circulo-pequeno:nth-child(7) { top: 125px; left: -25px; }
+        .circulo-pequeno:nth-child(8) { top: 50px; left: 20px; }
         
         /* Bloco Direito */
         .bloco-direito {
@@ -802,6 +858,9 @@
             border-radius: 10px;
             padding: 15px;
             margin-bottom: 20px;
+            width: 80%; 
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .retangulo.item {
@@ -817,6 +876,7 @@
             display: flex;
             justify-content: center;
             gap: 10px;
+            margin-top: 20px;
         }
         
         .seta {
