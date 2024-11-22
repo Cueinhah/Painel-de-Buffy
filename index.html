@@ -2426,7 +2426,6 @@
     let chaveAtual = 0;
     
     // Dados das chaves
-    
     const chaves = [
         { id: 1,
          nome: "Key of Souls",
@@ -2518,12 +2517,7 @@
     document.querySelectorAll(".titulo-item, .titulo-efeito, .descricao-detalhada").forEach(elemento => {
         elemento.contentEditable = "false"; // Impede edição
     });
-    
-    // Inicia com a primeira chave destacada
-    document.addEventListener("DOMContentLoaded", () => {
-        navegar(0);
-    });
-    
+
     // Controla a posição do carrossel
     let posicaoCarrossel = 0;
 
