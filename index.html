@@ -1717,7 +1717,7 @@
            </span>
         </p>
 
-        <!-- Chaves -->
+       <!-- Chaves -->
         <div class="container-chave">
             <!-- Bloco Esquerdo -->
             <div class="bloco-esquerdo">
@@ -1726,35 +1726,35 @@
                     <div class="circulo-decorativo maior"></div>
         
                     <!-- Círculos Pequenos -->
-                    <div class="circulo-pequeno" id="circulo1" onclick="navegar(0)">
+                    <div class="circulo-pequeno" data-id="0" onclick="selecionarChave(0)">
                         <img src="https://imgur.com/zHQo8sh.png" alt="Key of Souls">
                         <div class="janela-chave">Key of Souls (1x)</div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo2" onclick="navegar(1)">
+                    <div class="circulo-pequeno" data-id="1" onclick="selecionarChave(1)">
                         <img src="https://imgur.com/lKXdgwT.png" alt="Key of Dreams">
                         <div class="janela-chave">Key of Dreams (1x)</div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo3" onclick="navegar(2)">
+                    <div class="circulo-pequeno" data-id="2" onclick="selecionarChave(2)">
                         <img src="https://imgur.com/Hf705GX.png" alt="Key of Infinite Moon Mansion">
                         <div class="janela-chave">Key of Infinite Moon Mansion (1x)</div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo4" onclick="navegar(3)">
+                    <div class="circulo-pequeno" data-id="3" onclick="selecionarChave(3)">
                         <img src="https://imgur.com/L2bLSl2.png" alt="Key of Desires">
                         <div class="janela-chave">Key of Desires (1x)</div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo5" onclick="navegar(4)">
+                    <div class="circulo-pequeno" data-id="4" onclick="selecionarChave(4)">
                         <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Soul World">
                         <div class="janela-chave">Key of Soul World (1x)</div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo6" onclick="navegar(5)">
+                    <div class="circulo-pequeno" data-id="5" onclick="selecionarChave(5)">
                         <img src="https://imgur.com/QaNq2NX.png" alt="Key of Pendragon">
                         <div class="janela-chave">Key of Pendragon (1x)</div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo7" onclick="navegar(6)">
+                    <div class="circulo-pequeno" data-id="6" onclick="selecionarChave(6)">
                         <img src="https://imgur.com/46Dh8W2.png" alt="Key Pinnacle of Flames">
                         <div class="janela-chave">Key Pinnacle of Flames (1x)</div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo8" onclick="navegar(7)">
+                    <div class="circulo-pequeno" data-id="7" onclick="selecionarChave(7)">
                         <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Isaac's Heart">
                         <div class="janela-chave">Key of Isaac's Heart (1/2)</div>
                     </div>
@@ -1769,18 +1769,18 @@
                         <h4 class="titulo-item" id="titulo-item">Nome da Chave</h4>
                         <span class="descricao-secao">ITEM</span>
                     </div>
-                    <p class="descricao-detalhada">Esta chave permite acesso ao mundo das almas.</p>
-                    <p class="clicavel">Clique para Ativar</p>
+                    <p class="descricao-detalhada">Descrição da chave aqui.</p>
+                    <p class="clicavel" onclick="ativarChave()">Clique para Ativar</p>
                 </div>
         
                 <!-- Retângulo Efeitos -->
                 <div class="retangulo efeitos" id="retangulo-efeitos">
                     <div class="topo-retangulo">
                         <img src="https://imgur.com/zHQo8sh.png" alt="Ícone do Efeito">
-                        <h4 class="titulo-efeito">Garante imunidade a ataques espirituais</h4>
+                        <h4 class="titulo-efeito">Efeito da Chave</h4>
                         <span class="descricao-secao">EFEITOS</span>
                     </div>
-                    <p class="descricao-detalhada">Garante imunidade a ataques espirituais por 5 minutos.</p>
+                    <p class="descricao-detalhada">Detalhes do efeito da chave.</p>
                 </div>
         
                 <!-- Navegação -->
@@ -1790,7 +1790,7 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Bençãos/Maldições -->
         <h2 class="titulo2">Bençãos e Maldições</h2>
 
@@ -2434,15 +2434,30 @@
         chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
         const chave = chaves[chaveAtual];
     
-        // Atualiza Retângulo Item
-        document.querySelector(".titulo-item").textContent = chave.nome;
-        document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
+        // Atualiza o título e descrição da chave no retângulo principal
+        const tituloElemento = document.querySelector(".titulo-item");
+        if (tituloElemento) {
+            tituloElemento.textContent = chave.nome; // Exibe o nome da chave
+        }
     
-        // Atualiza Retângulo Efeitos
-        document.querySelector(".titulo-efeito").textContent = chave.efeito;
-        document.querySelector("#retangulo-efeitos img").src = chave.icone;
+        const descricaoElemento = document.querySelector("#retangulo-item .descricao-detalhada");
+        if (descricaoElemento) {
+            descricaoElemento.textContent = chave.descricao; // Exibe a descrição
+        }
     
-        // Atualiza Destaque dos Círculos
+        // Atualiza o efeito e o ícone no retângulo de efeitos
+        const efeitoElemento = document.querySelector(".titulo-efeito");
+        if (efeitoElemento) {
+            efeitoElemento.textContent = chave.efeito;
+        }
+    
+        const iconeElemento = document.querySelector("#retangulo-efeitos img");
+        if (iconeElemento) {
+            iconeElemento.src = chave.icone;
+            iconeElemento.alt = chave.nome; // Adiciona texto alternativo
+        }
+    
+        // Atualiza o destaque dourado no círculo correspondente
         atualizarDestaqueCirculo(chaveAtual + 1);
     }
     
@@ -2450,18 +2465,23 @@
     function atualizarDestaqueCirculo(id) {
         document.querySelectorAll(".circulo-pequeno").forEach((circulo, index) => {
             if (index + 1 === id) {
-                circulo.style.boxShadow = "0 0 10px 3px #FFD700";
+                circulo.style.boxShadow = "0 0 10px 3px #FFD700"; // Adiciona o destaque
             } else {
-                circulo.style.boxShadow = "none";
+                circulo.style.boxShadow = "none"; // Remove o destaque
             }
         });
     }
+    
+    // Previne caixas de texto editáveis e comportamento indesejado
+    document.querySelectorAll(".titulo-item, .titulo-efeito, .descricao-detalhada").forEach(elemento => {
+        elemento.contentEditable = "false"; // Impede edição
+    });
     
     // Inicia com a primeira chave destacada
     document.addEventListener("DOMContentLoaded", () => {
         navegar(0);
     });
-
+    
     // Controla a posição do carrossel
     let posicaoCarrossel = 0;
 
