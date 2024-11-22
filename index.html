@@ -839,6 +839,12 @@
             text-align: center;
             z-index: 10;
         }
+
+        .janela-chave .quantidade {
+            color: #1E90FF;
+            font-weight: bold;
+            text-shadow: 0 0 5px #1E90FF; /* Efeito de brilho */
+        }
         
         .circulo-pequeno:hover .janela-chave {
             display: block;
@@ -1740,7 +1746,9 @@
                     </div>
                     <div class="circulo-pequeno" id="circulo2" onclick="navegar(1)">
                         <img src="https://imgur.com/lKXdgwT.png" alt="Key of Dreams">
-                        <div class="janela-chave">Key of Dreams (1x)</div>
+                        <div class="janela-chave">
+                            Key of Dreams <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
                     <div class="circulo-pequeno" id="circulo3" onclick="navegar(2)">
                         <img src="https://imgur.com/Hf705GX.png" alt="Key of Infinite Moon Mansion">
