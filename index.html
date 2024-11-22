@@ -2426,6 +2426,7 @@
     let chaveAtual = 0;
     
     // Dados das chaves
+    
     const chaves = [
         { id: 1, nome: "Key of Souls", descricao: "Esta chave permite acesso ao mundo das almas.", efeito: "Garante imunidade a ataques espirituais.", icone: "https://imgur.com/zHQo8sh.png" },
         { id: 2, nome: "Key of Dreams", descricao: "Abre portas para o mundo dos sonhos.", efeito: "Permite visualizar pensamentos ocultos.", icone: "https://imgur.com/lKXdgwT.png" },
@@ -2442,30 +2443,15 @@
         chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
         const chave = chaves[chaveAtual];
     
-        // Atualiza o título e descrição da chave no retângulo principal
-        const tituloElemento = document.querySelector(".titulo-item");
-        if (tituloElemento) {
-            tituloElemento.textContent = chave.nome; // Exibe o nome da chave
-        }
+        // Atualiza Retângulo Item
+        document.getElementById("titulo-item").textContent = chave.nome;
+        document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
     
-        const descricaoElemento = document.querySelector("#retangulo-item .descricao-detalhada");
-        if (descricaoElemento) {
-            descricaoElemento.textContent = chave.descricao; // Exibe a descrição
-        }
+        // Atualiza Retângulo Efeitos
+        document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
+        document.querySelector("#retangulo-efeitos img").src = chave.icone;
     
-        // Atualiza o efeito e o ícone no retângulo de efeitos
-        const efeitoElemento = document.querySelector(".titulo-efeito");
-        if (efeitoElemento) {
-            efeitoElemento.textContent = chave.efeito;
-        }
-    
-        const iconeElemento = document.querySelector("#retangulo-efeitos img");
-        if (iconeElemento) {
-            iconeElemento.src = chave.icone;
-            iconeElemento.alt = chave.nome; // Adiciona texto alternativo
-        }
-    
-        // Atualiza o destaque dourado no círculo correspondente
+        // Atualiza Destaque dos Círculos
         atualizarDestaqueCirculo(chaveAtual + 1);
     }
     
