@@ -812,10 +812,12 @@
             height: 80%;
             object-fit: cover;
             border-radius: 50%;
+            background: none;
         }
 
         .circulo-pequeno.active {
-            border-color: #1E90FF;
+            border-color: #FFD700;
+            box-shadow: 0 0 15px #FFD700;
         }
         
         .circulo-pequeno:hover {
@@ -865,9 +867,15 @@
             border: 2px solid #1E90FF;
             background-color: #1E1E2E;
             border-radius: 10px;
-            padding: 0px 25px;
+            padding: 15px 20px;
             margin-left: -20px;
             margin-right: -20px;
+            overflow-y: auto;
+            scrollbar-width: none; 
+        }
+
+        .retangulo::-webkit-scrollbar {
+            display: none; /* Chrome e outros */
         }
         
         .retangulo.item {
@@ -910,7 +918,7 @@
             font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
-        }
+            user-select: none;
         
         /* Navegação */
         .navegacao {
@@ -925,6 +933,12 @@
             font-size: 20px;
             color: #FFD700;;
             cursor: pointer;
+        }
+
+        .navegacao button:hover {
+            color: #FFFFFF; /* Destaque ao passar o mouse */
+            transform: scale(1.1);
+            transition: transform 0.2s ease, color 0.2s ease;
         }
         
         /* Estilo do Carrossel de Bençãos/Maldições */
