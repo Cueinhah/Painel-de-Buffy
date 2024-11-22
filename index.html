@@ -774,6 +774,26 @@
             margin: 0px;
         }
 
+        .circulo-decorativo {
+            position: absolute;
+            border: 1px solid #333;
+            border-radius: 50%;
+        }
+        
+        .circulo-decorativo.menor {
+            width: 250px;
+            height: 250px;
+            top: 15px;
+            left: 15px;
+        }
+        
+        .circulo-decorativo.maior {
+            width: 310px;
+            height: 310px;
+            top: -15px;
+            left: -15px;
+        }
+        
         .circulo-pequeno {
             position: absolute;
             width: 70px;
@@ -1710,9 +1730,7 @@
             <!-- Bloco Esquerdo -->
             <div class="bloco-esquerdo">
                 <div class="circulo-base">
-                    <div class="circulo-decorativo menor"></div>
-                    <div class="circulo-decorativo maior"></div>
-        
+                    
                     <!-- Círculos Pequenos -->
                    <div class="circulo-pequeno" id="circulo0" onclick="navegar(0)">
                         <img src="https://imgur.com/zHQo8sh.png" alt="Key of Souls">
