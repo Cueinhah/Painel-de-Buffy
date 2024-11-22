@@ -1788,7 +1788,7 @@
                         <h4 class="titulo-efeito">Efeito da Chave</h4>
                         <span class="descricao-secao">EFEITOS</span>
                     </div>
-                    <p class="descricao-detalhada">Detalhes do efeito da chave.</p>
+                    <p class="detalhes-detalhados">Detalhes do efeito da chave.</p>
                 </div>
         
                 <!-- Navegação -->
@@ -2428,7 +2428,12 @@
     // Dados das chaves
     
     const chaves = [
-        { id: 1, nome: "Key of Souls", descricao: "Esta chave permite acesso ao mundo das almas.", efeito: "Garante imunidade a ataques espirituais.", icone: "https://imgur.com/zHQo8sh.png" },
+        { id: 1,
+         nome: "Key of Souls",
+         descricao: "Esta chave permite acesso ao mundo das almas.",
+         efeito: "Garante imunidade a ataques espirituais.",
+         icone: "https://imgur.com/zHQo8sh.png",
+         detalhes: "Esta chave é um teste da alinezinha"},
         { id: 2, nome: "Key of Dreams", descricao: "Abre portas para o mundo dos sonhos.", efeito: "Permite visualizar pensamentos ocultos.", icone: "https://imgur.com/lKXdgwT.png" },
         { id: 3, nome: "Key of Infinite Moon Mansion", descricao: "Concede acesso à Mansão Infinita da Lua.", efeito: "Permite teletransporte entre dimensões lunares.", icone: "https://imgur.com/Hf705GX.png" },
         { id: 4, nome: "Key of Desires", descricao: "Abre caminhos para os seus desejos mais profundos.", efeito: "Amplifica as habilidades relacionadas à vontade.", icone: "https://imgur.com/L2bLSl2.png" },
@@ -2450,6 +2455,7 @@
         // Atualiza Retângulo Efeitos
         document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
         document.querySelector("#retangulo-efeitos img").src = chave.icone;
+        document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
     
         // Atualiza Destaque dos Círculos
         atualizarDestaqueCirculo(chaveAtual + 1);
