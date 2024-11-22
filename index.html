@@ -1,580 +1,580 @@
-!DOCTYPE html
-html lang=pt-BR
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    titlePainel de Personagemtitle
-    style
-         Backgrounds 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Personagem</title>
+    <style>
+        /* Backgrounds */
         .background1 {
-            background-image url('httpsimgur.comt2LRzeo.png'); 
-            background-size cover; 
-            background-position center; 
-            background-repeat no-repeat; 
-            min-height 100vh; 
-            display flex;
-            justify-content center;
-            align-items center;
-            padding 80px 0px;
+            background-image: url('https://imgur.com/t2LRzeo.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            min-height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 0px;
         }
 
         .background2 {
-            border 1px solid #A020F0;
-            border-radius 30px;
-            padding 50px; 
-            background-image url('httpsimgur.comjHwtm72.png'); 
-            background-color rgba(0, 0, 0, 0.85);
-            background-blend-mode overlay;
-            background-size cover; 
-            background-position center;
-            background-repeat no-repeat; 
-            width 100%;
-            max-width 995px; 
-            box-sizing border-box;
-            min-height 100vh;
-            animation borda-brilhante 3s infinite;
-            box-shadow 0px 10px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid #A020F0;
+            border-radius: 30px;
+            padding: 50px; 
+            background-image: url('https://imgur.com/jHwtm72.png'); 
+            background-color: rgba(0, 0, 0, 0.85);
+            background-blend-mode: overlay;
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+            width: 100%;
+            max-width: 995px; 
+            box-sizing: border-box;
+            min-height: 100vh;
+            animation: borda-brilhante 3s infinite;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
         }
-         Tira borda branca 
+        /* Tira borda branca */
             html, body {
-            margin 0;
-            padding 0;
-            box-sizing border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         @keyframes borda-brilhante {
-            0% { border-color #A020F0; }
-            50% { border-color #FFD700; }
-            100% { border-color #A020F0; }
+            0% { border-color: #A020F0; }
+            50% { border-color: #FFD700; }
+            100% { border-color: #A020F0; }
         }
         
-         Títulos e textos 
+        /* Títulos e textos */
         .titulo1 {
-            font-family 'Arial Black', sans-serif;
-            color #FFFFFF;
-            font-size 30px;
-            font-weight bold;
-            text-align left;
+            font-family: 'Arial Black', sans-serif;
+            color: #FFFFFF;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: left;
         }
 
         .titulo2 {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 25px;
-            font-weight bold;
-            text-align center;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
         }
 
         .texto-pequeno {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 12px;
-            text-align center;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            text-align: center;
         }
 
         .subtitulo {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 14px;
-            font-weight bold;
-            text-align left;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
         }
 
         .subtitulo {
-            font-size 15px;
+            font-size: 15px;
         }
 
         .texto {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 13px;
-            text-align left;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 13px;
+            text-align: left;
         }
 
         .ver-tudo {
-            font-family Arial;
-            color #FFD700;
-            font-size 12px;
-            font-weight bold;
-            font-style italic;
-            cursor pointer;
+            font-family: Arial;
+            color: #FFD700;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
         }
 
         .expandido {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 12px;
-            text-align left;
-            display none;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            text-align: left;
+            display: none;
         }
 
-         Container do título flutuante 
+        /* Container do título flutuante */
         .titulo-assimilacao {
-            position absolute;  Flutua sobre o conteúdo 
-            top 50px;  Distância do topo 
-            left 50%;  Centraliza horizontalmente 
-            transform translateX(-50%);  Ajusta para o centro exato 
-            z-index 10;  Garante que fique acima de outros elementos 
+            position: absolute; /* Flutua sobre o conteúdo */
+            top: 50px; /* Distância do topo */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Ajusta para o centro exato */
+            z-index: 10; /* Garante que fique acima de outros elementos */
         }
         
-         Bloco retangular do título 
+        /* Bloco retangular do título */
         .bloco-retangular {
-            position relative;
-            display flex;
-            justify-content center;
-            align-items center;
-            background linear-gradient(145deg, #000000, #232323);  Fundo em tons de marrom 
-            border 1px solid #A020F0;
-            animation borda-brilhante 3s infinite;
-            box-shadow 0px 10px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1);  Sombra e efeito interno 
-            padding 10px 30px;  Espaçamento interno 
-            border-radius 0;  Sem bordas arredondadas 
-            min-width 450px;  Tamanho mínimo 
-            height 40px;  Altura fixa 
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #000000, #232323); /* Fundo em tons de marrom */
+            border: 1px solid #A020F0;
+            animation: borda-brilhante 3s infinite;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra e efeito interno */
+            padding: 10px 30px; /* Espaçamento interno */
+            border-radius: 0; /* Sem bordas arredondadas */
+            min-width: 450px; /* Tamanho mínimo */
+            height: 40px; /* Altura fixa */
         }
         
-         Estilo do texto principal 
+        /* Estilo do texto principal */
         .texto-titulo {
-            font-family 'Arial Black', sans-serif;
-            color #F5DEB3;
-            font-size 18px;
-            font-weight bold;
-            text-transform uppercase;
-            text-shadow 0 2px 5px rgba(0, 0, 0, 0.8); 
-            margin-right 10px;
+            font-family: 'Arial Black', sans-serif;
+            color: #F5DEB3;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); 
+            margin-right: 10px;
         }
         
-         Estilo do texto da porcentagem 
+        /* Estilo do texto da porcentagem */
         .texto-porcentagem {
-            font-family 'Arial Black', sans-serif;
-            font-size 18px; 
-            color #FFD700; 
-            text-shadow 0 2px 5px rgba(0, 0, 0, 0.8); 
+            font-family: 'Arial Black', sans-serif;
+            font-size: 18px; 
+            color: #FFD700; 
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); 
         }
                 
-         Música Aura 
+        /* Música Aura */
         .botao-musica {
-            position relative;
-            z-index 20;  Acima de outros elementos 
+            position: relative;
+            z-index: 20; /* Acima de outros elementos */
         }
 
         .circulo-botao-musica {
-            width 40px;
-            height 40px;
-            border-radius 50%;
-            border 1px solid #FFFFFF;
-            display flex;
-            justify-content center;
-            align-items center;
-            color #FFFFFF;
-            cursor pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            cursor: pointer;
         }
 
         .janela-musica {
-            display none; 
-            position absolute;
-            top 190px;
-            left 40px;
-            width 250px;
-            height 250px;
-            background-color rgba(0, 0, 0, 0.85);
-            border 2px solid #A020F0;
-            border-radius 10px;
-            padding 15px;
-            color #FFFFFF;
-            z-index 10; 
+            display: none; 
+            position: absolute;
+            top: 190px;
+            left: 40px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #A020F0;
+            border-radius: 10px;
+            padding: 15px;
+            color: #FFFFFF;
+            z-index: 10; 
         }
 
         .janela-musica h3 {
-            margin-top 0;
-            font-size 16px;
-            text-align center;
+            margin-top: 0;
+            font-size: 16px;
+            text-align: center;
         }
 
         .janela-musica iframe {
-            width 100%;
-            height 80%;
-            border none;
-            background-color #333;
-            border-radius 5px;
+            width: 100%;
+            height: 80%;
+            border: none;
+            background-color: #333;
+            border-radius: 5px;
         }
 
-         Cabeçalho 
+        /* Cabeçalho */
         .cabeçalho {
-            display flex;
-            align-items flex-start;
-            gap 30px;
-            margin-top -40px;
-            margin-bottom 20px;
-            position relative;
-            z-index 2;
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-top: -40px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
 
-         Cabeçalho - Foto da Doll 
+        /* Cabeçalho - Foto da Doll */
         .cab-doll {
-            clip-path polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            background-image url('httpsimgur.comPj0uMuI.png');
-                background-repeat no-repeat;
-            width 300px; 
-            height 300px;
-            background-size cover;
-            border 2px solid #FFFFFF;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            background-image: url('https://imgur.com/Pj0uMuI.png');
+                background-repeat: no-repeat;
+            width: 300px; 
+            height: 300px;
+            background-size: cover;
+            border: 2px solid #FFFFFF;
         }
 
-         Cabeçalho - Textos 
+        /* Cabeçalho - Textos */
             .cab-texto {
-            display flex;
-            flex-direction column;
-            gap 5px;
-            max-width 70%;
-            flex-wrap wrap;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            max-width: 70%;
+            flex-wrap: wrap;
         }
 
-         Alma 
+        /* Alma */
         .circulo-aura {
-            display inline-block;
-            width 40px;
-            height 40px;
-            border-radius 50%;
-            overflow hidden;
-            border 1px solid #FFFFFF;
-            margin-left 10px;
-            vertical-align middle;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #FFFFFF;
+            margin-left: 10px;
+            vertical-align: middle;
         }
 
         .circulo-aura img {
-            width 100%;
-            height 100%;
-            object-fit cover; 
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
         }
 
-         Raça e Sub-raça 
+        /* Raça e Sub-raça */
         .caixa-gif img,
         .circulos-subraca .circulo-subraca img {
-            width auto;
-            height 20px;
-            object-fit contain;
-            vertical-align middle;
-            margin-left 5px;
+            width: auto;
+            height: 20px;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-left: 5px;
         }
 
         .circulos-subraca {
-            display inline-flex;
-            gap 5px;
+            display: inline-flex;
+            gap: 5px;
         }
 
-         Largura Dinâmica 
+        /* Largura Dinâmica */
         .background1,
         .background2 {
-            width 100%;
+            width: 100%;
         }
 
-         Barra de Nível 
+        /* Barra de Nível */
         .barra {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 90px
             );
-            display flex;
-            align-items center;
-            border 1px solid #FFFFFF;
-            height 25px;
-            border-radius 0;
-            width 100%;
-            max-width 894px;
-            position absolute;
-            top 395px; 
-            z-index 1; 
+            display: flex;
+            align-items: center;
+            border: 1px solid #FFFFFF;
+            height: 25px;
+            border-radius: 0;
+            width: 100%;
+            max-width: 894px;
+            position: absolute;
+            top: 395px; 
+            z-index: 1; 
         }
 
         .barra-progresso {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 90px
             );
-            background-color #A020F0;
-            height 100%;
-            border-radius 0px;
-            position absolute;
-            left 0;
-            top 0;
+            background-color: #A020F0;
+            height: 100%;
+            border-radius: 0px;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         .barra-texto {
-            font-family Arial;
-            color #76D7EA;
-            font-size 12px;
-            position absolute;
-            right 10px;
-            top 50%;
-            transform translateY(-50%);
-            z-index 1;
+            font-family: Arial;
+            color: #76D7EA;
+            font-size: 12px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
             
         }
         
-         Dinheiro 
+        /* Dinheiro */
         .circulos-abaixo {
-            display flex;
-            justify-content space-between;
-            align-items center;
-            margin-top -40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -40px;
         }
 
         .circulo-com-texto {
-            display flex;
-            align-items center;
-            gap 6px; 
-            width 33%;
+            display: flex;
+            align-items: center;
+            gap: 6px; 
+            width: 33%;
         }
 
         .moedas {
-            width 12px;
-            height 12px;
-            background-size cover;
-            border-radius 50%;
+            width: 12px;
+            height: 12px;
+            background-size: cover;
+            border-radius: 50%;
         }
 
         .moedas-trans {
-            width 12px;
-            height 12px;
-            background-size cover;
-            border-radius 50%;
-            opacity 0.6;
+            width: 12px;
+            height: 12px;
+            background-size: cover;
+            border-radius: 50%;
+            opacity: 0.6;
         }
 
-         Títulos 
+        /* Títulos */
         .carrossel {
-            display flex;
-            align-items center;
-            justify-content center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .carrossel-imagens {
-            display flex;
-            width 900px;
-            padding 10px; 
-            overflow-x auto; 
-            scrollbar-width none; 
+            display: flex;
+            width: 900px;
+            padding: 10px; 
+            overflow-x: auto; 
+            scrollbar-width: none; 
         }
 
-        .carrossel-imagens-webkit-scrollbar {
-            display none; 
+        .carrossel-imagens::-webkit-scrollbar {
+            display: none; 
         }
 
         .titulo-item {
-            display flex;
-            flex-direction column;
-            align-items center;
-            margin-right 75px;
-            transition transform 0.3s; 
-            z-index 1; 
-            overflow visible; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 75px;
+            transition: transform 0.3s; 
+            z-index: 1; 
+            overflow: visible; 
         }
 
-        .titulo-itemhover {
-            transform scale(1.1);
+        .titulo-item:hover {
+            transform: scale(1.1);
         }
 
         .circulo-carrossel {
-            width 100px;
-            height 100px;
-            border 1px solid #FFFFFF;
-            border-radius 50%;
-            background-size cover;
-            background-image url('URL_DA_IMAGEM_CARROSSEL'); 
+            width: 100px;
+            height: 100px;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            background-size: cover;
+            background-image: url('URL_DA_IMAGEM_CARROSSEL'); 
         }
 
         .texto-carrossel {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 12px;
-            text-align center;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            text-align: center;
         }
 
         .texto-ativo-carrossel {
-            font-family Arial;
-            color #76D7EA;
-            font-size 12px;
-            font-weight bold;
-            text-align center;
+            font-family: Arial;
+            color: #76D7EA;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
         }
 
         .seta {
-            background none;
-            border none;
-            color #FFD700;
-            font-size 20px;
-            cursor pointer;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 20px;
+            cursor: pointer;
         }
 
-         Necessidades Básicas 
+        /* Necessidades Básicas */
         .necessidades-basicas-container {
-            display flex;
-            gap 10px; 
-            justify-content space-around; 
-            flex-wrap wrap;
+            display: flex;
+            gap: 10px; 
+            justify-content: space-around; 
+            flex-wrap: wrap;
         }
 
         .necessidades-basicas {
-            display flex;
-            align-items center;
-            gap 10px;
-            margin-bottom 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
         }
 
         .circulo-nbasico {
-            width 80px; 
-            height 80px;
-            border 1px solid white;
-            border-radius 50%;
-            display flex;
-            justify-content center;
-            align-items center;
+            width: 80px; 
+            height: 80px;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .circulo-texto-nbasico {
-            color #A020F0;
-            font-size 45px;
+            color: #A020F0;
+            font-size: 45px;
         }
 
         .status-nbasico {
-            display flex;
-            flex-direction column;
-            align-items flex-start;;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;;
         }
 
         .status-titulo-nbasico {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 13px;
-            font-weight bold;
-            text-align left;
-            margin-bottom 5px;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 5px;
         }
 
         .bar-nbasico {
-            width 160px;
-            height 20px;
-            border 1px solid white;
-            position relative;
-            display flex;
-            align-items center;
+            width: 160px;
+            height: 20px;
+            border: 1px solid white;
+            position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .fill-nbasico {
-            height 100%;
-            background-color green; 
-            transition width 0.3s, background-color 0.3s; 
+            height: 100%;
+            background-color: green; 
+            transition: width 0.3s, background-color 0.3s; 
         }
 
         .progresso-texto-nbasico {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 12px;
-            text-align center;
-            position absolute;
-            width 100%;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
         }
 
         .status-indicador-nbasico {
-            margin-top 5px;
-            position relative;
-            width 100%;
-            display flex;
-            justify-content center;
+            margin-top: 5px;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .status-texto-nbasico {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 12px;
-            margin 4px;
-            font-weight bold;
-            text-align left;
-            position relative;
-            z-index 1;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            margin: 4px;
+            font-weight: bold;
+            text-align: left;
+            position: relative;
+            z-index: 1;
         }
 
-        .status-indicador-nbasicobefore {
-            content ;
-            position absolute;
-            width 100%;
-            height 20px;
-            border 1px solid white;
-            top 0;
-            left 50;
-            pointer-events none;
-            clip-path polygon(0% 0%, 10% 0%, 15% 15%, 0% 15%, 0% 0%, 100% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 100%, 85% 100%, 85% 85%, 100% 85%, 100% 100%, 0% 100%, 15% 100%, 15% 85%, 0% 85%, 0% 100%);
+        .status-indicador-nbasico::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 20px;
+            border: 1px solid white;
+            top: 0;
+            left: 50;
+            pointer-events: none;
+            clip-path: polygon(0% 0%, 10% 0%, 15% 15%, 0% 15%, 0% 0%, 100% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 100%, 85% 100%, 85% 85%, 100% 85%, 100% 100%, 0% 100%, 15% 100%, 15% 85%, 0% 85%, 0% 100%);
         }
 
-         Linha de separação 
+        /* Linha de separação */
         .linha-separadora {
-            width 80%;
-            height 0.5px; 
-            background-color rgba(255, 255, 255, 0.3);
-            margin 40px auto; 
+            width: 80%;
+            height: 0.5px; 
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 40px auto; 
         }
 
-         Semente da Dungeon 
+        /* Semente da Dungeon */
         .gif-dungeon img {
-            width 30px;
-            height 30px;
-            vertical-align middle;
-            margin-left 5px;
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-left: 5px;
         }
         
-         Características 
+        /* Características */
         .nova-secao {
-            display flex;
-            gap 50px;
-            padding 0px;
-            align-items center; 
-            max-width 100%;
-            overflow hidden; 
-            margin-top 0px;
-            margin-bottom 0px;
+            display: flex;
+            gap: 50px;
+            padding: 0px;
+            align-items: center; 
+            max-width: 100%;
+            overflow: hidden; 
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
 
-         Bloco Direito - Autoestima e FamaMoral 
+        /* Bloco Direito - Autoestima e Fama/Moral */
         .bloco-direito {
-            flex 1.9;
-            display flex;
-            flex-direction column;
-            gap 10px;
-            align-items flex-start; 
-            margin-left 0;
+            flex: 1.9;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start; 
+            margin-left: 0;
         }
 
         .status-fama {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 12px;
-            margin-top 4px;
-            font-weight bold;
-            justify-content center;
-            width 420px;
-            margin-left 0;
-            position relative;
-            display flex;
-            padding 4px 0px;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            margin-top: 4px;
+            font-weight: bold;
+            justify-content: center;
+            width: 420px;
+            margin-left: 0;
+            position: relative;
+            display: flex;
+            padding: 4px 0px;
         }
 
-        .status-famabefore {
-            content ;
-            position absolute;
-            width 420px;
-            height 20px;
-            border 1px solid white;
-            top 0px;
-            left 0px;
-            pointer-events none;
-            clip-path polygon(
+        .status-fama::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 20px;
+            border: 1px solid white;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            clip-path: polygon(
                 0% 0%, 10% 0%, 15% 15%, 0% 15%, 
                 0% 0%, 100% 0%, 85% 0%, 85% 15%, 
                 100% 15%, 100% 100%, 85% 100%, 
@@ -585,1672 +585,1680 @@ head
         }
 
         .barra-porcentagem {
-            width 420px;
-            height 20px;
-            border 1px solid #FFFFFF;
-            position relative;
-            display flex;
-            align-items center;
+            width: 420px;
+            height: 20px;
+            border: 1px solid #FFFFFF;
+            position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .preenchimento-barra {
-            height 100%;
-            background-color green;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: green;
+            transition: width 0.3s ease;
         }
 
         .texto-barra {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 12px;
-            text-align center;
-            width 100%;
-            position absolute;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
         }
 
         .titulo-barra {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 14px;
-            font-weight bold;
-            text-align left;
-            margin-bottom 5px;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 5px;
         }
 
-         Bloco Central - Buffy Pixel 
+        /* Bloco Central - Buffy Pixel */
         .bloco-centro {
-            flex 0.5;
-            display flex;
-            align-items center;
-            justify-content center;
+            flex: 0.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .imagem-central {
-            width 100px; 
-            height auto;
+            width: 100px; 
+            height: auto;
         }
 
-         Bloco Esquerdo - Textos 
+        /* Bloco Esquerdo - Textos */
         .bloco-esquerdo {
-            flex 1.2;
-            display flex;
-            flex-direction column;
-            gap 15px;
-            justify-content center; 
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center; 
         }
 
         .linha-texto {
-            display flex;
-            align-items center;
-            gap 5px; 
+            display: flex;
+            align-items: center;
+            gap: 5px; 
         }
 
-         Janela Flutuante - Estado Civil 
+        /* Janela Flutuante - Estado Civil */
         .janela-estado-civil {
-            position absolute;
-            top 40%; 
-            left 30%;
-            transform translate(-50%, -20%);
-            width 340px;
-            height 250px;
-            box-shadow 0 4px 15px rgba(0, 0, 0, 0.5);
-            background-image url('httpsimgur.comsuxlLBi.png'); 
-            background-size 120%;
-            background-position center;
-            border 2px solid #1E90FF;
-            border-radius 20px;
-            font-family Arial;
-            overflow auto;  Permite o scroll 
-            z-index 1000;
-            display none; 
+            position: absolute;
+            top: 40%; 
+            left: 30%;
+            transform: translate(-50%, -20%);
+            width: 340px;
+            height: 250px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            background-image: url('https://imgur.com/suxlLBi.png'); 
+            background-size: 120%;
+            background-position: center;
+            border: 2px solid #1E90FF;
+            border-radius: 20px;
+            font-family: Arial;
+            overflow: auto; /* Permite o scroll */
+            z-index: 1000;
+            display: none; 
         }
         
         .janela-estado-civil .conteudo-janela {
-            background-color rgba(0, 0, 0, 0.9);  Sobreposição preta 
-            color #FFFFFF;
-            padding 20px 20px;
-            position relative;
+            background-color: rgba(0, 0, 0, 0.9); /* Sobreposição preta */
+            color: #FFFFFF;
+            padding: 20px 20px;
+            position: relative;
         }
         
         .janela-estado-civil .botao-fechar {
-            position absolute;
-            top 10px;
-            right 10px;
-            background none;
-            border none;
-            color #1E90FF;  Azul do botão 
-            font-size 18px;
-            cursor pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #1E90FF; /* Azul do botão */
+            font-size: 18px;
+            cursor: pointer;
         }
         
-         Círculo com a Foto do Marido 
+        /* Círculo com a Foto do Marido */
         .circulo-marido {
-            width 100px;
-            height 100px;
-            border-radius 50%;  Define o formato circular 
-            background-color #FFFFFF;
-            overflow hidden;
-            border 1px solid #1E90FF;  Azul da borda 
-            display flex;
-            align-items center;
-            justify-content center;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Define o formato circular */
+            background-color: #FFFFFF;
+            overflow: hidden;
+            border: 1px solid #1E90FF; /* Azul da borda */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .circulo-marido img {
-            width 100%;
-            height 100%;
-            object-fit cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
-         Informações do Marido 
+        /* Informações do Marido */
         .info-marido h3 {
-            margin 15px 0 10px;
-            font-size 16px;
-            color #1E90FF;  Azul do texto 
+            margin: 15px 0 10px;
+            font-size: 16px;
+            color: #1E90FF; /* Azul do texto */
         }
         
         .info-marido p {
-            margin 15px 0;
-            font-size 12px;
-            color #FFFFFF;
+            margin: 15px 0;
+            font-size: 12px;
+            color: #FFFFFF;
         }
         
-         Bloco Detalhado 
+        /* Bloco Detalhado */
         .detalhes-marido {
-            background-color rgba(0, 0, 0, 0.9);
-            padding 05px 05px;
-            border-radius 8px;
-            border 0px solid #FFFFFF;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 05px 05px;
+            border-radius: 8px;
+            border: 0px solid #FFFFFF;
         }
         
         .detalhes-marido p, .detalhes-marido ul {
-            margin 15px 15px;
-            font-size 12px;
+            margin: 15px 15px;
+            font-size: 12px;
         }
         
         .detalhes-marido ul {
-            padding-left 20px;
-            list-style disc;
+            padding-left: 20px;
+            list-style: disc;
         }
         
-         Barra de Scroll Invisível 
-        .janela-estado-civil-webkit-scrollbar {
-            display none;  Esconde a barra 
+        /* Barra de Scroll Invisível */
+        .janela-estado-civil::-webkit-scrollbar {
+            display: none; /* Esconde a barra */
         }
         
         .janela-estado-civil {
-            scrollbar-width none;  Para navegadores Firefox 
+            scrollbar-width: none; /* Para navegadores Firefox */
         }
 
         .texto-clicavel {
-            text-decoration underline;
-            cursor pointer;
+            text-decoration: underline;
+            cursor: pointer;
         }
 
-         Categoria de Chaves 
+        /* Categoria de Chaves */
         .container-chave {
-            display flex;
-            justify-content space-between;
-            align-items flex-start;
-            gap 20px;
-            margin-top 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 40px;
         }
         
-         Bloco Esquerdo 
+        /* Bloco Esquerdo */
         .bloco-esquerdo {
-            flex 1;
-            display flex;
-            justify-content center;
-            align-items center;
-            position relative;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
         
         .circulo-base {
-            position relative;
-            width 280px;
-            height 280px;
-            border 1px solid #444;
-            border-radius 50%;
-            margin 0px;
+            position: relative;
+            width: 280px;
+            height: 280px;
+            border: 1px solid #444;
+            border-radius: 50%;
+            margin: 0px;
         }
 
          .circulo-decorativo {
-            position absolute;
-            border 1px solid #333;
-            border-radius 50%;
+            position: absolute;
+            border: 1px solid #333;
+            border-radius: 50%;
         }
         
         .circulo-decorativo.menor {
-            width 250px;
-            height 250px;
-            top 15px;
-            left 15px;
+            width: 250px;
+            height: 250px;
+            top: 15px;
+            left: 15px;
         }
         
         .circulo-decorativo.maior {
-            width 310px;
-            height 310px;
-            top -15px;
-            left -15px;
+            width: 310px;
+            height: 310px;
+            top: -15px;
+            left: -15px;
         }
 
         .circulo-pequeno {
-            position absolute;
-            width 70px;
-            height 70px;
-            border-radius 50%;
-            border 1px solid gray;
-            background-color transparent;
-            display flex;
-            justify-content center;
-            align-items center;
-            transition transform 0.3s ease;
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 1px solid gray;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
         }
 
         .circulo-pequeno img {
-            width 80%;
-            height 80%;
-            object-fit cover;
-            border-radius 50%;
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: none;
         }
 
         .circulo-pequeno.active {
-            border-color #1E90FF;
+            border-color: #FFD700;
+            box-shadow: 0 0 15px #FFD700;
         }
         
-        .circulo-pequenohover {
-            transform scale(1.2);
+        .circulo-pequeno:hover {
+            transform: scale(1.2);
         }
 
         .janela-chave {
-            display none;
-            position absolute;
-            bottom 60px;
-            width 100px;
-            background-color rgba(0, 0, 0, 0.8);
-            padding 5px 10px;
-            border-radius 5px;
-            color #FFFFFF;
-            font-size 12px;
-            text-align center;
-            z-index 10;
+            display: none;
+            position: absolute;
+            bottom: 60px;
+            width: 100px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 12px;
+            text-align: center;
+            z-index: 10;
         }
         
-        .circulo-pequenohover .janela-chave {
-            display block;
+        .circulo-pequeno:hover .janela-chave {
+            display: block;
         }
         
-         Posicionamento dos 8 Círculos 
-        .circulo-pequenonth-child(1) { top 0; left 50%; transform translate(-50%, -50%); }
+        /* Posicionamento dos 8 Círculos */
+        .circulo-pequeno:nth-child(1) { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+        .circulo-pequeno:nth-child(2) { top: 30%; left: 80%; transform: translate(-50%, -50%); }
+        .circulo-pequeno:nth-child(3) { top: 50%; left: 90%; transform: translate(-50%, -50%); }
+        .circulo-pequeno:nth-child(4) { top: 70%; left: 80%; transform: translate(-50%, -50%); }
+        .circulo-pequeno:nth-child(5) { top: 90%; left: 50%; transform: translate(-50%, -50%); }
+        .circulo-pequeno:nth-child(6) { top: 70%; left: 20%; transform: translate(-50%, -50%); }
+        .circulo-pequeno:nth-child(7) { top: 50%; left: 10%; transform: translate(-50%, -50%); }
+        .circulo-pequeno:nth-child(8) { top: 30%; left: 20%; transform: translate(-50%, -50%); }
         
-        .circulo-pequenonth-child(2) { top 50%; left 80%; transform translate(-50%, -50%); }
-        
-        .circulo-pequenonth-child(3) { top 50%; left 100%; transform translate(-50%, -50%); }
-        
-        .circulo-pequenonth-child(4) { top 75%; left 85%; transform translate(-50%, -50%); }
-        
-        .circulo-pequenonth-child(5) { top 100%; left 50%; transform translate(-50%, -50%); }
-        
-        .circulo-pequenonth-child(6) { top 75%; left 15%; transform translate(-50%, -50%); }
-        
-        .circulo-pequenonth-child(7) { top 50%; left 0; transform translate(-50%, -50%); }
-        
-        .circulo-pequenonth-child(8) { top 25%; left 15%; transform translate(-50%, -50%); }
-        
-         Bloco Direito 
+        /* Bloco Direito */
         .bloco-direito {
-            flex 1;
-            display flex;
-            flex-direction column;
-            align-items center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .retangulo {
-            width 100%;
-            max-width 300px;
-            color white;
-            border 2px solid #1E90FF;
-            background-color #1E1E2E;
-            border-radius 10px;
-            padding 0px 25px;
-            margin-left -20px;
-            margin-right -20px;
+            width: 100%;
+            max-width: 300px;
+            color: white;
+            border: 2px solid #1E90FF;
+            background-color: #1E1E2E;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-left: -20px;
+            margin-right: -20px;
+            overflow-y: auto;
+            scrollbar-width: none; 
+        }
+
+        .retangulo::-webkit-scrollbar {
+            display: none; /* Chrome e outros */
         }
         
         .retangulo.item {
-            height 180px;
+            height: 180px;
         }
         
         .retangulo.efeitos {
-            height 130px;
+            height: 130px;
         }
 
         .topo-retangulo {
-            display flex;
-            justify-content space-between;
-            align-items center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .topo-retangulo img {
-            width 30px;
-            height 30px;
+            width: 30px;
+            height: 30px;
         }
 
         .titulo-item, .titulo-efeito {
-            font-family 'Arial Black', sans-serif;
-            font-size 14px;
-            color #FFD700;  Dourado 
-            font-weight bold;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 14px;
+            color: #FFD700; /* Dourado */
+            font-weight: bold;
         }
         
         .descricao-secao {
-            font-family 'Arial Black', sans-serif;
-            font-size 14px;
-            color #1E90FF;  Azul 
-            font-weight bold;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 14px;
+            color: #1E90FF; /* Azul */
+            font-weight: bold;
         }
         
         .clicavel {
-            font-family Arial;
-            font-size 12px;
-            color #FFD700;
-            font-weight bold;
-            cursor pointer;
-            margin-top 10px;
+            font-family: Arial;
+            font-size: 12px;
+            color: #FFD700;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            user-select: none;
         }
         
-         Navegação 
+        /* Navegação */
         .navegacao {
-            display flex;
-            justify-content center;
-            gap 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         
         .navegacao button {
-            background none;
-            border none;
-            font-size 20px;
-            color #FFD700;;
-            cursor pointer;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #FFD700;;
+            cursor: pointer;
+        }
+
+        .navegacao button:hover {
+            color: #FFFFFF; /* Destaque ao passar o mouse */
+            transform: scale(1.1);
+            transition: transform 0.2s ease, color 0.2s ease;
         }
         
-         Estilo do Carrossel de BençãosMaldições 
+        /* Estilo do Carrossel de Bençãos/Maldições */
         .carrossel-selos {
-            display flex;
-            align-items center;
-            justify-content center;
-            gap 15px;
-            margin-top 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 35px;
         }
 
         .carrossel-diamantes {
-            display flex;
-            overflow visible;
-            width 920px;
-            justify-content space-between;
-            gap 10px;
-            position relative;
+            display: flex;
+            overflow: visible;
+            width: 920px;
+            justify-content: space-between;
+            gap: 10px;
+            position: relative;
         }
 
         .diamante {
-            width 110px;
-            height 110px;
-            background-size cover;
-            background-position center;
-            clip-path polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            border 2px solid white;
-            transition all 0.3s ease;
-            overflow hidden;
+            width: 110px;
+            height: 110px;
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            overflow: hidden;
         }
 
         .diamante img {
-            width 100%;
-            height 100%;
-            object-fit cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .diamante-item {
-            display flex;
-            flex-direction column;
-            align-items center;
-            position relative; 
-            z-index 1;
-            transition transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; 
+            z-index: 1;
+            transition: transform 0.3s;
         }
 
         .diamante-item.ativo {
-            z-index 2; 
+            z-index: 2; 
         }
 
         .diamante-item.ativo .diamante {
-            transform scale(1.4);
-            border-color gold;
+            transform: scale(1.4);
+            border-color: gold;
         }
 
         .texto-diamante {
-            font-family Arial;
-            font-size 12px;
-            color white;
-            text-align center;
-            margin-top 10px;
-            transition transform 0.3s, font-size 0.3s, color 0.3s;
+            font-family: Arial;
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+            transition: transform 0.3s, font-size 0.3s, color 0.3s;
         }
 
         .diamante-item.ativo .texto-diamante {
-            font-size 14px; 
-            font-weight bold;
-            color gold; 
-            transform translateY(-10px); 
+            font-size: 14px; 
+            font-weight: bold;
+            color: gold; 
+            transform: translateY(-10px); 
         }
 
         .seta {
-            background none;
-            border none;
-            color #FFD700;
-            font-size 20px;
-            cursor pointer;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 20px;
+            cursor: pointer;
         }
 
-         Estilo da Janela Flutuante 
+        /* Estilo da Janela Flutuante */
         .janela-bencao {
-            display none;
-            position absolute;
-            top 2200px;
-            left 300px;
-            width 400px;
-            height 250px;
-            background-color rgba(0, 0, 0, 0.85);
-            border 2px solid #A020F0;
-            border-radius 10px;
-            box-shadow 0px 4px 10px rgba(0, 0, 0, 0.5);
-            color #FFFFFF;
-            z-index 1000;
-            overflow hidden;
-            overflow-y auto;
-            cursor move;
-            scrollbar-width none; 
-            scrollbar-color #A020F0 transparent; 
+            display: none;
+            position: absolute;
+            top: 2200px;
+            left: 300px;
+            width: 400px;
+            height: 250px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #A020F0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            color: #FFFFFF;
+            z-index: 1000;
+            overflow: hidden;
+            overflow-y: auto;
+            cursor: move;
+            scrollbar-width: none; 
+            scrollbar-color: #A020F0 transparent; 
         }
 
-         Para navegadores baseados em Webkit 
-        .janela-bencao-webkit-scrollbar {
-            display none;
+        /* Para navegadores baseados em Webkit */
+        .janela-bencao::-webkit-scrollbar {
+            display: none;
         }
 
-        .janela-bencao-webkit-scrollbar-thumb {
-            background-color #A020F0; 
-            border-radius 4px; 
+        .janela-bencao::-webkit-scrollbar-thumb {
+            background-color: #A020F0; 
+            border-radius: 4px; 
         }
 
-        .janela-bencao-webkit-scrollbar-track {
-            background-color transparent; 
+        .janela-bencao::-webkit-scrollbar-track {
+            background-color: transparent; 
         }
         
-         Botões da Janela 
+        /* Botões da Janela */
         .janela-botoes {
-            display flex;
-            justify-content space-between;
-            background-color #333;
-            padding 5px;
-            border-bottom 1px solid #A020F0;
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 5px;
+            border-bottom: 1px solid #A020F0;
         }
 
         .botao-expandir, .botao-fechar {
-            background none;
-            border none;
-            color #FFD700;
-            cursor pointer;
-            font-size 16px;
-            padding 2px 5px;
+            background: none;
+            border: none;
+            color: #FFD700;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 2px 5px;
         }
 
-         Conteúdo da Janela 
+        /* Conteúdo da Janela */
         .conteudo-janela {
-            padding 0px 20px;
+            padding: 0px 20px;
         }
 
-         Expansão 
+        /* Expansão */
         .janela-expandida {
-            width 600px;
-            height 400px;
+            width: 600px;
+            height: 400px;
         }
 
-         Contêiner Atributos 
+        /* Contêiner Atributos */
         .atributos-container {
-            display flex;
-            flex-wrap wrap;
-            gap 20px;
-            justify-content space-between;
-            margin-top 40px;
-            width 100%;
-            margin-bottom 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-top: 40px;
+            width: 100%;
+            margin-bottom: 40px;
         }
 
         .atributo {
-            display flex;
-            align-items center;
-            width 48%;
-            gap 0px;
-            margin-bottom 20px;
+            display: flex;
+            align-items: center;
+            width: 48%;
+            gap: 0px;
+            margin-bottom: 20px;
         }
 
         .icone-atributo {
-            width 30px;
-            height 30px;
-            display flex;
-            align-items center;
-            justify-content center;
-            margin-right 60px; 
-            overflow visible;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 60px; 
+            overflow: visible;
         }
 
         .titulo-e-marcacao {
-            display flex;
-            align-items center;
-            gap 5px;
-            margin-bottom 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
         }
 
         .marcacao-atributo {
-            width 20px;
-            height 20px;
-            border 1px solid #FFFFFF;
-            display flex;
-            align-items center;
-            justify-content center;
-            cursor pointer;
-            font-size 14px;
-            color #FFFFFF;
-            font-weight bold;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            color: #FFFFFF;
+            font-weight: bold;
         }
 
-        .marcacao-atributo.checkedbefore {
-            content X;
+        .marcacao-atributo.checked::before {
+            content: "X";
         }
 
         .titulo-barra-atributo {
-            font-family Arial;
-            color #FFFFFF;
-            font-size 14px;
-            font-weight bold;
-            margin-bottom 5px;
-            text-align left;
-            margin-left 0px;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+            margin-left: 0px;
         }
 
         .barra-porcentagem-atributo {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            width 300px;
-            height 20px;
-            position relative;
-            border 1px solid #FFFFFF;
-            display flex;
-            align-items center;
-            z-index 0;
+            width: 300px;
+            height: 20px;
+            position: relative;
+            border: 1px solid #FFFFFF;
+            display: flex;
+            align-items: center;
+            z-index: 0;
         }
 
         .preenchimento-barra-atributo.hp {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color green;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: green;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.mp {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color blue;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: blue;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.agi {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color yellow;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: yellow;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.def {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color purple;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: purple;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.res {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color gray;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: gray;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.spd
          {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color magenta;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: magenta;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.int {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color orange;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: orange;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.atk {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color red;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: red;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.smp {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color brown;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: brown;
+            transition: width 0.3s ease;
         }
 
         .preenchimento-barra-atributo.unknown {
-            background repeating-linear-gradient(
+            background: repeating-linear-gradient(
                 to right,
                 #ccc,
                 #ccc 1px,
                 transparent 1px,
                 transparent 30px
             );
-            height 100%;
-            background-color cyan;
-            transition width 0.3s ease;
+            height: 100%;
+            background-color: cyan;
+            transition: width 0.3s ease;
         }
 
         .texto-barra-atributo {
-            position absolute;
-            width 100%;
-            text-align center;
-            font-size 12px;
-            color #ffffff;
-            font-family Arial;
-            pointer-events none;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #ffffff;
+            font-family: Arial;
+            pointer-events: none;
         }
 
-    style
-head
-body
+    </style>
+</head>
+<body>
 
-div class=background1
-    div class=background2
-        !-- Botão de Música --
-        div class=botao-musica onclick=toggleJanelaMusica()
-            div class=circulo-botao-musica
-                span class=texto-botao-musica🎶span
-            div
-        div
+<div class="background1">
+    <div class="background2">
+        <!-- Botão de Música -->
+        <div class="botao-musica" onclick="toggleJanelaMusica()">
+            <div class="circulo-botao-musica">
+                <span class="texto-botao-musica">🎶</span>
+            </div>
+        </div>
 
-        !-- Janela Flutuante da Música --
-        div class=janela-musica id=janelaMusica
-            h3Aurah3
-            !-- Insira o código do player de música aqui --
-            iframe width=100% height=300 scrolling=no frameborder=no src=httpsw.soundcloud.complayerurl=https%3Aapi.soundcloud.comtracks1961843283%3Fsecret_token%3Ds-lg9054r5PuH&color=%23a020f0&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=trueiframediv style=font-size 10px; color #cccccc;line-break anywhere;word-break normal;overflow hidden;white-space nowrap;text-overflow ellipsis; font-family Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight 100;a href=httpssoundcloud.comaline-santos-42416271 title=Buffy le Fay Pendragon target=_blank style=color #cccccc; text-decoration none;Buffy le Fay Pendragona · a href=httpssoundcloud.comaline-santos-42416271buffy-the-last-shots-lg9054r5PuH title=Buffy The Last Shot target=_blank style=color #cccccc; text-decoration none;Buffy The Last Shotadiv
-        div
+        <!-- Janela Flutuante da Música -->
+        <div class="janela-musica" id="janelaMusica">
+            <h3>Aura:</h3>
+            <!-- Insira o código do player de música aqui -->
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH&color=%23a020f0&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/aline-santos-42416271" title="Buffy le Fay Pendragon" target="_blank" style="color: #cccccc; text-decoration: none;">Buffy le Fay Pendragon</a> · <a href="https://soundcloud.com/aline-santos-42416271/buffy-the-last-shot/s-lg9054r5PuH" title="Buffy The Last Shot" target="_blank" style="color: #cccccc; text-decoration: none;">Buffy The Last Shot</a></div>
+        </div>
         
-        !-- Arte de Título Taxa de Assimilação --
-        div class=titulo-assimilacao
-            div class=bloco-retangular
-                span class=texto-tituloTaxa de Assimilaçãospan
-                span class=texto-porcentagem52.81%span
-            div
-        div
+        <!-- Arte de Título: Taxa de Assimilação -->
+        <div class="titulo-assimilacao">
+            <div class="bloco-retangular">
+                <span class="texto-titulo">Taxa de Assimilação:</span>
+                <span class="texto-porcentagem">52.81%</span>
+            </div>
+        </div>
 
-        !-- Cabeçalho --
-        div class=cabeçalho
-            !-- Foto da Doll --
-            div class=cab-dolldiv
+        <!-- Cabeçalho -->
+        <div class="cabeçalho">
+            <!-- Foto da Doll -->
+            <div class="cab-doll"></div>
             
-            !-- Informações --
-            div class=cab-texto
-                h1 class=titulo1
+            <!-- Informações -->
+            <div class="cab-texto">
+                <h1 class="titulo1">
                     Buffy le Fay Pendragon
-                    span class=circulo-aura
-                        img src=httpsi.imgur.comGEyuWhO.gif alt=Aura
-                    span
-                h1
-                p
-                    span class=subtituloIdadespan span class=texto157 anosspan
-                p
-                p
-                    span class=subtituloRaçaspan span class=textoArch Harenggothspan
-                    span class=caixa-gif
-                        img src=httpsi.imgur.comMp4W10S.gif alt=GIF
-                    span
-                p
-                p
-                    span class=subtituloSub-raçaspan span class=textoArch Succubus + Vampire Queen (Sangue Puro), [Empusa]span
-                    span class=circulos-subraca
-                        span class=circulo-subraca
-                            img src=httpsi.imgur.com3C2JwOZ.png alt=Círculo 1
-                        span
-                        span class=circulo-subraca
-                            img src=httpsi.imgur.com4oCw2mc.png alt=Círculo 2
-                        span
-                    span
-                p
-            div
+                    <span class="circulo-aura">
+                        <img src="https://i.imgur.com/GEyuWhO.gif" alt="Aura">
+                    </span>
+                </h1>
+                <p>
+                    <span class="subtitulo">Idade:</span> <span class="texto">157 anos</span>
+                </p>
+                <p>
+                    <span class="subtitulo">Raça:</span> <span class="texto">Arch Harenggoth</span>
+                    <span class="caixa-gif">
+                        <img src="https://i.imgur.com/Mp4W10S.gif" alt="GIF">
+                    </span>
+                </p>
+                <p>
+                    <span class="subtitulo">Sub-raça:</span> <span class="texto">Arch Succubus + Vampire Queen (Sangue Puro), [Empusa]</span>
+                    <span class="circulos-subraca">
+                        <span class="circulo-subraca">
+                            <img src="https://i.imgur.com/3C2JwOZ.png" alt="Círculo 1">
+                        </span>
+                        <span class="circulo-subraca">
+                            <img src="https://i.imgur.com/4oCw2mc.png" alt="Círculo 2">
+                        </span>
+                    </span>
+                </p>
+            </div>
 
-        div
+        </div>
 
-        !-- Barra de Experiência --
-        div class=barra 
-            div class=barra-progresso id=expBardiv
-            span class=barra-textospan
-        div      
+        <!-- Barra de Experiência -->
+        <div class="barra"> 
+            <div class="barra-progresso" id="expBar"></div>
+            <span class="barra-texto"></span>
+        </div>      
 
-        !-- Dinheiro --
-        div class=circulos-abaixo
-            div class=circulo-com-texto style=justify-content flex-start;
-                div class=moedas style=background-image url('httpsimgur.comk4ptcgo.gif');div
-                p class=texto-pequeno210.000p
-            div
+        <!-- Dinheiro -->
+        <div class="circulos-abaixo">
+            <div class="circulo-com-texto" style="justify-content: flex-start;">
+                <div class="moedas" style="background-image: url('https://imgur.com/k4ptcgo.gif');"></div>
+                <p class="texto-pequeno">210.000</p>
+            </div>
 
-            div class=circulo-com-texto style=justify-content center;
-                div class=moedas style=background-image url('httpsimgur.comTqyiX83.gif');div
-                p class=texto-pequeno135.000p
-            div
+            <div class="circulo-com-texto" style="justify-content: center;">
+                <div class="moedas" style="background-image: url('https://imgur.com/TqyiX83.gif');"></div>
+                <p class="texto-pequeno">135.000</p>
+            </div>
 
-            div class=circulo-com-texto style=justify-content flex-end;
-                div class=moedas-trans style=background-image url('httpsimgur.compmRYXw3.gif');div
-                p class=texto-pequeno90.000p
-            div
-        div
+            <div class="circulo-com-texto" style="justify-content: flex-end;">
+                <div class="moedas-trans" style="background-image: url('https://imgur.com/pmRYXw3.gif');"></div>
+                <p class="texto-pequeno">90.000</p>
+            </div>
+        </div>
 
-        !-- Bloco de Classes --
-        pspan class=subtituloClasse Originalspan span class=textosMsagical sDsestroyerspanp
-        pspan class=subtituloClasse Principalspan span class=textoMonster Tamerspanp
-        pspan class=subtituloClasses Secundáriasspan span class=textoMonge, Maga Demoníaca, Caminhante dos Sonhos...span
-            span class=ver-tudo onclick=mostrarTexto()[ver tudo]span
-        p
-        p id=texto-expandido class=expandidoMaga Suprema, MAOUDA, Soul Artisan, Mestre de Runas, Rainha de Copas, Infernal Dancer, Ceifadora, Ninja, Dungeon Master, Ferreira mágica.p
-        pspan class=subtituloClasse de Conjuntospan span class=textoArch Succubus + Vampire Queen (Sangue Puro), [Empusa]spanp
+        <!-- Bloco de Classes -->
+        <p><span class="subtitulo">Classe Original:</span> <span class="texto"><s>M</s>agical <s>D</s>estroyer</span></p>
+        <p><span class="subtitulo">Classe Principal:</span> <span class="texto">Monster Tamer</span></p>
+        <p><span class="subtitulo">Classes Secundárias:</span> <span class="texto">Monge, Maga Demoníaca, Caminhante dos Sonhos...</span>
+            <span class="ver-tudo" onclick="mostrarTexto()">[ver tudo]</span>
+        </p>
+        <p id="texto-expandido" class="expandido">Maga Suprema, MAOUDA, Soul Artisan, Mestre de Runas, Rainha de Copas, Infernal Dancer, Ceifadora, Ninja, Dungeon Master, Ferreira mágica.</p>
+        <p><span class="subtitulo">Classe de Conjunto:</span> <span class="texto">Arch Succubus + Vampire Queen (Sangue Puro), [Empusa]</span></p>
 
-        div class=linha-separadoradiv
+        <div class="linha-separadora"></div>
 
-        !-- Características --
-        div class=nova-secao
-            !-- Textos - Estado Civil; Sexualidade e Profissão --
-            div class=bloco-esquerdo
-                div class=linha-texto
-                    span class=subtituloEstado Civilspan
-                    span class=texto texto-clicavel onclick=abrirJanelaEstadoCivil()Casada 💍span
-                div
-                div class=linha-texto
-                    span class=subtituloSexualidadespan span class=textoBissexualspan
-                div
-                div class=linha-texto
-                    span class=subtituloProfissõesspan span class=textoCaçadora (Nível 20),span
-                div
-                div class=linha-texto
-                    span class=textoVampire Hunter (0), Dominatrix (Nível 211)span
-                div
-            div
+        <!-- Características -->
+        <div class="nova-secao">
+            <!-- Textos - Estado Civil; Sexualidade e Profissão -->
+            <div class="bloco-esquerdo">
+                <div class="linha-texto">
+                    <span class="subtitulo">Estado Civil:</span>
+                    <span class="texto texto-clicavel" onclick="abrirJanelaEstadoCivil()">Casada 💍</span>
+                </div>
+                <div class="linha-texto">
+                    <span class="subtitulo">Sexualidade:</span> <span class="texto">Bissexual</span>
+                </div>
+                <div class="linha-texto">
+                    <span class="subtitulo">Profissões:</span> <span class="texto">Caçadora (Nível 20),</span>
+                </div>
+                <div class="linha-texto">
+                    <span class="texto">Vampire Hunter (0), Dominatrix (Nível 211)</span>
+                </div>
+            </div>
 
-            !-- Buffy Pixel Art --
-            div class=bloco-centro
-                img src=httpsi.imgur.comAEbulNh.gif alt=Imagem Central class=imagem-central
-            div
+            <!-- Buffy Pixel Art -->
+            <div class="bloco-centro">
+                <img src="https://i.imgur.com/AEbulNh.gif" alt="Imagem Central" class="imagem-central">
+            </div>
 
-            !-- Barras - Autoestima e FamaMoral --
-            div class=bloco-direito
-                !-- Barra de Autoestima --
-                div
-                    div class=titulo-barraAutoestimadiv
-                    div class=barra-porcentagem
-                        div class=preenchimento-barra id=barra-autoestima style=width 70%;div
-                        span class=texto-barra id=texto-autoestima70%span
-                    div
-                div
+            <!-- Barras - Autoestima e Fama/Moral -->
+            <div class="bloco-direito">
+                <!-- Barra de Autoestima -->
+                <div>
+                    <div class="titulo-barra">Autoestima</div>
+                    <div class="barra-porcentagem">
+                        <div class="preenchimento-barra" id="barra-autoestima" style="width: 70%;"></div>
+                        <span class="texto-barra" id="texto-autoestima">70%</span>
+                    </div>
+                </div>
 
-                !-- Barra de Fama  Moral --
-                div
-                    div class=titulo-barraFama  Moraldiv
-                    div class=barra-porcentagem
-                        div class=preenchimento-barra id=barra-fama style=width 50%;div
-                        span class=texto-barra id=texto-fama50%span
-                    div
-                    div class=status-fama
-                        span id=status-famaStatusspan
-                    div
-                div
-            div
-        div
+                <!-- Barra de Fama / Moral -->
+                <div>
+                    <div class="titulo-barra">Fama / Moral</div>
+                    <div class="barra-porcentagem">
+                        <div class="preenchimento-barra" id="barra-fama" style="width: 50%;"></div>
+                        <span class="texto-barra" id="texto-fama">50%</span>
+                    </div>
+                    <div class="status-fama">
+                        <span id="status-fama">Status</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        !-- Janela Flutuante para Estado Civil --
-        div class=janela-estado-civil id=janelaEstadoCivil
-            div class=conteudo-janela
-                button class=botao-fechar onclick=fecharJanelaEstadoCivil()✖︎button
-                !-- Bloco com Círculo e Informações Básicas --
-                div class=bloco-circulo
-                    div class=circulo-marido
-                        img src=httpsimgur.comqXKnN34.png alt=Foto do Marido
-                    div
-                    div class=info-marido
-                        h3Kurae Radiânthia Pendragon Isaach3
-                        pstrongData do Casamentostrong p
-                        pstrongLocal do Casamentostrong Elkhorn - Mana Riverp
-                    div
-                div
-                !-- Bloco com Informações Detalhadas --
-                div class=detalhes-marido
-                    pstrongMissões em Conjuntostrongp
-                    ul
-                        li[nenhuma]li
-                    ul
-                    pstrongPropriedades do Casalstrongp
-                    ul
-                        li[nenhuma]li
-                    ul
-                div
-            div
-        div
+        <!-- Janela Flutuante para Estado Civil -->
+        <div class="janela-estado-civil" id="janelaEstadoCivil">
+            <div class="conteudo-janela">
+                <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
+                <!-- Bloco com Círculo e Informações Básicas -->
+                <div class="bloco-circulo">
+                    <div class="circulo-marido">
+                        <img src="https://imgur.com/qXKnN34.png" alt="Foto do Marido">
+                    </div>
+                    <div class="info-marido">
+                        <h3>Kurae Radiânthia Pendragon Isaac</h3>
+                        <p><strong>Data do Casamento:</strong> ??</p>
+                        <p><strong>Local do Casamento:</strong> Elkhorn - Mana River</p>
+                    </div>
+                </div>
+                <!-- Bloco com Informações Detalhadas -->
+                <div class="detalhes-marido">
+                    <p><strong>Missões em Conjunto:</strong></p>
+                    <ul>
+                        <li>[nenhuma]</li>
+                    </ul>
+                    <p><strong>Propriedades do Casal:</strong></p>
+                    <ul>
+                        <li>[nenhuma]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-        div class=linha-separadoradiv
+        <div class="linha-separadora"></div>
 
-        !-- Títulos --
-        h2 class=titulo2Emblemas de Títulosh2
+        <!-- Títulos -->
+        <h2 class="titulo2">Emblemas de Títulos</h2>
 
-        div class=carrossel
-            button class=seta onclick=scrollCarrossel(-1)❮button
-            div class=carrossel-imagens
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('httpsi.imgur.comTUiALKb.png');div
-                    p class=texto-carrosselA Primeira Protegidap
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('httpsi.imgur.com8Z5miGr.png');div
-                    p class=texto-carrosselAliada de Makaip
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_3');div
-                    p class=texto-carrosselAprendiz da Rainhap
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('httpsimgur.com1rqfkyV.png');div
-                    p class=texto-ativo-carrosselA Sucessora de Isaacp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselFalsa Amiga da Deusap
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselAmante do Destinop
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselRainha da Castap
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-ativo-carrosselRainha de Todos os Vampirosp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselFour of Clubsp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselDreamerp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-ativo-carrosselMother of Soulsp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-ativo-carrosselA Lady da Segunda Forjasp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselConsumidora da Loucurap
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-ativo-carrosselLady do Segundo Domop
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselSoberana das Primeiras Terrasp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselDetentora do fimp
-                div
-                div class=titulo-item
-                    div class=circulo-carrossel style=background-image url('URL_DA_IMAGEM_4');div
-                    p class=texto-carrosselMãe do iniciop
-                div
-            div
-            button class=seta onclick=scrollCarrossel(1)❯button
-        div
+        <div class="carrossel">
+            <button class="seta" onclick="scrollCarrossel(-1)">❮</button>
+            <div class="carrossel-imagens">
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('https://i.imgur.com/TUiALKb.png');"></div>
+                    <p class="texto-carrossel">A Primeira Protegida</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('https://i.imgur.com/8Z5miGr.png');"></div>
+                    <p class="texto-carrossel">Aliada de Makai</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_3');"></div>
+                    <p class="texto-carrossel">Aprendiz da Rainha</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('https://imgur.com/1rqfkyV.png');"></div>
+                    <p class="texto-ativo-carrossel">A Sucessora de Isaac</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Falsa Amiga da Deusa</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Amante do Destino</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Rainha da Casta</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-ativo-carrossel">Rainha de Todos os Vampiros</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Four of Clubs</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Dreamer</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-ativo-carrossel">Mother of Souls</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-ativo-carrossel">A Lady da Segunda Forjas</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Consumidora da Loucura</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-ativo-carrossel">Lady do Segundo Domo</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Soberana das Primeiras Terras</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Detentora do fim</p>
+                </div>
+                <div class="titulo-item">
+                    <div class="circulo-carrossel" style="background-image: url('URL_DA_IMAGEM_4');"></div>
+                    <p class="texto-carrossel">Mãe do inicio</p>
+                </div>
+            </div>
+            <button class="seta" onclick="scrollCarrossel(1)">❯</button>
+        </div>
 
-        div class=linha-separadoradiv
+        <div class="linha-separadora"></div>
 
-        !-- Atributos --
-        h2 class=titulo2Atributosh2
+        <!-- Atributos -->
+        <h2 class="titulo2">Atributos</h2>
 
-        div class=atributos-container
-            !-- Primeira linha de atributos HP e MP --
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.com25bxTGa.gif alt=HP Iconediv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoHPdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo hp id=barra-hpdiv
-                        span class=texto-barra-atributo id=texto-hp4.024.763  4.024.763span
-                    div
-                div
-            div
+        <div class="atributos-container">
+            <!-- Primeira linha de atributos: HP e MP -->
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/25bxTGa.gif" alt="HP Icone"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">HP:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo hp" id="barra-hp"></div>
+                        <span class="texto-barra-atributo" id="texto-hp">4.024.763 / 4.024.763</span>
+                    </div>
+                </div>
+            </div>
             
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comZHuxhHW.gif alt=MP Iconediv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoMPdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo mp id=barra-mpdiv
-                        span class=texto-barra-atributo id=texto-mp675.157  675.157span
-                    div
-                div
-            div
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/ZHuxhHW.gif" alt="MP Icone"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">MP:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo mp" id="barra-mp"></div>
+                        <span class="texto-barra-atributo" id="texto-mp">675.157 / 675.157</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Segunda linha de atributos AGI e DEF --
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comuzS8oj8.gif alt=AGI Iconediv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoAGIdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo agi id=barra-agidiv
-                        span class=texto-barra-atributo id=texto-agi522.434  522.434span
-                    div
-                div
-            div
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comTf1phAq.gif alt=DEF Iconediv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoDEFdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo def id=barra-def style=width 70%;div
-                        span class=texto-barra-atributo id=texto-def1.210.293  1.210.293span
-                    div
-                div
-            div
+            <!-- Segunda linha de atributos: AGI e DEF -->
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/uzS8oj8.gif" alt="AGI Icone"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">AGI:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo agi" id="barra-agi"></div>
+                        <span class="texto-barra-atributo" id="texto-agi">522.434 / 522.434</span>
+                    </div>
+                </div>
+            </div>
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/Tf1phAq.gif" alt="DEF Icone"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">DEF:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo def" id="barra-def" style="width: 70%;"></div>
+                        <span class="texto-barra-atributo" id="texto-def">1.210.293 / 1.210.293</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Terceira linha de atributos RES e SPD --
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comHNlCPjW.gif alt=RES Iconediv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoRESdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo res id=barra-res style=width 70%;div
-                        span class=texto-barra-atributo id=texto-res303.776  303.776span
-                    div
-                div
-            div
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comQ2H1k5f.gif alt=SPD Iconediv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoSPDdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo spd id=barra-spd style=width 70%;div
-                        span class=texto-barra-atributo id=texto-spd836.877  836.877span
-                    div
-                div
-            div
+            <!-- Terceira linha de atributos: RES e SPD -->
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/HNlCPjW.gif" alt="RES Icone"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">RES:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo res" id="barra-res" style="width: 70%;"></div>
+                        <span class="texto-barra-atributo" id="texto-res">303.776 / 303.776</span>
+                    </div>
+                </div>
+            </div>
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/Q2H1k5f.gif" alt="SPD Icone"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">SPD:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo spd" id="barra-spd" style="width: 70%;"></div>
+                        <span class="texto-barra-atributo" id="texto-spd">836.877 / 836.877</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Quarta linha de atributos INT e ATK --
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comQjlNy8l.gif alt=Icone de INTdiv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoINTdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo int id=barra-int style=width 70%;div
-                        span class=texto-barra-atributo id=texto-int353.947  353.947span
-                    div
-                div
-            div
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comq6CuCfC.gif alt=Icone de ATKdiv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoATKdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo atk id=barra-atk style=width 70%;div
-                        span class=texto-barra-atributo id=texto-atk1.701.508  1.701.508span
-                    div
-                div
-            div
+            <!-- Quarta linha de atributos: INT e ATK -->
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/QjlNy8l.gif" alt="Icone de INT"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">INT:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo int" id="barra-int" style="width: 70%;"></div>
+                        <span class="texto-barra-atributo" id="texto-int">353.947 / 353.947</span>
+                    </div>
+                </div>
+            </div>
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/q6CuCfC.gif" alt="Icone de ATK"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">ATK:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo atk" id="barra-atk" style="width: 70%;"></div>
+                        <span class="texto-barra-atributo" id="texto-atk">1.701.508 / 1.701.508</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Quinta linha de atributos SMP e  --
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.comwnVtTpl.gif alt=Icone de SMPdiv
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributoSMPdiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo smp id=barra-smp style=width 70%;div
-                        span class=texto-barra-atributo id=texto-smp1.886.028  9.314.172span
-                    div
-                div
-            div
-            div class=atributo
-                div class=icone-atributoimg src=httpsi.imgur.com507gMr6.gif alt=Icone de div
-                div class=conteudo-atributo
-                    div class=titulo-e-marcacao
-                        div class=marcacao-atributo onclick=toggleCheckbox(this)div
-                        div class=titulo-barra-atributodiv
-                    div
-                    div class=barra-porcentagem-atributo
-                        div class=preenchimento-barra-atributo unknown id=barra-unknown style=width 70%;div
-                        span class=texto-barra-atributo id=texto-unknown47,19  47,19span
-                    div
-                div
-            div
-        div
+            <!-- Quinta linha de atributos: SMP e ?? -->
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/wnVtTpl.gif" alt="Icone de SMP"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">SMP:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo smp" id="barra-smp" style="width: 70%;"></div>
+                        <span class="texto-barra-atributo" id="texto-smp">1.886.028 / 9.314.172</span>
+                    </div>
+                </div>
+            </div>
+            <div class="atributo">
+                <div class="icone-atributo"><img src="https://i.imgur.com/507gMr6.gif" alt="Icone de ??"></div>
+                <div class="conteudo-atributo">
+                    <div class="titulo-e-marcacao">
+                        <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
+                        <div class="titulo-barra-atributo">??:</div>
+                    </div>
+                    <div class="barra-porcentagem-atributo">
+                        <div class="preenchimento-barra-atributo unknown" id="barra-unknown" style="width: 70%;"></div>
+                        <span class="texto-barra-atributo" id="texto-unknown">47,19 / 47,19</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        div class=linha-separadoradiv
+        <div class="linha-separadora"></div>
 
-        !-- Informações 02 --
-        pspan class=subtituloSeikispan span class=texto32.112 pontosspanp
-        pspan class=subtituloBônus de Dominância por Território Conquistado pelo Reinospan span class=texto11.567.241spanp
-        pspan class=subtituloPoder de Dominânciaspan span class=texto279  845.512spanp
-        pspan class=subtituloPontos de Habilidade Disponíveisspan span class=texto351spanp
-        pspan class=subtituloPontos de recompensaspan span class=texto272.330.324spanp
-        pspan class=subtituloSementes de Dungeonspan 
-           span class=textoForest of Ruins (1x)span
-           span class=gif-dungeon
-               img src=httpsimgur.comE5E3wkV.gif alt=GIF Dungeon
-           span
-        p
+        <!-- Informações 02 -->
+        <p><span class="subtitulo">Seiki:</span> <span class="texto">32.112 pontos</span></p>
+        <p><span class="subtitulo">Bônus de Dominância por Território Conquistado pelo Reino:</span> <span class="texto">11.567.241</span></p>
+        <p><span class="subtitulo">Poder de Dominância:</span> <span class="texto">279 / 845.512</span></p>
+        <p><span class="subtitulo">Pontos de Habilidade Disponíveis:</span> <span class="texto">351</span></p>
+        <p><span class="subtitulo">Pontos de recompensa:</span> <span class="texto">272.330.324</span></p>
+        <p><span class="subtitulo">Sementes de Dungeon:</span> 
+           <span class="texto">Forest of Ruins (1x)</span>
+           <span class="gif-dungeon">
+               <img src="https://imgur.com/E5E3wkV.gif" alt="GIF Dungeon">
+           </span>
+        </p>
 
-        !-- Chaves --
-        div class=container-chave
-            !-- Bloco Esquerdo --
-            div class=bloco-esquerdo
-                div class=circulo-base
-                    div class=circulo-decorativo menordiv
-                    div class=circulo-decorativo maiordiv
+       <!-- Chaves -->
+        <div class="container-chave">
+            <!-- Bloco Esquerdo -->
+            <div class="bloco-esquerdo">
+                <div class="circulo-base">
+                    <div class="circulo-decorativo menor"></div>
+                    <div class="circulo-decorativo maior"></div>
         
-                    !-- Círculos Pequenos --
-                    div class=circulo-pequeno id=circulo1 onclick=navegar(0)
-                        img src=httpsimgur.comzHQo8sh.png alt=Key of Souls
-                        div class=janela-chaveKey of Souls (1x)div
-                    div
-                    div class=circulo-pequeno id=circulo2 onclick=navegar(1)
-                        img src=httpsimgur.comlKXdgwT.png alt=Key of Dreams
-                        div class=janela-chaveKey of Dreams (1x)div
-                    div
-                    div class=circulo-pequeno id=circulo3 onclick=navegar(2)
-                        img src=httpsimgur.comHf705GX.png alt=Key of Infinite Moon Mansion
-                        div class=janela-chaveKey of Infinite Moon Mansion (1x)div
-                    div
-                    div class=circulo-pequeno id=circulo4 onclick=navegar(3)
-                        img src=httpsimgur.comL2bLSl2.png alt=Key of Desires
-                        div class=janela-chaveKey of Desires (1x)div
-                    div
-                    div class=circulo-pequeno id=circulo5 onclick=navegar(4)
-                        img src=httpsimgur.comX1zPnlJ.png alt=Key of Soul World
-                        div class=janela-chaveKey of Soul World (1x)div
-                    div
-                    div class=circulo-pequeno id=circulo6 onclick=navegar(5)
-                        img src=httpsimgur.comQaNq2NX.png alt=Key of Pendragon
-                        div class=janela-chaveKey of Pendragon (1x)div
-                    div
-                    div class=circulo-pequeno id=circulo7 onclick=navegar(6)
-                        img src=httpsimgur.com46Dh8W2.png alt=Key Pinnacle of Flames
-                        div class=janela-chaveKey Pinnacle of Flames (1x)div
-                    div
-                    div class=circulo-pequeno id=circulo8 onclick=navegar(7)
-                        img src=httpsimgur.comX1zPnlJ.png alt=Key of Isaac's Heart
-                        div class=janela-chaveKey of Isaac's Heart (12)div
-                    div
-                div
-            div
+                    <!-- Círculos Pequenos -->
+                    <div class="circulo-pequeno" data-id="0" onclick="selecionarChave(0)">
+                        <img src="https://imgur.com/zHQo8sh.png" alt="Key of Souls">
+                        <div class="janela-chave">Key of Souls (1x)</div>
+                    </div>
+                    <div class="circulo-pequeno" data-id="1" onclick="selecionarChave(1)">
+                        <img src="https://imgur.com/lKXdgwT.png" alt="Key of Dreams">
+                        <div class="janela-chave">Key of Dreams (1x)</div>
+                    </div>
+                    <div class="circulo-pequeno" data-id="2" onclick="selecionarChave(2)">
+                        <img src="https://imgur.com/Hf705GX.png" alt="Key of Infinite Moon Mansion">
+                        <div class="janela-chave">Key of Infinite Moon Mansion (1x)</div>
+                    </div>
+                    <div class="circulo-pequeno" data-id="3" onclick="selecionarChave(3)">
+                        <img src="https://imgur.com/L2bLSl2.png" alt="Key of Desires">
+                        <div class="janela-chave">Key of Desires (1x)</div>
+                    </div>
+                    <div class="circulo-pequeno" data-id="4" onclick="selecionarChave(4)">
+                        <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Soul World">
+                        <div class="janela-chave">Key of Soul World (1x)</div>
+                    </div>
+                    <div class="circulo-pequeno" data-id="5" onclick="selecionarChave(5)">
+                        <img src="https://imgur.com/QaNq2NX.png" alt="Key of Pendragon">
+                        <div class="janela-chave">Key of Pendragon (1x)</div>
+                    </div>
+                    <div class="circulo-pequeno" data-id="6" onclick="selecionarChave(6)">
+                        <img src="https://imgur.com/46Dh8W2.png" alt="Key Pinnacle of Flames">
+                        <div class="janela-chave">Key Pinnacle of Flames (1x)</div>
+                    </div>
+                    <div class="circulo-pequeno" data-id="7" onclick="selecionarChave(7)">
+                        <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Isaac's Heart">
+                        <div class="janela-chave">Key of Isaac's Heart (1/2)</div>
+                    </div>
+                </div>
+            </div>
         
-            !-- Bloco Direito --
-            div class=bloco-direito
-                !-- Retângulo Item --
-                div class=retangulo item id=retangulo-item
-                    div class=topo-retangulo
-                        h4 class=titulo-item id=titulo-itemNome da Chaveh4
-                        span class=descricao-secaoITEMspan
-                    div
-                    p class=descricao-detalhadaEsta chave permite acesso ao mundo das almas.p
-                    p class=clicavelClique para Ativarp
-                div
+            <!-- Bloco Direito -->
+            <div class="bloco-direito">
+                <!-- Retângulo Item -->
+                <div class="retangulo item" id="retangulo-item">
+                    <div class="topo-retangulo">
+                        <h4 class="titulo-item" id="titulo-item">Nome da Chave</h4>
+                        <span class="descricao-secao">ITEM</span>
+                    </div>
+                    <p class="descricao-detalhada">Descrição da chave aqui.</p>
+                    <p class="clicavel" onclick="ativarChave()">Clique para Ativar</p>
+                </div>
         
-                !-- Retângulo Efeitos --
-                div class=retangulo efeitos id=retangulo-efeitos
-                    div class=topo-retangulo
-                        img src=httpsimgur.comzHQo8sh.png alt=Ícone do Efeito
-                        h4 class=titulo-efeitoGarante imunidade a ataques espirituaish4
-                        span class=descricao-secaoEFEITOSspan
-                    div
-                    p class=descricao-detalhadaGarante imunidade a ataques espirituais por 5 minutos.p
-                div
+                <!-- Retângulo Efeitos -->
+                <div class="retangulo efeitos" id="retangulo-efeitos">
+                    <div class="topo-retangulo">
+                        <img src="https://imgur.com/zHQo8sh.png" alt="Ícone do Efeito">
+                        <h4 class="titulo-efeito">Efeito da Chave</h4>
+                        <span class="descricao-secao">EFEITOS</span>
+                    </div>
+                    <p class="descricao-detalhada">Detalhes do efeito da chave.</p>
+                </div>
         
-                !-- Navegação --
-                div class=navegacao
-                    button onclick=navegar(-1)◄button
-                    button onclick=navegar(1)►button
-                div
-            div
-        div
+                <!-- Navegação -->
+                <div class="navegacao">
+                    <button onclick="navegar(-1)">◄</button>
+                    <button onclick="navegar(1)">►</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bençãos/Maldições -->
+        <h2 class="titulo2">Bençãos e Maldições</h2>
 
-        !-- BençãosMaldições --
-        h2 class=titulo2Bençãos e Maldiçõesh2
+        <div class="carrossel-selos">
+            <button class="seta" onclick="moverCarrossel(-1)">❮</button>
+            <div class="carrossel-diamantes"> 
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao1')">
+                    <div class="diamante">
+                        <img src="https://imgur.com/C1wMrYw.png" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Redo revenger</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao2')">
+                    <div class="diamante">
+                        <img src="https://imgur.com/SKLKOG8.png" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Tentação Vampírica…</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao3')">
+                    <div class="diamante">
+                        <img src="https://imgur.com/p4ljgmn.png" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Reunion Memories</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao4')">
+                    <div class="diamante">
+                        <img src="https://imgur.com/TOG8XB5.png" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Luminar Duplo</div>
+                </div>
+                <div class="diamante-item" onclick="abrirJanela('janelaBencao5')">
+                    <div class="diamante">
+                        <img src="https://imgur.com/LNgpuQx.png" alt="Diamante">
+                    </div>
+                    <div class="texto-diamante">Rainbow Bird</div>
+                </div>
+            </div>
+            <button class="seta" onclick="moverCarrossel(1)">❯</button>
+        </div>
 
-        div class=carrossel-selos
-            button class=seta onclick=moverCarrossel(-1)❮button
-            div class=carrossel-diamantes 
-                div class=diamante-item onclick=abrirJanela('janelaBencao1')
-                    div class=diamante
-                        img src=httpsimgur.comC1wMrYw.png alt=Diamante
-                    div
-                    div class=texto-diamanteRedo revengerdiv
-                div
-                div class=diamante-item onclick=abrirJanela('janelaBencao2')
-                    div class=diamante
-                        img src=httpsimgur.comSKLKOG8.png alt=Diamante
-                    div
-                    div class=texto-diamanteTentação Vampírica…div
-                div
-                div class=diamante-item onclick=abrirJanela('janelaBencao3')
-                    div class=diamante
-                        img src=httpsimgur.comp4ljgmn.png alt=Diamante
-                    div
-                    div class=texto-diamanteReunion Memoriesdiv
-                div
-                div class=diamante-item onclick=abrirJanela('janelaBencao4')
-                    div class=diamante
-                        img src=httpsimgur.comTOG8XB5.png alt=Diamante
-                    div
-                    div class=texto-diamanteLuminar Duplodiv
-                div
-                div class=diamante-item onclick=abrirJanela('janelaBencao5')
-                    div class=diamante
-                        img src=httpsimgur.comLNgpuQx.png alt=Diamante
-                    div
-                    div class=texto-diamanteRainbow Birddiv
-                div
-            div
-            button class=seta onclick=moverCarrossel(1)❯button
-        div
+        <!-- Janela Flutuante para Bênção/Maldição -->
+        <div class="janela-bencao" id="janelaBencao1">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanela('janelaBencao1')">❐</button>
+                <button class="botao-fechar" onclick="fecharJanela('janelaBencao1')">✖︎</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>#[SEM INFORMAÇÕES]</h3>
+            </div>
+        </div>
 
-        !-- Janela Flutuante para BênçãoMaldição --
-        div class=janela-bencao id=janelaBencao1
-            div class=janela-botoes
-                button class=botao-expandir onclick=expandirJanela('janelaBencao1')❐button
-                button class=botao-fechar onclick=fecharJanela('janelaBencao1')✖︎button
-            div
-            div class=conteudo-janela
-                h3#[SEM INFORMAÇÕES]h3
-            div
-        div
-
-        div class=janela-bencao id=janelaBencao2
-            div class=janela-botoes
-                button class=botao-expandir onclick=expandirJanela('janelaBencao2')❐button
-                button class=botao-fechar onclick=fecharJanela('janelaBencao2')✖︎button
-            div
-            div class=conteudo-janela
-                h3#Nova Bênção Única Desbloqueada Tentação Vampírica da Rainhah3
-                pspan class='subtitulo'Descriçãospan span class=textoSeres com a capacidade de transferir vampirismo sentem uma atração irresistível por você e experimentam prazer em seguir suas ordens. Enquanto estiverem obedecendo a suas instruções, aqueles sob seu comando receberão um constante aumento nos seus atributos. Além disso, essa bênção pode esconder efeitos ocultos que proporcionam benefícios adicionais.spanp
-                pspan class='subtitulo'Tipospan span class='texto'LuzVampiroSuccubusEmpusaspanp
-                pspan class='subtitulo'Nívelspan span class='texto'Máximospanp
-                pspan class='subtitulo'Classespan span class='texto'Bênção de Classe SSspanp
-                h3Funcionamento Detalhadoh3
-                pspan class='subtitulo'Atração Vampíricaspan span class='texto'A bênção cria uma irresistível atração em seres com a capacidade de transferir o vampirismo. Eles se sentem atraídos por você e desejam segui-lo.spanp
-                pspan class='subtitulo'Prazer na Obediênciaspan span class='texto'Aqueles que obedecem às suas ordens experimentam um prazer profundo e gratificante em fazê-lo.spanp
-                pspan class='subtitulo'Aumento de Atributosspan span class='texto'Enquanto estiverem sob seu comando, os seguidores recebem um aumento constante em seus atributos, tornando-os mais fortes e eficazes em suas ações.spanp
-                pspan class='subtitulo'Efeitos Ocultosspan span class='texto'Além dos benefícios declarados, essa bênção pode conter efeitos ocultos que podem se manifestar em situações específicas, proporcionando vantagens adicionais.spanp
-                pspan class='texto'A Tentação Vampírica da Rainha é uma bênção de classe SS extremamente poderosa que não apenas atrai aqueles com a capacidade de transferir o vampirismo, mas também os fortalece e os faz sentir prazer em segui-la. Além disso, a presença de efeitos ocultos torna essa bênção ainda mais misteriosa e vantajosa. Este é um presente divino excepcional que aumenta sua influência sobre os seguidores e aliados que a obedecem.spanp
-            div
-        div
+        <div class="janela-bencao" id="janelaBencao2">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanela('janelaBencao2')">❐</button>
+                <button class="botao-fechar" onclick="fecharJanela('janelaBencao2')">✖︎</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>#Nova Bênção Única Desbloqueada: Tentação Vampírica da Rainha</h3>
+                <p><span class='subtitulo'>Descrição:</span> <span class="texto">Seres com a capacidade de transferir vampirismo sentem uma atração irresistível por você e experimentam prazer em seguir suas ordens. Enquanto estiverem obedecendo a suas instruções, aqueles sob seu comando receberão um constante aumento nos seus atributos. Além disso, essa bênção pode esconder efeitos ocultos que proporcionam benefícios adicionais.</span></p>
+                <p><span class='subtitulo'>Tipo:</span> <span class='texto'>Luz/Vampiro/Succubus/Empusa</span></p>
+                <p><span class='subtitulo'>Nível:</span> <span class='texto'>Máximo</span></p>
+                <p><span class='subtitulo'>Classe:</span> <span class='texto'>Bênção de Classe SS</span></p>
+                <h3>Funcionamento Detalhado:</h3>
+                <p><span class='subtitulo'>Atração Vampírica:</span> <span class='texto'>A bênção cria uma irresistível atração em seres com a capacidade de transferir o vampirismo. Eles se sentem atraídos por você e desejam segui-lo.</span></p>
+                <p><span class='subtitulo'>Prazer na Obediência:</span> <span class='texto'>Aqueles que obedecem às suas ordens experimentam um prazer profundo e gratificante em fazê-lo.</span></p>
+                <p><span class='subtitulo'>Aumento de Atributos:</span> <span class='texto'>Enquanto estiverem sob seu comando, os seguidores recebem um aumento constante em seus atributos, tornando-os mais fortes e eficazes em suas ações.</span></p>
+                <p><span class='subtitulo'>Efeitos Ocultos:</span> <span class='texto'>Além dos benefícios declarados, essa bênção pode conter efeitos ocultos que podem se manifestar em situações específicas, proporcionando vantagens adicionais.</span></p>
+                <p><span class='texto'>A "Tentação Vampírica da Rainha" é uma bênção de classe SS extremamente poderosa que não apenas atrai aqueles com a capacidade de transferir o vampirismo, mas também os fortalece e os faz sentir prazer em segui-la. Além disso, a presença de efeitos ocultos torna essa bênção ainda mais misteriosa e vantajosa. Este é um presente divino excepcional que aumenta sua influência sobre os seguidores e aliados que a obedecem.</span></p>
+            </div>
+        </div>
                 
-        div class=janela-bencao id=janelaBencao3
-            div class=janela-botoes
-                button class=botao-expandir onclick=expandirJanela('janelaBencao3')❐button
-                button class=botao-fechar onclick=fecharJanela('janelaBencao3')✖︎button
-            div
-            div class=conteudo-janela
-                h3#Nova Bênção Única Desbloqueada Reunion Memoriesh3
-                pspan class='subtitulo'Descriçãospan span class=textoDesencadeada pela luz da lua cheia, os usuários desta habilidade assumem uma aparência semelhante à de um animal lupino ou felino, com pelagem branca e um intenso brilho azul nos olhos. A forma  aumenta significativamente a força, velocidade e sentidos do usuário em até  vezes. No entanto, a transformação tem um custo alto e pode levar o usuário à exaustão rapidamente. Além disso, a habilidade só pode ser ativada na presença da luz da lua cheia.spanp
-                pspan class='subtitulo'Tipospan span class='texto'spanp
-                pspan class='subtitulo'Nívelspan span class='texto'spanp
-                pspan class='subtitulo'Classespan span class='texto' Blessingspanp
-                h3Funcionamento Detalhadoh3
-                pspan class='subtitulo'Ativação pela Lua Cheiaspan span class='texto'Esta habilidade só pode ser desencadeada quando a luz da lua está em seu auge, na fase de lua cheia.spanp
-                pspan class='subtitulo'Transformação Lupina ou Felinaspan span class='texto'Ao ativá-la, o usuário adquire uma aparência semelhante à de um animal lupino (lobo) ou felino (felino), com pelagem branca e olhos brilhantes azuis.spanp
-                pspan class='subtitulo'Aumento de Habilidadesspan span class='texto'A forma concede ao usuário um significativo aumento de força, velocidade e sentidos, multiplicando essas capacidades em até  vezes.spanp
-                pspan class='subtitulo'Custo e Exaustãospan span class='texto'No entanto, essa transformação vem com um alto custo de energia e pode levar o usuário à exaustão rapidamente, tornando seu uso limitado em combate.spanp
-                pspan class='subtitulo'Restrição à Luz da Lua Cheiaspan span class='texto'A habilidade só pode ser ativada sob a luz da lua cheia, tornando-a uma habilidade condicional.spanp
-                pspan class='texto'A Reunion Memories é uma bênção misteriosa que permite ao usuário assumir uma forma lupina ou felina poderosa sob a luz da lua cheia. Essa forma amplia suas habilidades físicas, tornando-o muito mais forte, rápido e sensível, mas a transformação tem um alto custo de energia e só pode ser usada nas noites de lua cheia. Esta é uma habilidade única que adiciona uma camada de complexidade e poder ao usuário quando as condições certas são atendidas.spanp
-            div
-        div
+        <div class="janela-bencao" id="janelaBencao3">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanela('janelaBencao3')">❐</button>
+                <button class="botao-fechar" onclick="fecharJanela('janelaBencao3')">✖︎</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>#Nova Bênção Única Desbloqueada: Reunion Memories</h3>
+                <p><span class='subtitulo'>Descrição:</span> <span class="texto">Desencadeada pela luz da lua cheia, os usuários desta habilidade assumem uma aparência semelhante à de um animal lupino ou felino, com pelagem branca e um intenso brilho azul nos olhos. A forma ?? aumenta significativamente a força, velocidade e sentidos do usuário em até ?? vezes. No entanto, a transformação tem um custo alto e pode levar o usuário à exaustão rapidamente. Além disso, a habilidade só pode ser ativada na presença da luz da lua cheia.</span></p>
+                <p><span class='subtitulo'>Tipo:</span> <span class='texto'>??</span></p>
+                <p><span class='subtitulo'>Nível:</span> <span class='texto'>??</span></p>
+                <p><span class='subtitulo'>Classe:</span> <span class='texto'>?? Blessing</span></p>
+                <h3>Funcionamento Detalhado:</h3>
+                <p><span class='subtitulo'>Ativação pela Lua Cheia:</span> <span class='texto'>Esta habilidade só pode ser desencadeada quando a luz da lua está em seu auge, na fase de lua cheia.</span></p>
+                <p><span class='subtitulo'>Transformação Lupina ou Felina:</span> <span class='texto'>Ao ativá-la, o usuário adquire uma aparência semelhante à de um animal lupino (lobo) ou felino (felino), com pelagem branca e olhos brilhantes azuis.</span></p>
+                <p><span class='subtitulo'>Aumento de Habilidades:</span> <span class='texto'>A forma concede ao usuário um significativo aumento de força, velocidade e sentidos, multiplicando essas capacidades em até ?? vezes.</span></p>
+                <p><span class='subtitulo'>Custo e Exaustão:</span> <span class='texto'>No entanto, essa transformação vem com um alto custo de energia e pode levar o usuário à exaustão rapidamente, tornando seu uso limitado em combate.</span></p>
+                <p><span class='subtitulo'>Restrição à Luz da Lua Cheia:</span> <span class='texto'>A habilidade só pode ser ativada sob a luz da lua cheia, tornando-a uma habilidade condicional.</span></p>
+                <p><span class='texto'>A "Reunion Memories" é uma bênção misteriosa que permite ao usuário assumir uma forma lupina ou felina poderosa sob a luz da lua cheia. Essa forma amplia suas habilidades físicas, tornando-o muito mais forte, rápido e sensível, mas a transformação tem um alto custo de energia e só pode ser usada nas noites de lua cheia. Esta é uma habilidade única que adiciona uma camada de complexidade e poder ao usuário quando as condições certas são atendidas.</span></p>
+            </div>
+        </div>
                 
-        div class=janela-bencao id=janelaBencao4
-            div class=janela-botoes
-                button class=botao-expandir onclick=expandirJanela('janelaBencao4')❐button
-                button class=botao-fechar onclick=fecharJanela('janelaBencao4')✖︎button
-            div
-            div class=conteudo-janela
-                h3#Nova Bênção Única Desbloqueada Luminar Duploh3
-                pspan class='subtitulo'Descriçãospan span class=textoToda energia divina recebida por orações é duplicada, fortalecendo a conexão entre você e seus seguidores.spanp
-                pspan class='subtitulo'Tipospan span class='texto'spanp
-                pspan class='subtitulo'Nívelspan span class='texto'spanp
-                pspan class='subtitulo'Classespan span class='texto' Blessingspanp
-                h3Funcionamento Detalhadoh3
-                pspan class='subtitulo'Aura Potenciadoraspan span class='texto'Uma aura divina envolve seu Apóstolo, amplificando suas habilidades e bençãos. Essa aura se estende a todos que estão ao seu redor, multiplicando a eficácia das bençãos concedidas.spanp
-                pspan class='subtitulo'Duplicação de Energia Divinaspan span class='texto'Todas as energias divinas recebidas por meio de orações são duplicadas. Isso significa que cada prece, ritual ou demonstração de fé resulta em uma quantidade dobrada de energia divina para você.spanp
-                pspan class='subtitulo'Fortalecimento da Conexãospan span class='texto'A duplicação da energia divina fortalece a conexão entre você e seus seguidores, intensificando a eficácia de suas bênçãos e favores divinos.spanp
-                pspan class='subtitulo'Amplificação do Impacto Divinospan span class='texto'A aura potenciadora não apenas reforça as habilidades do Apóstolo, mas também amplifica o impacto de suas intervenções divinas, tornando cada manifestação divina mais poderosa e influente.spanp
-                pspan class='subtitulo'Alcance da Auraspan span class='texto'A aura potenciadora tem um alcance que se estende a todos ao redor do Apóstolo, criando um campo de fortalecimento divino que beneficia todos aqueles que estão em proximidade.spanp
-                pspan class='texto'A Luminar Duplo é uma bênção única que não apenas duplica a energia divina recebida, mas também fortalece a conexão com os seguidores por meio de uma aura potenciadora. Isso não apenas amplifica as habilidades dos seguidores, mas também aumenta o impacto das intervenções divinas, criando um ambiente mais potente e sagrado ao seu redor.spanp
-            div
-        div
+        <div class="janela-bencao" id="janelaBencao4">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanela('janelaBencao4')">❐</button>
+                <button class="botao-fechar" onclick="fecharJanela('janelaBencao4')">✖︎</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>#Nova Bênção Única Desbloqueada: Luminar Duplo</h3>
+                <p><span class='subtitulo'>Descrição:</span> <span class="texto">Toda energia divina recebida por orações é duplicada, fortalecendo a conexão entre você e seus seguidores.</span></p>
+                <p><span class='subtitulo'>Tipo:</span> <span class='texto'>??</span></p>
+                <p><span class='subtitulo'>Nível:</span> <span class='texto'>??</span></p>
+                <p><span class='subtitulo'>Classe:</span> <span class='texto'>?? Blessing</span></p>
+                <h3>Funcionamento Detalhado:</h3>
+                <p><span class='subtitulo'>Aura Potenciadora:</span> <span class='texto'>Uma aura divina envolve seu Apóstolo, amplificando suas habilidades e bençãos. Essa aura se estende a todos que estão ao seu redor, multiplicando a eficácia das bençãos concedidas.</span></p>
+                <p><span class='subtitulo'>Duplicação de Energia Divina:</span> <span class='texto'>Todas as energias divinas recebidas por meio de orações são duplicadas. Isso significa que cada prece, ritual ou demonstração de fé resulta em uma quantidade dobrada de energia divina para você.</span></p>
+                <p><span class='subtitulo'>Fortalecimento da Conexão:</span> <span class='texto'>A duplicação da energia divina fortalece a conexão entre você e seus seguidores, intensificando a eficácia de suas bênçãos e favores divinos.</span></p>
+                <p><span class='subtitulo'>Amplificação do Impacto Divino:</span> <span class='texto'>A aura potenciadora não apenas reforça as habilidades do Apóstolo, mas também amplifica o impacto de suas intervenções divinas, tornando cada manifestação divina mais poderosa e influente.</span></p>
+                <p><span class='subtitulo'>Alcance da Aura:</span> <span class='texto'>A aura potenciadora tem um alcance que se estende a todos ao redor do Apóstolo, criando um campo de fortalecimento divino que beneficia todos aqueles que estão em proximidade.</span></p>
+                <p><span class='texto'>A "Luminar Duplo" é uma bênção única que não apenas duplica a energia divina recebida, mas também fortalece a conexão com os seguidores por meio de uma aura potenciadora. Isso não apenas amplifica as habilidades dos seguidores, mas também aumenta o impacto das intervenções divinas, criando um ambiente mais potente e sagrado ao seu redor.</span></p>
+            </div>
+        </div>
 
-        div class=janela-bencao id=janelaBencao5
-            div class=janela-botoes
-                button class=botao-expandir onclick=expandirJanela('janelaBencao5')❐button
-                button class=botao-fechar onclick=fecharJanela('janelaBencao5')✖︎button
-            div
-            div class=conteudo-janela
-                h3#[SEM INFORMAÇÕES]h3
-            div   
-        div
+        <div class="janela-bencao" id="janelaBencao5">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanela('janelaBencao5')">❐</button>
+                <button class="botao-fechar" onclick="fecharJanela('janelaBencao5')">✖︎</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>#[SEM INFORMAÇÕES]</h3>
+            </div>   
+        </div>
 
-        div class=linha-separadoradiv
+        <div class="linha-separadora"></div>
 
-        !-- Necessidades Básicas --
-        h2 class=titulo2Necessidades Básicash2
+        <!-- Necessidades Básicas -->
+        <h2 class="titulo2">Necessidades Básicas</h2>
 
-        div class=necessidades-basicas-container
-            !-- Grupo 01 --
-            div class=necessidades-basicas id=grupo-higiene
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🧽span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoHigienespan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-higiene class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-higiene class=progresso-texto-nbasico75%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-higiene class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+        <div class="necessidades-basicas-container">
+            <!-- Grupo 01 -->
+            <div class="necessidades-basicas" id="grupo-higiene">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🧽</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Higiene</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-higiene" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-higiene" class="progresso-texto-nbasico">75%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-higiene" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-banheiro
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🧻span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoBanheirospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-banheiro class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-banheiro class=progresso-texto-nbasico50%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-banheiro class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-banheiro">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🧻</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Banheiro</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-banheiro" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-banheiro" class="progresso-texto-nbasico">50%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-banheiro" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-sono
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico💤span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoSonospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-sono class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-sono class=progresso-texto-nbasico40%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-sono class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-sono">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">💤</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Sono</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-sono" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-sono" class="progresso-texto-nbasico">40%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-sono" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Grupo 02 --
-            div class=necessidades-basicas id=grupo-desgaste
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🩹span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoDesgastespan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-desgaste class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-desgaste class=progresso-texto-nbasico60%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-desgaste class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <!-- Grupo 02 -->
+            <div class="necessidades-basicas" id="grupo-desgaste">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🩹</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Desgaste</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-desgaste" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-desgaste" class="progresso-texto-nbasico">60%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-desgaste" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-fome
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🍴span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoFomespan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-fome class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-fome class=progresso-texto-nbasico30%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-fome class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-fome">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🍴</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Fome</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-fome" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-fome" class="progresso-texto-nbasico">30%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-fome" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-sede
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🥛span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoSedespan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-sede class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-sede class=progresso-texto-nbasico20%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-sede class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-sede">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🥛</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Sede</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-sede" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-sede" class="progresso-texto-nbasico">20%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-sede" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Grupo 03 --
-            div class=necessidades-basicas id=grupo-diversao
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🎲span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoDiversãospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-diversao class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-diversao class=progresso-texto-nbasico90%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-diversao class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <!-- Grupo 03 -->
+            <div class="necessidades-basicas" id="grupo-diversao">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🎲</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Diversão</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-diversao" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-diversao" class="progresso-texto-nbasico">90%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-diversao" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-social
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🥂span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoSocialspan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-social class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-social class=progresso-texto-nbasico50%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-social class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-social">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🥂</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Social</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-social" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-social" class="progresso-texto-nbasico">50%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-social" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-foco
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🧠span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoFocospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-foco class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-foco class=progresso-texto-nbasico45%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-foco class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-foco">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🧠</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Foco</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-foco" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-foco" class="progresso-texto-nbasico">45%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-foco" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Necessidades Temporárias --
-        h2 class=titulo2Necessidades Temporáriash2
+            <!-- Necessidades Temporárias -->
+        <h2 class="titulo2">Necessidades Temporárias</h2>
 
         
-        div class=necessidades-basicas-container
-            !-- Grupo 01 --
-            div class=necessidades-basicas id=grupo-enjoo
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🤢span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoEnjoospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-enjoo class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-enjoo class=progresso-texto-nbasico75%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-enjoo class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+        <div class="necessidades-basicas-container">
+            <!-- Grupo 01 -->
+            <div class="necessidades-basicas" id="grupo-enjoo:">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🤢</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Enjoo</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-enjoo" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-enjoo" class="progresso-texto-nbasico">75%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-enjoo" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-fadiga
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico☕span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoFadigaspan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-fadiga class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-fadiga class=progresso-texto-nbasico50%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-fadiga class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-fadiga">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">☕</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Fadiga</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-fadiga" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-fadiga" class="progresso-texto-nbasico">50%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-fadiga" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-estresse
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico💥span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoEstressespan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-estresse class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-estresse class=progresso-texto-nbasico40%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-estresse class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-estresse">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">💥</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Estresse</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-estresse" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-estresse" class="progresso-texto-nbasico">40%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-estresse" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            !-- Grupo 02 --
-            div class=necessidades-basicas id=grupo-ansiedade
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🤡span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoAnsiedadespan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-ansiedade class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-ansiedade class=progresso-texto-nbasico60%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-ansiedade class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <!-- Grupo 02 -->
+            <div class="necessidades-basicas" id="grupo-ansiedade">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🤡</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Ansiedade</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-ansiedade" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-ansiedade" class="progresso-texto-nbasico">60%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-ansiedade" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-medo
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico😨span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoMedospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-medo class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-medo class=progresso-texto-nbasico30%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-medo class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-medo">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">😨</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Medo</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-medo" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-medo" class="progresso-texto-nbasico">30%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-medo" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-felicidade
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🥳span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoFelicidadespan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-felicidade class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-felicidade class=progresso-texto-nbasico20%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-felicidade class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-felicidade">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🥳</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Felicidade</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-felicidade" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-felicidade" class="progresso-texto-nbasico">20%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-felicidade" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
         
-            !-- Grupo 03 --
-            div class=necessidades-basicas id=grupo-tesao
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico💋span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoTesãospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-tesao class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-tesao class=progresso-texto-nbasico90%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-tesao class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <!-- Grupo 03 -->
+            <div class="necessidades-basicas" id="grupo-tesao">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">💋</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Tesão</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-tesao" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-tesao" class="progresso-texto-nbasico">90%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-tesao" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-tedio
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico😑span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoTédiospan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-tedio class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-tedio class=progresso-texto-nbasico50%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-tedio class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
+            <div class="necessidades-basicas" id="grupo-tedio">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">😑</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Tédio</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-tedio" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-tedio" class="progresso-texto-nbasico">50%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-tedio" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
 
-            div class=necessidades-basicas id=grupo-raiva
-                div class=circulo-nbasico
-                    span class=circulo-texto-nbasico🤬span
-                div
-                div class=status-nbasico
-                    span class=status-titulo-nbasicoRaivaspan
-                    div class=bar-nbasico
-                        div id=barra-progresso-grupo-raiva class=fill-nbasicodiv
-                        span id=progresso-texto-grupo-raiva class=progresso-texto-nbasico45%span
-                    div
-                    div class=status-indicador-nbasico
-                        span id=estado-grupo-raiva class=status-texto-nbasicoNecessidade Atualspan
-                    div
-                div
-            div
-        div
+            <div class="necessidades-basicas" id="grupo-raiva">
+                <div class="circulo-nbasico">
+                    <span class="circulo-texto-nbasico">🤬</span>
+                </div>
+                <div class="status-nbasico">
+                    <span class="status-titulo-nbasico">Raiva</span>
+                    <div class="bar-nbasico">
+                        <div id="barra-progresso-grupo-raiva" class="fill-nbasico"></div>
+                        <span id="progresso-texto-grupo-raiva" class="progresso-texto-nbasico">45%</span>
+                    </div>
+                    <div class="status-indicador-nbasico">
+                        <span id="estado-grupo-raiva" class="status-texto-nbasico">Necessidade Atual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    div
-div
+    </div>
+</div>
 
-script
-     Barra de Experiência
+<script>
+    // Barra de Experiência
     function updateExpBar(percentage) {
     var progressBar = document.getElementById('expBar');
     progressBar.style.width = percentage + '%';
   
-     Texto bonitinho
+    // Texto bonitinho
     var textSpan = document.querySelector('.barra-texto');
-        textSpan.textContent = '1303 - ' + percentage + '%';  Define o texto
+        textSpan.textContent = '1303 - ' + percentage + '%'; // Define o texto
     }
 
-     Inicializa a barra com 50% como exemplo
+    // Inicializa a barra com 50% como exemplo
     updateExpBar(73);
 
-     Classes - Texto retraído
+    // Classes - Texto retraído
     function mostrarTexto() {
         const expandido = document.querySelector('.expandido');
-        expandido.style.display = expandido.style.display === 'none'  'block'  'none';
+        expandido.style.display = expandido.style.display === 'none' ? 'block' : 'none';
     }
 
-     Carrossel - Movimentação das Setas
+    // Carrossel - Movimentação das Setas
     function scrollCarrossel(direcao) {
         const carrossel = document.querySelector('.carrossel-imagens');
-        const scrollAmount = 50;  Ajuste conforme necessário
-        carrossel.scrollLeft += direcao  scrollAmount;
+        const scrollAmount = 50; // Ajuste conforme necessário
+        carrossel.scrollLeft += direcao * scrollAmount;
     }
 
-     Necessidades Básicas - Barra de Progresso e Estado
+    // Necessidades Básicas - Barra de Progresso e Estado
     function atualizarStatusBasicas(grupoId, porcentagem) {
         const fillBar = document.getElementById(`barra-progresso-${grupoId}`);
         const progressText = document.getElementById(`progresso-texto-${grupoId}`);
@@ -2262,19 +2270,19 @@ script
         let color = '';
         let status = '';
 
-        if (porcentagem = 0) {
+        if (porcentagem <= 0) {
             color = '#00B59B';
             status = 'Nulo';
-        } else if (porcentagem = 5) {
+        } else if (porcentagem <= 5) {
             color = 'darkred';
             status = 'Crítico';
-        } else if (porcentagem = 30) {
+        } else if (porcentagem <= 30) {
             color = 'red';
             status = 'Baixo';
-        } else if (porcentagem = 60) {
+        } else if (porcentagem <= 60) {
             color = '#FFAA00';
             status = 'Moderado';
-        } else if (porcentagem = 95) {
+        } else if (porcentagem <= 95) {
             color = 'green';
             status = 'Bom';
         } else {
@@ -2286,7 +2294,7 @@ script
         statusIndicator.textContent = status;
     }
 
-     Necessidades Temporárias - Barra de Progresso e Estado
+    // Necessidades Temporárias - Barra de Progresso e Estado
     function atualizarStatusTemporarias(grupoId, porcentagem) {
         const fillBar = document.getElementById(`barra-progresso-${grupoId}`);
         const progressText = document.getElementById(`progresso-texto-${grupoId}`);
@@ -2298,19 +2306,19 @@ script
         let color = '';
         let status = '';
 
-        if (porcentagem = 0) {
+        if (porcentagem <= 0) {
             color = '#00B59B';
             status = 'Nulo';
-        } else if (porcentagem = 5) {
+        } else if (porcentagem <= 5) {
             color = '#00B59B';
             status = 'Muito Baixo';
-        } else if (porcentagem = 30) {
+        } else if (porcentagem <= 30) {
             color = 'green';
             status = 'Baixo';
-        } else if (porcentagem = 60) {
+        } else if (porcentagem <= 60) {
             color = '#FFAA00';
             status = 'Moderado';
-        } else if (porcentagem = 95) {
+        } else if (porcentagem <= 95) {
             color = 'red';
             status = 'Alto';
         } else {
@@ -2322,7 +2330,7 @@ script
         statusIndicator.textContent = status;
     }
 
-     Exemplo de uso para Necessidades Básicas
+    // Exemplo de uso para Necessidades Básicas
     atualizarStatusBasicas('grupo-higiene', 100);
     atualizarStatusBasicas('grupo-banheiro', 100);
     atualizarStatusBasicas('grupo-sono', 100);
@@ -2334,7 +2342,7 @@ script
     atualizarStatusBasicas('grupo-felicidade', 100);
     atualizarStatusBasicas('grupo-tesao', 51);
 
-     Exemplo de uso para Necessidades Temporárias
+    // Exemplo de uso para Necessidades Temporárias
     atualizarStatusTemporarias('grupo-enjoo', 0);
     atualizarStatusTemporarias('grupo-fadiga', 0);
     atualizarStatusTemporarias('grupo-estresse', 0);
@@ -2344,42 +2352,42 @@ script
     atualizarStatusTemporarias('grupo-raiva', 02);
     atualizarStatusTemporarias('grupo-desgaste', 01);
 
-     Função para atualizar a barra com porcentagem, cor e, opcionalmente, status
+    // Função para atualizar a barra com porcentagem, cor e, opcionalmente, status
     function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
         const barra = document.getElementById(idBarra);
         const texto = document.getElementById(idTexto);
         
-         Atualiza a largura da barra e o texto central com a porcentagem
+        // Atualiza a largura da barra e o texto central com a porcentagem
         barra.style.width = `${porcentagem}%`;
         texto.textContent = `${porcentagem}%`;
 
-         Define cor baseada na porcentagem
+        // Define cor baseada na porcentagem
         let cor;
-        if (porcentagem = 20) {
+        if (porcentagem <= 20) {
             cor = 'darkred';
-        } else if (porcentagem = 40) {
+        } else if (porcentagem <= 40) {
             cor = '#FF9100';
-        } else if (porcentagem = 60) {
+        } else if (porcentagem <= 60) {
             cor = '#00D19A';
-        } else if (porcentagem = 80) {
+        } else if (porcentagem <= 80) {
             cor = '#D622EF';
         } else {
             cor = '#6222EF';
         }
         barra.style.backgroundColor = cor;
 
-         Atualiza o status apenas se o ID de status for fornecido
+        // Atualiza o status apenas se o ID de status for fornecido
         if (idStatus) {
             const status = document.getElementById(idStatus);
             let textoStatus;
 
-            if (porcentagem = 20) {
+            if (porcentagem <= 20) {
                 textoStatus = 'Infame - Condenado - Vilão - Corrupto';
-            } else if (porcentagem = 40) {
+            } else if (porcentagem <= 40) {
                 textoStatus = 'Desprezado - Mal-Visto - Suspeito - Anti-Herói';
-            } else if (porcentagem = 60) {
+            } else if (porcentagem <= 60) {
                 textoStatus = 'Ambíguo - Neutro - Indiferente - Equilibrado';
-            } else if (porcentagem = 80) {
+            } else if (porcentagem <= 80) {
                 textoStatus = 'Respeitado - Admirado - Herói - Protetor';
             } else {
                 textoStatus = 'Renomado - Lendário - Venerado - Salvador';
@@ -2389,199 +2397,220 @@ script
         }
     }
 
-     Atualiza apenas a cor e porcentagem para Autoestima
+    // Atualiza apenas a cor e porcentagem para Autoestima
     atualizarBarra('barra-autoestima', 'texto-autoestima', 88);
 
-     Atualiza cor, porcentagem e status para Fama  Moral
+    // Atualiza cor, porcentagem e status para Fama / Moral
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
 
-     Estado Civil
+    // Estado Civil
     function abrirJanelaEstadoCivil() {
-        const janela = document.getElementById(janelaEstadoCivil);
-        const textoCasada = document.querySelector(.texto-clicavel);
+        const janela = document.getElementById("janelaEstadoCivil");
+        const textoCasada = document.querySelector(".texto-clicavel");
         const rect = textoCasada.getBoundingClientRect();
-        const offsetX = window.pageXOffset  document.documentElement.scrollLeft;
-        const offsetY = window.pageYOffset  document.documentElement.scrollTop;
+        const offsetX = window.pageXOffset || document.documentElement.scrollLeft;
+        const offsetY = window.pageYOffset || document.documentElement.scrollTop;
     
-         Define a posição da janela flutuante
-        janela.style.left = `${rect.right + offsetX + 10}px`;  Ajuste para evitar sobreposição
+        // Define a posição da janela flutuante
+        janela.style.left = `${rect.right + offsetX + 10}px`; // Ajuste para evitar sobreposição
         janela.style.top = `${rect.top + offsetY}px`;
-        janela.style.display = block;  Torna a janela visível
+        janela.style.display = "block"; // Torna a janela visível
     }
 
     function fecharJanelaEstadoCivil() {
-        const janela = document.getElementById(janelaEstadoCivil);
-        janela.style.display = none;  Oculta a janela
+        const janela = document.getElementById("janelaEstadoCivil");
+        janela.style.display = "none"; // Oculta a janela
     }
 
-     Define o estado inicial
+    // Define o estado inicial
     let chaveAtual = 0;
     
-     Dados das chaves
+    // Dados das chaves
     const chaves = [
-        { id 1, nome Key of Souls, descricao Esta chave permite acesso ao mundo das almas., efeito Garante imunidade a ataques espirituais., icone httpsimgur.comzHQo8sh.png },
-        { id 2, nome Key of Dreams, descricao Abre portas para o mundo dos sonhos., efeito Permite visualizar pensamentos ocultos., icone httpsimgur.comlKXdgwT.png },
-        { id 3, nome Key of Infinite Moon Mansion, descricao Concede acesso à Mansão Infinita da Lua., efeito Permite teletransporte entre dimensões lunares., icone httpsimgur.comHf705GX.png },
-        { id 4, nome Key of Desires, descricao Abre caminhos para os seus desejos mais profundos., efeito Amplifica as habilidades relacionadas à vontade., icone httpsimgur.comL2bLSl2.png },
-        { id 5, nome Key of Soul World, descricao Permite entrada no Mundo das Almas., efeito Concede invocação temporária de aliados espirituais., icone httpsimgur.comX1zPnlJ.png },
-        { id 6, nome Key of Pendragon, descricao A chave do legado Pendragon., efeito Aumenta o poder de habilidades ancestrais., icone httpsimgur.comQaNq2NX.png },
-        { id 7, nome Key Pinnacle of Flames, descricao Controle absoluto sobre o fogo eterno., efeito Aumenta drasticamente o dano por fogo., icone httpsimgur.com46Dh8W2.png },
-        { id 8, nome Key of Isaac's Heart, descricao Metade do coração lendário de Isaac., efeito Concede regeneração passiva de HP., icone httpsimgur.comX1zPnlJ.png },
+        { id: 1, nome: "Key of Souls", descricao: "Esta chave permite acesso ao mundo das almas.", efeito: "Garante imunidade a ataques espirituais.", icone: "https://imgur.com/zHQo8sh.png" },
+        { id: 2, nome: "Key of Dreams", descricao: "Abre portas para o mundo dos sonhos.", efeito: "Permite visualizar pensamentos ocultos.", icone: "https://imgur.com/lKXdgwT.png" },
+        { id: 3, nome: "Key of Infinite Moon Mansion", descricao: "Concede acesso à Mansão Infinita da Lua.", efeito: "Permite teletransporte entre dimensões lunares.", icone: "https://imgur.com/Hf705GX.png" },
+        { id: 4, nome: "Key of Desires", descricao: "Abre caminhos para os seus desejos mais profundos.", efeito: "Amplifica as habilidades relacionadas à vontade.", icone: "https://imgur.com/L2bLSl2.png" },
+        { id: 5, nome: "Key of Soul World", descricao: "Permite entrada no Mundo das Almas.", efeito: "Concede invocação temporária de aliados espirituais.", icone: "https://imgur.com/X1zPnlJ.png" },
+        { id: 6, nome: "Key of Pendragon", descricao: "A chave do legado Pendragon.", efeito: "Aumenta o poder de habilidades ancestrais.", icone: "https://imgur.com/QaNq2NX.png" },
+        { id: 7, nome: "Key Pinnacle of Flames", descricao: "Controle absoluto sobre o fogo eterno.", efeito: "Aumenta drasticamente o dano por fogo.", icone: "https://imgur.com/46Dh8W2.png" },
+        { id: 8, nome: "Key of Isaac's Heart", descricao: "Metade do coração lendário de Isaac.", efeito: "Concede regeneração passiva de HP.", icone: "https://imgur.com/X1zPnlJ.png" },
     ];
     
-     function navegar(direcao) {
+    // Atualiza os detalhes do retângulo com base na chave selecionada
+    function navegar(direcao) {
         chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
         const chave = chaves[chaveAtual];
     
-        // Atualiza Retângulo Item
-        document.getElementById("titulo-item").textContent = chave.nome;
-        document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
+        // Atualiza o título e descrição da chave no retângulo principal
+        const tituloElemento = document.querySelector(".titulo-item");
+        if (tituloElemento) {
+            tituloElemento.textContent = chave.nome; // Exibe o nome da chave
+        }
     
-        // Atualiza Retângulo Efeitos
-        document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
-        document.querySelector("#retangulo-efeitos img").src = chave.icone;
+        const descricaoElemento = document.querySelector("#retangulo-item .descricao-detalhada");
+        if (descricaoElemento) {
+            descricaoElemento.textContent = chave.descricao; // Exibe a descrição
+        }
     
-        // Atualiza Destaque dos Círculos
+        // Atualiza o efeito e o ícone no retângulo de efeitos
+        const efeitoElemento = document.querySelector(".titulo-efeito");
+        if (efeitoElemento) {
+            efeitoElemento.textContent = chave.efeito;
+        }
+    
+        const iconeElemento = document.querySelector("#retangulo-efeitos img");
+        if (iconeElemento) {
+            iconeElemento.src = chave.icone;
+            iconeElemento.alt = chave.nome; // Adiciona texto alternativo
+        }
+    
+        // Atualiza o destaque dourado no círculo correspondente
         atualizarDestaqueCirculo(chaveAtual + 1);
     }
     
-     Atualiza o destaque dourado nos círculos pequenos
+    // Atualiza o destaque dourado nos círculos pequenos
     function atualizarDestaqueCirculo(id) {
-        document.querySelectorAll(.circulo-pequeno).forEach((circulo, index) = {
+        document.querySelectorAll(".circulo-pequeno").forEach((circulo, index) => {
             if (index + 1 === id) {
-                circulo.style.boxShadow = 0 0 10px 3px #FFD700;
+                circulo.style.boxShadow = "0 0 10px 3px #FFD700"; // Adiciona o destaque
             } else {
-                circulo.style.boxShadow = none;
+                circulo.style.boxShadow = "none"; // Remove o destaque
             }
         });
     }
     
-     Inicia com a primeira chave destacada
-    document.addEventListener(DOMContentLoaded, () = {
+    // Previne caixas de texto editáveis e comportamento indesejado
+    document.querySelectorAll(".titulo-item, .titulo-efeito, .descricao-detalhada").forEach(elemento => {
+        elemento.contentEditable = "false"; // Impede edição
+    });
+    
+    // Inicia com a primeira chave destacada
+    document.addEventListener("DOMContentLoaded", () => {
         navegar(0);
     });
-
-     Controla a posição do carrossel
+    
+    // Controla a posição do carrossel
     let posicaoCarrossel = 0;
 
     function moverCarrossel(direcao) {
         const carrossel = document.querySelector('.carrossel-diamantes');
         const itens = carrossel.querySelectorAll('.diamante-item');
     
-         Remove a classe 'ativo' de todos os itens
-        itens.forEach(item = item.classList.remove('ativo'));
+        // Remove a classe 'ativo' de todos os itens
+        itens.forEach(item => item.classList.remove('ativo'));
     
-         Atualiza a posição
+        // Atualiza a posição
         posicaoCarrossel = (posicaoCarrossel + direcao + itens.length) % itens.length;
     
-         Adiciona a classe 'ativo' ao novo item central
+        // Adiciona a classe 'ativo' ao novo item central
         itens[posicaoCarrossel].classList.add('ativo');
     
-         Faz o scroll horizontal para manter o item central visível
-        const tamanhoItem = itens[posicaoCarrossel].offsetWidth + 10;  Inclui o gap
-        carrossel.scrollLeft = posicaoCarrossel  tamanhoItem - (carrossel.clientWidth - tamanhoItem)  2;
+        // Faz o scroll horizontal para manter o item central visível
+        const tamanhoItem = itens[posicaoCarrossel].offsetWidth + 10; // Inclui o gap
+        carrossel.scrollLeft = posicaoCarrossel * tamanhoItem - (carrossel.clientWidth - tamanhoItem) / 2;
     }
 
-     Diamante do Meio
-    document.addEventListener(DOMContentLoaded, () = {
+    // Diamante do Meio
+    document.addEventListener("DOMContentLoaded", () => {
         const diamantes = document.querySelectorAll('.diamante-item');
-        const meio = Math.floor(diamantes.length  2);
+        const meio = Math.floor(diamantes.length / 2);
         diamantes[meio].classList.add('ativo');
     });
 
     
-     Abrir Janela Flutuante
+    // Abrir Janela Flutuante
     function abrirJanela(idJanela) {
-        console.log(`Janela ${idJanela} aberta`);  Para teste
+        console.log(`Janela ${idJanela} aberta`); // Para teste
         const janela = document.getElementById(idJanela);
         janela.style.display = 'block';
     }
 
-     Fechar Janela Flutuante
+    // Fechar Janela Flutuante
     function fecharJanela(idJanela) {
         const janela = document.getElementById(idJanela);
         janela.style.display = 'none';
     }
 
-     Expandir ou Reduzir Janela
+    // Expandir ou Reduzir Janela
     function expandirJanela(idJanela) {
         const janela = document.getElementById(idJanela);
         janela.classList.toggle('janela-expandida');
     }
 
-     Tornar a Janela Arrastável
-    document.querySelectorAll('.janela-bencao').forEach((janela) = {
+    // Tornar a Janela Arrastável
+    document.querySelectorAll('.janela-bencao').forEach((janela) => {
         let isDragging = false, startX, startY;
 
-        janela.addEventListener('mousedown', (e) = {
+        janela.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.clientX - janela.offsetLeft;
             startY = e.clientY - janela.offsetTop;
             janela.style.cursor = 'grabbing';
         });
 
-        document.addEventListener('mousemove', (e) = {
+        document.addEventListener('mousemove', (e) => {
             if (isDragging) {
                 janela.style.left = `${e.clientX - startX}px`;
                 janela.style.top = `${e.clientY - startY}px`;
             }
         });
 
-        document.addEventListener('mouseup', () = {
+        document.addEventListener('mouseup', () => {
             isDragging = false;
             janela.style.cursor = 'move';
         });
     });
 
-     Função para atualizar a barra de atributo com valor e total
+    // Função para atualizar a barra de atributo com valor e total
     function toggleCheckbox(element) {
-        element.classList.toggle(checked);
+        element.classList.toggle("checked");
     }
 
     function atualizarAtributoAtual(atributo, total, porcentagem) {
-        const valorAtual = Math.floor((porcentagem  100)  total);
-        document.getElementById(`texto-${atributo}`).innerText = `${valorAtual}  ${total}`;
+        const valorAtual = Math.floor((porcentagem / 100) * total);
+        document.getElementById(`texto-${atributo}`).innerText = `${valorAtual} / ${total}`;
         document.getElementById(`barra-${atributo}`).style.width = `${porcentagem}%`;
     }
 
-     Definindo valores e porcentagens iniciais para cada atributo
+    // Definindo valores e porcentagens iniciais para cada atributo
     const atributos = {
-        hp { total 4024763, porcentagem 100 },
-        mp { total 675157, porcentagem 100 },
-        agi { total 522434, porcentagem 100 },
-        def { total 1210293, porcentagem 100 },
-        res { total 303776, porcentagem 100 },
-        spd { total 836877, porcentagem 100 },
-        int { total 353947, porcentagem 100 },
-        atk { total 1701508, porcentagem 100 },
-        smp { total 9314172, porcentagem 20.26 },
-        unknown { total 100, porcentagem 47.19 }
+        hp: { total: 4024763, porcentagem: 100 },
+        mp: { total: 675157, porcentagem: 100 },
+        agi: { total: 522434, porcentagem: 100 },
+        def: { total: 1210293, porcentagem: 100 },
+        res: { total: 303776, porcentagem: 100 },
+        spd: { total: 836877, porcentagem: 100 },
+        int: { total: 353947, porcentagem: 100 },
+        atk: { total: 1701508, porcentagem: 100 },
+        smp: { total: 9314172, porcentagem: 20.26 },
+        unknown: { total: 100, porcentagem: 47.19 }
     };
 
-     Atualizando os valores e porcentagens das barras
+    // Atualizando os valores e porcentagens das barras
     for (let atributo in atributos) {
         const { total, porcentagem } = atributos[atributo];
         atualizarAtributoAtual(atributo, total, porcentagem);
     }
 
-     Função para abrir e fechar a janela de música
+    // Função para abrir e fechar a janela de música
     function toggleJanelaMusica() {
         const janela = document.getElementById('janelaMusica');
 
-        if (janela.style.display === 'none'  janela.style.display === '') {
-            janela.style.display = 'block';  Abre a janela
+        if (janela.style.display === 'none' || janela.style.display === '') {
+            janela.style.display = 'block'; // Abre a janela
         } else {
-            janela.style.display = 'none';  Fecha a janela
+            janela.style.display = 'none'; // Fecha a janela
         }
     }
 
-     Inicia o player assim que a página carrega, mantendo a música tocando mesmo ao fechar a janela
-    document.addEventListener(DOMContentLoaded, function() {
-        const playerMusica = document.querySelector(#janelaMusica iframe);
-        playerMusica.src = httpsw.soundcloud.complayerurl=https%3Aapi.soundcloud.comtracks1961843283%3Fsecret_token%3Ds-lg9054r5PuH&color=%23a020f0&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true;
+    // Inicia o player assim que a página carrega, mantendo a música tocando mesmo ao fechar a janela
+    document.addEventListener("DOMContentLoaded", function() {
+        const playerMusica = document.querySelector("#janelaMusica iframe");
+        playerMusica.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH&color=%23a020f0&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
     });
 
-script
+</script>
 
-body
-html
+</body>
+</html>
