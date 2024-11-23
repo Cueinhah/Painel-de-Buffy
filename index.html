@@ -774,6 +774,7 @@
             margin: 0px;
             justify-content: center;
             align-items: center;
+            overflow: visible;
         }
 
         .circulo-decorativo {
@@ -807,6 +808,7 @@
             justify-content: center;
             align-items: center;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .circulo-pequeno img {
@@ -827,17 +829,12 @@
         }
 
         .titulo-chave {
-            position: relative;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: absolute;
             text-align: center;
             font-family: Arial, sans-serif;
             font-size: 18px;
             font-weight: bold;
             color: #FFFFFF;
-            z-index: 10;
         }
         
         .janela-chave {
