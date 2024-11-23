@@ -772,28 +772,6 @@
             border: 1px solid #444;
             border-radius: 50%;
             margin: 0px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .circulo-decorativo {
-            position: absolute;
-            border: 1px solid #333;
-            border-radius: 50%;
-        }
-        
-        .circulo-decorativo.menor {
-            width: 250px;
-            height: 250px;
-            top: 15px;
-            left: 15px;
-        }
-        
-        .circulo-decorativo.maior {
-            width: 310px;
-            height: 310px;
-            top: -15px;
-            left: -15px;
         }
         
         .circulo-pequeno {
@@ -808,15 +786,14 @@
             align-items: center;
             transition: transform 0.3s ease;
         }
-
+        
         .circulo-pequeno img {
             width: 80%;
             height: 80%;
             object-fit: cover;
             border-radius: 50%;
-            background: none;
         }
-
+        
         .circulo-pequeno.active {
             border-color: #FFD700;
             box-shadow: 0 0 15px #FFD700;
@@ -825,40 +802,30 @@
         .circulo-pequeno:hover {
             transform: none;
         }
-
-        .janela-chave {
-            display: none;
+        
+        .botao-transparente {
             position: absolute;
-            bottom: 60px;
-            width: 100px;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: #FFFFFF;
-            font-size: 12px;
-            text-align: center;
-            z-index: 10;
-        }
-
-        .janela-chave .quantidade {
-            color: #1E90FF;
-            font-weight: bold;
-            text-shadow: 0 0 5px #1E90FF; /* Efeito de brilho */
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: transparent;
+            cursor: pointer;
+            z-index: 2;
         }
         
-        .circulo-pequeno:hover .janela-chave {
-            display: block;
+        .botao-transparente:hover {
+            outline: 2px solid #FFD700;
         }
         
-        /* Posicionamento dos 8 Círculos */
-        .circulo-pequeno:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
-        .circulo-pequeno:nth-child(2) { top: 15%; left: 86%; transform: translate(-50%, -50%); }
-        .circulo-pequeno:nth-child(3) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
-        .circulo-pequeno:nth-child(4) { top: 84%; left: 86%; transform: translate(-50%, -50%); }
-        .circulo-pequeno:nth-child(5) { top: 100%; left: 50%; transform: translate(-50%, -50%); }
-        .circulo-pequeno:nth-child(6) { top: 84%; left: 13%; transform: translate(-50%, -50%); }
-        .circulo-pequeno:nth-child(7) { top: 50%; left: 0%; transform: translate(-50%, -50%); }
-        .circulo-pequeno:nth-child(8) { top: 15%; left: 13%; transform: translate(-50%, -50%); }
+        /* Posicionamento dos Botões */
+        .botao-transparente:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, -50%); }
+        .botao-transparente:nth-child(2) { top: 15%; left: 86%; transform: translate(-50%, -50%); }
+        .botao-transparente:nth-child(3) { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+        .botao-transparente:nth-child(4) { top: 84%; left: 86%; transform: translate(-50%, -50%); }
+        .botao-transparente:nth-child(5) { top: 100%; left: 50%; transform: translate(-50%, -50%); }
+        .botao-transparente:nth-child(6) { top: 84%; left: 13%; transform: translate(-50%, -50%); }
+        .botao-transparente:nth-child(7) { top: 50%; left: 0%; transform: translate(-50%, -50%); }
+        .botao-transparente:nth-child(8) { top: 15%; left: 13%; transform: translate(-50%, -50%); }
         
         /* Bloco Direito */
         .bloco-direito {
@@ -867,7 +834,7 @@
             flex-direction: column;
             align-items: center;
         }
-
+        
         .retangulo {
             width: 100%;
             max-width: 300px;
@@ -879,11 +846,11 @@
             margin-left: -20px;
             margin-right: -20px;
             overflow-y: auto;
-            scrollbar-width: none; 
+            scrollbar-width: none;
         }
-
+        
         .retangulo::-webkit-scrollbar {
-            display: none; /* Chrome e outros */
+            display: none;
         }
         
         .retangulo.item {
@@ -893,29 +860,24 @@
         .retangulo.efeitos {
             height: 130px;
         }
-
+        
         .topo-retangulo {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .topo-retangulo img {
-            width: 30px;
-            height: 30px;
-        }
-
         .titulo-item, .titulo-efeito {
             font-family: 'Arial Black', sans-serif;
             font-size: 14px;
-            color: #FFD700; /* Dourado */
+            color: #FFD700;
             font-weight: bold;
         }
         
         .descricao-secao {
             font-family: 'Arial Black', sans-serif;
             font-size: 14px;
-            color: #1E90FF; /* Azul */
+            color: #1E90FF;
             font-weight: bold;
         }
         
@@ -929,7 +891,6 @@
             user-select: none;
         }
         
-        /* Navegação */
         .navegacao {
             display: flex;
             justify-content: center;
@@ -940,12 +901,12 @@
             background: none;
             border: none;
             font-size: 20px;
-            color: #FFD700;;
+            color: #FFD700;
             cursor: pointer;
         }
-
+        
         .navegacao button:hover {
-            color: #FFFFFF; /* Destaque ao passar o mouse */
+            color: #FFFFFF;
             transform: scale(1.1);
             transition: transform 0.2s ease, color 0.2s ease;
         }
@@ -1738,56 +1699,41 @@
             <!-- Bloco Esquerdo -->
             <div class="bloco-esquerdo">
                 <div class="circulo-base">
-                    
-                    <!-- Círculos Pequenos -->
-                   <div class="circulo-pequeno" id="circulo1" onclick="navegar(0)">
+                    <!-- Círculos Pequenos (Chaves) -->
+                    <div class="circulo-pequeno" id="chave1">
                         <img src="https://imgur.com/zHQo8sh.png" alt="Key of Souls">
-                        <div class="janela-chave"
-                            >Key of Souls <span class="quantidade">(1x)</span>
-                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo2" onclick="navegar(1)">
+                    <div class="circulo-pequeno" id="chave2">
                         <img src="https://imgur.com/lKXdgwT.png" alt="Key of Dreams">
-                        <div class="janela-chave">
-                            Key of Dreams <span class="quantidade">(1x)</span>
-                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo3" onclick="navegar(2)">
+                    <div class="circulo-pequeno" id="chave3">
                         <img src="https://imgur.com/Hf705GX.png" alt="Key of Infinite Moon Mansion">
-                        <div class="janela-chave">
-                            Key of Infinite Moon Mansion <span class="quantidade">(1x)</span>
-                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo4" onclick="navegar(3)">
+                    <div class="circulo-pequeno" id="chave4">
                         <img src="https://imgur.com/L2bLSl2.png" alt="Key of Desires">
-                        <div class="janela-chave"
-                            >Key of Desires <span class="quantidade">(1x)</span>
-                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo5" onclick="navegar(4)">
+                    <div class="circulo-pequeno" id="chave5">
                         <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Soul World">
-                        <div class="janela-chave">
-                            Key of Soul World <span class="quantidade">(1x)</span>
-                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo6" onclick="navegar(5)">
+                    <div class="circulo-pequeno" id="chave6">
                         <img src="https://imgur.com/QaNq2NX.png" alt="Key of Pendragon">
-                        <div class="janela-chave">
-                            Key of Pendragon <span class="quantidade">(1x)</span>
-                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo7" onclick="navegar(6)">
+                    <div class="circulo-pequeno" id="chave7">
                         <img src="https://imgur.com/46Dh8W2.png" alt="Key Pinnacle of Flames">
-                        <div class="janela-chave">
-                            Key Pinnacle of Flames <span class="quantidade">(1x)</span>
-                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="circulo8" onclick="navegar(7)">
+                    <div class="circulo-pequeno" id="chave8">
                         <img src="https://imgur.com/Y1PI48e.png" alt="Key of Isaac's Heart">
-                        <div class="janela-chave">
-                            Key of Isaac's Heart <span class="quantidade">(1/2)</span>
-                        </div>
                     </div>
+        
+                    <!-- Botões Transparentes -->
+                    <div class="botao-transparente" onclick="ativarChave(1)"></div>
+                    <div class="botao-transparente" onclick="ativarChave(2)"></div>
+                    <div class="botao-transparente" onclick="ativarChave(3)"></div>
+                    <div class="botao-transparente" onclick="ativarChave(4)"></div>
+                    <div class="botao-transparente" onclick="ativarChave(5)"></div>
+                    <div class="botao-transparente" onclick="ativarChave(6)"></div>
+                    <div class="botao-transparente" onclick="ativarChave(7)"></div>
+                    <div class="botao-transparente" onclick="ativarChave(8)"></div>
                 </div>
             </div>
         
@@ -1810,7 +1756,7 @@
                         <h4 class="titulo-efeito">Efeito da Chave</h4>
                         <span class="descricao-secao">EFEITOS</span>
                     </div>
-                    <p class="detalhes-detalhados">Detalhes do efeito da chave.</p>
+                    <p class="descricao-detalhada">Detalhes do efeito da chave.</p>
                 </div>
         
                 <!-- Navegação -->
@@ -2449,95 +2395,47 @@
     
     // Dados das chaves
     const chaves = [
-        { id: 0,
-         nome: "Key of Souls",
-         descricao: "Esta chave permite acesso ao mundo das almas.",
-         efeito: "À descobrir 01.",
-         icone: "https://imgur.com/zHQo8sh.png",
-         detalhes: "Esta chave é um teste da alinezinha1"},
-        
-        { id: 1,
-         nome: "Key of Dreams",
-         descricao: "Abre portas para o mundo dos sonhos.",
-         efeito: "À descobrir 02.",
-         icone: "https://imgur.com/lKXdgwT.png",
-         detalhes: "Esta chave é um teste da alinezinha2"},
-        
-        { id: 2,
-         nome: "Key of Infinite Moon Mansion",
-         descricao: "Concede acesso à Mansão Infinita da Lua.",
-         efeito: "À descobrir 03.",
-         icone: "https://imgur.com/Hf705GX.png",
-         detalhes: "Esta chave é um teste da alinezinha3"},
-        
-        { id: 3,
-         nome: "Key of Desires",
-         descricao: "Abre caminhos para os seus desejos mais profundos.",
-         efeito: "À descobrir 04.",
-         icone: "https://imgur.com/L2bLSl2.png",
-         detalhes: "Esta chave é um teste da alinezinha4"},
-        
-        { id: 4,
-         nome: "Key of Soul World",
-         descricao: "Permite entrada no Mundo das Almas.",
-         efeito: "À descobrir 05.",
-         icone: "https://imgur.com/X1zPnlJ.png",
-         detalhes: "Esta chave é um teste da alinezinha5"},
-        
-        { id: 5,
-         nome: "Key of Pendragon",
-         descricao: "A chave do legado Pendragon.",
-         efeito: "À descobrir 06.",
-         icone: "https://imgur.com/QaNq2NX.png",
-         detalhes: "Esta chave é um teste da alinezinha6"},
-        
-        { id: 6,
-         nome: "Key Pinnacle of Flames",
-         descricao: "??.",
-         efeito: "À descobrir 07.",
-         icone: "https://imgur.com/46Dh8W2.png",
-         detalhes: "Esta chave é um teste da alinezinha7"},
-        
-        { id: 7,
-         nome: "Key of Isaac's Heart",
-         descricao: "Metade do coração lendário de Isaac.",
-         efeito: "À descobrir 08.",
-         icone: "https://imgur.com/Y1PI48e.png",
-         detalhes: "Esta chave é um teste da alinezinha8"},
+        { id: 1, nome: "Key of Souls", descricao: "Esta chave permite acesso ao mundo das almas.", efeito: "Garante imunidade a ataques espirituais.", icone: "https://imgur.com/zHQo8sh.png", detalhes: "Esta chave é um teste da alinezinha1" },
+        { id: 2, nome: "Key of Dreams", descricao: "Abre portas para o mundo dos sonhos.", efeito: "Permite visualizar pensamentos ocultos.", icone: "https://imgur.com/lKXdgwT.png", detalhes: "Esta chave é um teste da alinezinha3" },
+        { id: 3, nome: "Key of Infinite Moon Mansion", descricao: "Concede acesso à Mansão Infinita da Lua.", efeito: "Permite teletransporte entre dimensões lunares.", icone: "https://imgur.com/Hf705GX.png", detalhes: "Esta chave é um teste da alinezinha4" },
+        { id: 4, nome: "Key of Desires", descricao: "Abre caminhos para os seus desejos mais profundos.", efeito: "Amplifica as habilidades relacionadas à vontade.", icone: "https://imgur.com/L2bLSl2.png", detalhes: "Esta chave é um teste da alinezinha2" },
+        { id: 5, nome: "Key of Soul World", descricao: "Permite entrada no Mundo das Almas.", efeito: "Concede invocação temporária de aliados espirituais.", icone: "https://imgur.com/X1zPnlJ.png", detalhes: "Esta chave é um teste da alinezinha5" },
+        { id: 6, nome: "Key of Pendragon", descricao: "A chave do legado Pendragon.", efeito: "Aumenta o poder de habilidades ancestrais.", icone: "https://imgur.com/QaNq2NX.png", detalhes: "Esta chave é um teste da alinezinha6" },
+        { id: 7, nome: "Key Pinnacle of Flames", descricao: "Controle absoluto sobre o fogo eterno.", efeito: "Aumenta drasticamente o dano por fogo.", icone: "https://imgur.com/46Dh8W2.png", detalhes: "Esta chave é um teste da alinezinha7" },
+        { id: 8, nome: "Key of Isaac's Heart", descricao: "Metade do coração lendário de Isaac.", efeito: "Concede regeneração passiva de HP.", icone: "https://imgur.com/X1zPnlJ.png", detalhes: "Esta chave é um teste da alinezinha8" },
     ];
     
-    // Atualiza os detalhes do retângulo com base na chave selecionada
-    function navegar(direcao) {
-        chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
-        const chave = chaves[chaveAtual];
+    // Atualiza os detalhes com base no botão clicado
+    function ativarChave(id) {
+        const chave = chaves[id - 1];
     
-        // Atualiza Retângulo Item
+        // Atualiza Retângulo Item e Efeitos
         document.getElementById("titulo-item").textContent = chave.nome;
         document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
-    
-        // Atualiza Retângulo Efeitos
         document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
         document.querySelector("#retangulo-efeitos img").src = chave.icone;
-        document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
+        document.querySelector("#retangulo-efeitos .descricao-detalhada").textContent = chave.detalhes;
     
-        // Atualiza Destaque dos Círculos
-        atualizarDestaqueCirculo(chaveAtual + 1);
-    }
-    
-    // Atualiza o destaque dourado nos círculos pequenos
-    function atualizarDestaqueCirculo(id) {
-        document.querySelectorAll(".circulo-pequeno").forEach((circulo, index) => {
-            if (index + 1 === id) {
-                circulo.style.boxShadow = "0 0 10px 3px #FFD700"; // Adiciona o destaque
-            } else {
-                circulo.style.boxShadow = "none"; // Remove o destaque
-            }
+        // Atualiza Destaque no Botão
+        document.querySelectorAll(".botao-transparente").forEach((botao, index) => {
+            botao.style.outline = index + 1 === id ? "2px solid #FFD700" : "none";
         });
     }
     
-    // Previne caixas de texto editáveis e comportamento indesejado
+    // Navegação pelas setas
+    function navegar(direcao) {
+        chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
+        ativarChave(chaveAtual + 1);
+    }
+    
+    // Previne edição nos textos
     document.querySelectorAll(".titulo-item, .titulo-efeito, .descricao-detalhada").forEach(elemento => {
-        elemento.contentEditable = "false"; // Impede edição
+        elemento.contentEditable = "false";
+    });
+    
+    // Inicia com a primeira chave destacada
+    document.addEventListener("DOMContentLoaded", () => {
+        ativarChave(1);
     });
 
     // Controla a posição do carrossel
