@@ -818,25 +818,37 @@
         }
 
         .circulo-pequeno.active {
-            border-color: #FFD700;
+            border: 5px solid #1E90FF;
             box-shadow: 0 0 15px #FFD700;
         }
         
         .circulo-pequeno:hover {
-            transform: none;
+            transform: scale(1.2);
         }
 
+        .titulo-chave {
+            position: absolute;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+        
         .janela-chave {
             display: none;
             position: absolute;
             bottom: 60px;
             width: 100px;
+            transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.8);
             padding: 5px 10px;
+            border: 1px solid #1E90FF;
             border-radius: 5px;
             color: #FFFFFF;
             font-size: 12px;
             text-align: center;
+            white-space: nowrap;
             z-index: 10;
         }
 
@@ -1738,6 +1750,7 @@
             <!-- Bloco Esquerdo -->
             <div class="bloco-esquerdo">
                 <div class="circulo-base">
+                    <div class="titulo-chave">Selos</div>
                     
                     <!-- Círculos Pequenos -->
                    <div class="circulo-pequeno" id="circulo1" onclick="navegar(0)">
@@ -2540,6 +2553,69 @@
         elemento.contentEditable = "false"; // Impede edição
     });
 
+  // Define o estado inicial dos círculos (ativo ou inativo)
+    const estadosIniciais = {
+        circulo1: true,  // Ativo
+        circulo2: false, // Inativo
+        circulo3: true,  // Ativo
+        circulo4: false, // Inativo
+        circulo5: true,  // Ativo
+        circulo6: false, // Inativo
+        circulo7: true,  // Ativo
+        circulo8: false  // Inativo
+    };
+    
+    // Aplica os estados iniciais ao carregar a página
+    document.addEventListener("DOMContentLoaded", function () {
+        for (const [id, ativo] of Object.entries(estadosIniciais)) {
+            const circulo = document.getElementById(id);
+            if (ativo) {
+                circulo.classList.add('ativo');
+            } else {
+                circulo.classList.remove('ativo');
+            }
+        }
+    });
+    
+    // Funções para alternar o estado de cada círculo
+    function toggleCirculo1() {
+        toggleEstado('circulo1');
+    }
+    
+    function toggleCirculo2() {
+        toggleEstado('circulo2');
+    }
+    
+    function toggleCirculo3() {
+        toggleEstado('circulo3');
+    }
+    
+    function toggleCirculo4() {
+        toggleEstado('circulo4');
+    }
+    
+    function toggleCirculo5() {
+        toggleEstado('circulo5');
+    }
+    
+    function toggleCirculo6() {
+        toggleEstado('circulo6');
+    }
+    
+    function toggleCirculo7() {
+        toggleEstado('circulo7');
+    }
+    
+    function toggleCirculo8() {
+        toggleEstado('circulo8');
+    }
+    
+    // Função genérica para alternar estado
+    function toggleEstado(id) {
+        const circulo = document.getElementById(id);
+        circulo.classList.toggle('ativo');
+    }
+    
     // Controla a posição do carrossel
     let posicaoCarrossel = 0;
 
