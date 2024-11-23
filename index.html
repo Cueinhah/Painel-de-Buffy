@@ -1740,50 +1740,88 @@
 
        <!-- Chaves -->
         <div class="container-chave">
+            <!-- Bloco Esquerdo -->
             <div class="bloco-esquerdo">
                 <div class="circulo-base">
+                    
                     <!-- Círculos Pequenos -->
-                    <div class="circulo-pequeno" id="chave1" onclick="selecionarChave(0)">
+                   <div class="circulo-pequeno" id="circulo1" onclick="navegar(0)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/zHQo8sh.png" alt="Key of Souls">
+                        <div class="janela-chave"
+                            >Key of Souls <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="chave2" onclick="selecionarChave(1)">
+                    <div class="circulo-pequeno" id="circulo2" onclick="navegar(1)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/lKXdgwT.png" alt="Key of Dreams">
+                        <div class="janela-chave">
+                            Key of Dreams <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="chave3" onclick="selecionarChave(2)">
+                    <div class="circulo-pequeno" id="circulo3" onclick="navegar(2)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/Hf705GX.png" alt="Key of Infinite Moon Mansion">
+                        <div class="janela-chave">
+                            Key of Infinite Moon Mansion <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="chave4" onclick="selecionarChave(3)">
+                    <div class="circulo-pequeno" id="circulo4" onclick="navegar(3)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/L2bLSl2.png" alt="Key of Desires">
+                        <div class="janela-chave"
+                            >Key of Desires <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="chave5" onclick="selecionarChave(4)">
+                    <div class="circulo-pequeno" id="circulo5" onclick="navegar(4)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/X1zPnlJ.png" alt="Key of Soul World">
+                        <div class="janela-chave">
+                            Key of Soul World <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="chave6" onclick="selecionarChave(5)">
+                    <div class="circulo-pequeno" id="circulo6" onclick="navegar(5)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/QaNq2NX.png" alt="Key of Pendragon">
+                        <div class="janela-chave">
+                            Key of Pendragon <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="chave7" onclick="selecionarChave(6)">
+                    <div class="circulo-pequeno" id="circulo7" onclick="navegar(6)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/46Dh8W2.png" alt="Key Pinnacle of Flames">
+                        <div class="janela-chave">
+                            Key Pinnacle of Flames <span class="quantidade">(1x)</span>
+                        </div>
                     </div>
-                    <div class="circulo-pequeno" id="chave8" onclick="selecionarChave(7)">
+                    <div class="circulo-pequeno" id="circulo8" onclick="navegar(7)" onclick="toggleCirculo1()">
                         <img src="https://imgur.com/Y1PI48e.png" alt="Key of Isaac's Heart">
+                        <div class="janela-chave">
+                            Key of Isaac's Heart <span class="quantidade">(1/2)</span>
+                        </div>
                     </div>
                 </div>
             </div>
         
+            <!-- Bloco Direito -->
             <div class="bloco-direito">
+                <!-- Retângulo Item -->
                 <div class="retangulo item" id="retangulo-item">
                     <div class="topo-retangulo">
                         <h4 class="titulo-item" id="titulo-item">Nome da Chave</h4>
                         <span class="descricao-secao">ITEM</span>
                     </div>
                     <p class="descricao-detalhada">Descrição da chave aqui.</p>
+                    <p class="clicavel" onclick="ativarChave()">Clique para Ativar</p>
                 </div>
         
+                <!-- Retângulo Efeitos -->
                 <div class="retangulo efeitos" id="retangulo-efeitos">
                     <div class="topo-retangulo">
+                        <img src="https://imgur.com/zHQo8sh.png" alt="Ícone do Efeito">
                         <h4 class="titulo-efeito">Efeito da Chave</h4>
+                        <span class="descricao-secao">EFEITOS</span>
                     </div>
                     <p class="detalhes-detalhados">Detalhes do efeito da chave.</p>
+                </div>
+        
+                <!-- Navegação -->
+                <div class="navegacao">
+                    <button onclick="navegar(-1)">◄</button>
+                    <button onclick="navegar(1)">►</button>
                 </div>
             </div>
         </div>
@@ -2416,39 +2454,160 @@
     
     // Dados das chaves
     const chaves = [
-    { nome: "Key of Souls", descricao: "Acesso ao mundo das almas.", efeito: "Imunidade espiritual", ativa: true },
-    { nome: "Key of Dreams", descricao: "Portas para o mundo dos sonhos.", efeito: "Visualizar pensamentos ocultos", ativa: false },
-    { nome: "Key of Infinite Moon Mansion", descricao: "Acesso à Mansão da Lua.", efeito: "Teletransporte lunar", ativa: false },
-    { nome: "Key of Desires", descricao: "Caminhos aos desejos profundos.", efeito: "Amplifica habilidades", ativa: false },
-    { nome: "Key of Soul World", descricao: "Entrada no Mundo das Almas.", efeito: "Invocação espiritual", ativa: false },
-    { nome: "Key of Pendragon", descricao: "Legado Pendragon.", efeito: "Poder ancestral", ativa: false },
-    { nome: "Key Pinnacle of Flames", descricao: "Controle absoluto sobre o fogo.", efeito: "Dano por fogo aumentado", ativa: false },
-    { nome: "Key of Isaac's Heart", descricao: "Metade do coração de Isaac.", efeito: "Regeneração de HP", ativa: false },
-];
-    function selecionarChave(indice) {
-        const chave = chaves[indice];
-        document.getElementById("titulo-item").textContent = chave.nome;
-        document.querySelector(".descricao-detalhada").textContent = chave.descricao;
-        document.querySelector(".titulo-efeito").textContent = chave.efeito;
-    
-        // Atualizar destaque
-        document.querySelectorAll(".circulo-pequeno").forEach((circulo, i) => {
-            circulo.style.boxShadow = i === indice ? "0 0 15px 3px #FFD700" : "none";
-        });
-    }
-    
-    function toggleChave(indice) {
-        const chave = chaves[indice];
-        chave.ativa = !chave.ativa;
-        const circulo = document.getElementById(`chave${indice + 1}`);
-        circulo.style.borderColor = chave.ativa ? "#1E90FF" : "gray";
-    }
+        { id: 0,
+         nome: "Key of Souls",
+         descricao: "Esta chave permite acesso ao mundo das almas.",
+         efeito: "À descobrir 01.",
+         icone: "https://imgur.com/zHQo8sh.png",
+         detalhes: "Esta chave é um teste da alinezinha1"},
         
+        { id: 1,
+         nome: "Key of Dreams",
+         descricao: "Abre portas para o mundo dos sonhos.",
+         efeito: "À descobrir 02.",
+         icone: "https://imgur.com/lKXdgwT.png",
+         detalhes: "Esta chave é um teste da alinezinha2"},
+        
+        { id: 2,
+         nome: "Key of Infinite Moon Mansion",
+         descricao: "Concede acesso à Mansão Infinita da Lua.",
+         efeito: "À descobrir 03.",
+         icone: "https://imgur.com/Hf705GX.png",
+         detalhes: "Esta chave é um teste da alinezinha3"},
+        
+        { id: 3,
+         nome: "Key of Desires",
+         descricao: "Abre caminhos para os seus desejos mais profundos.",
+         efeito: "À descobrir 04.",
+         icone: "https://imgur.com/L2bLSl2.png",
+         detalhes: "Esta chave é um teste da alinezinha4"},
+        
+        { id: 4,
+         nome: "Key of Soul World",
+         descricao: "Permite entrada no Mundo das Almas.",
+         efeito: "À descobrir 05.",
+         icone: "https://imgur.com/X1zPnlJ.png",
+         detalhes: "Esta chave é um teste da alinezinha5"},
+        
+        { id: 5,
+         nome: "Key of Pendragon",
+         descricao: "A chave do legado Pendragon.",
+         efeito: "À descobrir 06.",
+         icone: "https://imgur.com/QaNq2NX.png",
+         detalhes: "Esta chave é um teste da alinezinha6"},
+        
+        { id: 6,
+         nome: "Key Pinnacle of Flames",
+         descricao: "??.",
+         efeito: "À descobrir 07.",
+         icone: "https://imgur.com/46Dh8W2.png",
+         detalhes: "Esta chave é um teste da alinezinha7"},
+        
+        { id: 7,
+         nome: "Key of Isaac's Heart",
+         descricao: "Metade do coração lendário de Isaac.",
+         efeito: "À descobrir 08.",
+         icone: "https://imgur.com/Y1PI48e.png",
+         detalhes: "Esta chave é um teste da alinezinha8"},
+    ];
+    
     // Atualiza os detalhes do retângulo com base na chave selecionada
     function navegar(direcao) {
         chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
         const chave = chaves[chaveAtual];
+    
+        // Atualiza Retângulo Item
+        document.getElementById("titulo-item").textContent = chave.nome;
+        document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
+    
+        // Atualiza Retângulo Efeitos
+        document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
+        document.querySelector("#retangulo-efeitos img").src = chave.icone;
+        document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
+    
+        // Atualiza Destaque dos Círculos
+        atualizarDestaqueCirculo(chaveAtual + 1);
+    }
+    
+    // Atualiza o destaque dourado nos círculos pequenos
+    function atualizarDestaqueCirculo(id) {
+        document.querySelectorAll(".circulo-pequeno").forEach((circulo, index) => {
+            if (index + 1 === id) {
+                circulo.style.boxShadow = "0 0 10px 3px #FFD700"; // Adiciona o destaque
+            } else {
+                circulo.style.boxShadow = "none"; // Remove o destaque
+            }
+        });
+    }
+    
+    // Previne caixas de texto editáveis e comportamento indesejado
+    document.querySelectorAll(".titulo-item, .titulo-efeito, .descricao-detalhada").forEach(elemento => {
+        elemento.contentEditable = "false"; // Impede edição
+    });
 
+  // Define o estado inicial dos círculos (ativo ou inativo)
+    const estadosIniciais = {
+        circulo1: true,  // Ativo
+        circulo2: false, // Inativo
+        circulo3: true,  // Ativo
+        circulo4: false, // Inativo
+        circulo5: true,  // Ativo
+        circulo6: false, // Inativo
+        circulo7: true,  // Ativo
+        circulo8: false  // Inativo
+    };
+    
+    // Aplica os estados iniciais ao carregar a página
+    document.addEventListener("DOMContentLoaded", function () {
+        for (const [id, ativo] of Object.entries(estadosIniciais)) {
+            const circulo = document.getElementById(id);
+            if (ativo) {
+                circulo.classList.add('ativo');
+            } else {
+                circulo.classList.remove('ativo');
+            }
+        }
+    });
+    
+    // Funções para alternar o estado de cada círculo
+    function toggleCirculo1() {
+        toggleEstado('circulo1');
+    }
+    
+    function toggleCirculo2() {
+        toggleEstado('circulo2');
+    }
+    
+    function toggleCirculo3() {
+        toggleEstado('circulo3');
+    }
+    
+    function toggleCirculo4() {
+        toggleEstado('circulo4');
+    }
+    
+    function toggleCirculo5() {
+        toggleEstado('circulo5');
+    }
+    
+    function toggleCirculo6() {
+        toggleEstado('circulo6');
+    }
+    
+    function toggleCirculo7() {
+        toggleEstado('circulo7');
+    }
+    
+    function toggleCirculo8() {
+        toggleEstado('circulo8');
+    }
+    
+    // Função genérica para alternar estado
+    function toggleEstado(id) {
+        const circulo = document.getElementById(id);
+        circulo.classList.toggle('ativo');
+    }
+    
     // Controla a posição do carrossel
     let posicaoCarrossel = 0;
 
