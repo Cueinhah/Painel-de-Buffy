@@ -2397,19 +2397,19 @@
     
     // Dados das chaves
     const chaves = [
-        { id: 1, nome: "Key of Souls", descricao: "Esta chave permite acesso ao mundo das almas.", efeito: "Garante imunidade a ataques espirituais.", icone: "https://imgur.com/zHQo8sh.png", detalhes: "Esta chave é um teste da alinezinha1", status: "off" },
-        { id: 2, nome: "Key of Dreams", descricao: "Abre portas para o mundo dos sonhos.", efeito: "Permite visualizar pensamentos ocultos.", icone: "https://imgur.com/lKXdgwT.png", detalhes: "Esta chave é um teste da alinezinha3", status: "on" },
-        { id: 3, nome: "Key of Infinite Moon Mansion", descricao: "Concede acesso à Mansão Infinita da Lua.", efeito: "Permite teletransporte entre dimensões lunares.", icone: "https://imgur.com/Hf705GX.png", detalhes: "Esta chave é um teste da alinezinha4", status: "off" },
-        { id: 4, nome: "Key of Desires", descricao: "Abre caminhos para os seus desejos mais profundos.", efeito: "Amplifica as habilidades relacionadas à vontade.", icone: "https://imgur.com/L2bLSl2.png", detalhes: "Esta chave é um teste da alinezinha2", status: "on" },
-        { id: 5, nome: "Key of Soul World", descricao: "Permite entrada no Mundo das Almas.", efeito: "Concede invocação temporária de aliados espirituais.", icone: "https://imgur.com/X1zPnlJ.png", detalhes: "Esta chave é um teste da alinezinha5", status: "off" },
-        { id: 6, nome: "Key of Pendragon", descricao: "A chave do legado Pendragon.", efeito: "Aumenta o poder de habilidades ancestrais.", icone: "https://imgur.com/QaNq2NX.png", detalhes: "Esta chave é um teste da alinezinha6", status: "on" },
-        { id: 7, nome: "Key Pinnacle of Flames", descricao: "Controle absoluto sobre o fogo eterno.", efeito: "Aumenta drasticamente o dano por fogo.", icone: "https://imgur.com/46Dh8W2.png", detalhes: "Esta chave é um teste da alinezinha7", status: "off" },
-        { id: 8, nome: "Key of Isaac's Heart", descricao: "Metade do coração lendário de Isaac.", efeito: "Concede regeneração passiva de HP.", icone: "https://imgur.com/X1zPnlJ.png", detalhes: "Esta chave é um teste da alinezinha8", status: "on" },
+        { id: 1, nome: "Key of Souls", descricao: "Esta chave permite acesso ao mundo das almas.", efeito: "Garante imunidade a ataques espirituais.", icone: "https://imgur.com/zHQo8sh.png", detalhes: "Esta chave é um teste da alinezinha1" },
+        { id: 2, nome: "Key of Dreams", descricao: "Abre portas para o mundo dos sonhos.", efeito: "Permite visualizar pensamentos ocultos.", icone: "https://imgur.com/lKXdgwT.png", detalhes: "Esta chave é um teste da alinezinha3" },
+        { id: 3, nome: "Key of Infinite Moon Mansion", descricao: "Concede acesso à Mansão Infinita da Lua.", efeito: "Permite teletransporte entre dimensões lunares.", icone: "https://imgur.com/Hf705GX.png", detalhes: "Esta chave é um teste da alinezinha4" },
+        { id: 4, nome: "Key of Desires", descricao: "Abre caminhos para os seus desejos mais profundos.", efeito: "Amplifica as habilidades relacionadas à vontade.", icone: "https://imgur.com/L2bLSl2.png", detalhes: "Esta chave é um teste da alinezinha2" },
+        { id: 5, nome: "Key of Soul World", descricao: "Permite entrada no Mundo das Almas.", efeito: "Concede invocação temporária de aliados espirituais.", icone: "https://imgur.com/X1zPnlJ.png", detalhes: "Esta chave é um teste da alinezinha5" },
+        { id: 6, nome: "Key of Pendragon", descricao: "A chave do legado Pendragon.", efeito: "Aumenta o poder de habilidades ancestrais.", icone: "https://imgur.com/QaNq2NX.png", detalhes: "Esta chave é um teste da alinezinha6" },
+        { id: 7, nome: "Key Pinnacle of Flames", descricao: "Controle absoluto sobre o fogo eterno.", efeito: "Aumenta drasticamente o dano por fogo.", icone: "https://imgur.com/46Dh8W2.png", detalhes: "Esta chave é um teste da alinezinha7" },
+        { id: 8, nome: "Key of Isaac's Heart", descricao: "Metade do coração lendário de Isaac.", efeito: "Concede regeneração passiva de HP.", icone: "https://imgur.com/X1zPnlJ.png", detalhes: "Esta chave é um teste da alinezinha8" },
     ];
     
     // Atualiza os detalhes com base no botão clicado
     function ativarChave(id) {
-        const chave = chaves.find(chave => chave.id === id);
+        const chave = chaves[id - 1];
     
         // Atualiza Retângulo Item e Efeitos
         document.getElementById("titulo-item").textContent = chave.nome;
@@ -2422,15 +2422,6 @@
         document.querySelectorAll(".botao-transparente").forEach((botao, index) => {
             botao.style.outline = index + 1 === id ? "2px solid #FFD700" : "none";
         });
-    }
-    
-    // Controle de ligar/desligar chaves
-    function toggleStatusChave(id) {
-        const chave = chaves.find(chave => chave.id === id);
-        chave.status = chave.status === "on" ? "off" : "on";
-    
-        const circulo = document.getElementById(`chave${id}`);
-        circulo.classList.toggle("active", chave.status === "on");
     }
     
     // Navegação pelas setas
@@ -2447,12 +2438,6 @@
     // Inicia com a primeira chave destacada
     document.addEventListener("DOMContentLoaded", () => {
         ativarChave(1);
-        chaves.forEach(chave => {
-            const circulo = document.getElementById(`chave${chave.id}`);
-            if (circulo) {
-                circulo.classList.toggle("active", chave.status === "on");
-            }
-        });
     });
 
     // Controla a posição do carrossel
