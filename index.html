@@ -1836,6 +1836,9 @@
             <div class="bloco-direito">
                 <!-- Retângulo Item -->
                 <div class="retangulo item" id="retangulo-item">
+                    <div class="item-imagem">
+                        <img src="https://imgur.com/zHQo8sh.png" alt="Item-Imagem">
+                    </div>
                     <div class="topo-retangulo">
                         <h4 class="titulo-item" id="titulo-item">Nome da Chave</h4>
                         <span class="descricao-secao">CHAVES</span>
@@ -1846,9 +1849,6 @@
         
                 <!-- Retângulo Efeitos -->
                 <div class="retangulo efeitos" id="retangulo-efeitos">
-                    <div class="item-imagem">
-                        <img src="https://imgur.com/zHQo8sh.png" alt="Item-Imagem">
-                    </div>
                     <div class="topo-retangulo">
                         <img src="https://imgur.com/zHQo8sh.png" alt="Ícone do Efeito">
                         <h4 class="titulo-efeito">Efeito da Chave</h4>
@@ -2566,14 +2566,14 @@
         // Atualiza Retângulo Item
         document.getElementById("titulo-item").textContent = chave.nome;
         document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
-    
+
+        // Atualiza a imagem no Item-Imagem
+        document.querySelector(".item-imagem img").src = chave.item;
+        
         // Atualiza Retângulo Efeitos
         document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
         document.querySelector("#retangulo-efeitos img").src = chave.icone;
         document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
-
-        // Atualiza a imagem no Item-Imagem
-        document.querySelector(".item-imagem img").src = chave.item;
         
         // Atualiza Destaque dos Círculos
         atualizarDestaqueCirculo(chaveAtual + 1);
