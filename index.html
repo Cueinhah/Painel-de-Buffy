@@ -903,8 +903,9 @@
 
         .topo-retangulo {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px; 
+            justify-content: flex-start;
         }
         
         .topo-retangulo img {
@@ -912,11 +913,19 @@
             height: 30px;
         }
 
-        .titulo-item, .titulo-efeito {
+        .titulo-item {
             font-family: 'Arial Black', sans-serif;
             font-size: 14px;
-            color: #FFD700; /* Dourado */
+            color: #FFD700; 
             font-weight: bold;
+        }
+
+        .titulo-efeito {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 14px;
+            color: #FFD700;
+            font-weight: bold;
+            margin-left: 0; 
         }
         
         .descricao-secao {
