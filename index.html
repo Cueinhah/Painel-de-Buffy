@@ -948,6 +948,27 @@
             margin-top: 10px;
             user-select: none;
         }
+
+        /* Estilo para o Item-Imagem */
+        .item-imagem {
+            position: absolute; /* Para posicionamento sobreposto */
+            width: 50px;
+            height: 50px;
+            border: 2px solid #1E90FF; /* Azul */
+            background-color: #121212; /* Preto levemente mais escuro que o fundo do retângulo */
+            border-radius: 8px;
+            top: 50%; /* Centralizado verticalmente */
+            left: -30px; /* Localizado à esquerda */
+            transform: translateY(-50%);
+            z-index: 1; /* Sobre o retângulo item */
+        }
+        
+        .item-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
         
         /* Navegação */
         .navegacao {
@@ -1832,7 +1853,20 @@
                     </div>
                     <p class="detalhes-detalhados">Detalhes do efeito da chave.</p>
                 </div>
-        
+
+                <!-- Retângulo Item -->
+                <div class="retangulo item" id="retangulo-item">
+                    <div class="item-imagem">
+                        <img src="https://imgur.com/zHQo8sh.png" alt="Item-Imagem">
+                    </div>
+                    <div class="topo-retangulo">
+                        <h4 class="titulo-item" id="titulo-item">Nome da Chave</h4>
+                        <span class="descricao-secao">ITEM</span>
+                    </div>
+                    <p class="descricao-detalhada">Descrição da chave aqui.</p>
+                    <p class="clicavel" onclick="ativarChave()">Clique para Ativar</p>
+                </div>
+                
                 <!-- Navegação -->
                 <div class="navegacao">
                     <button onclick="navegar(-1)">◄</button>
@@ -2472,6 +2506,7 @@
         { id: 0,
          nome: "Key of Souls",
          descricao: "Esta chave permite acesso ao mundo das almas.",
+         item: "https://imgur.com/zHQo8sh.png",
          efeito: "À descobrir 01.",
          icone: "https://imgur.com/zHQo8sh.png",
          detalhes: "Esta chave é um teste da alinezinha1"},
@@ -2479,6 +2514,7 @@
         { id: 1,
          nome: "Key of Dreams",
          descricao: "Abre portas para o mundo dos sonhos.",
+         item: "https://imgur.com/zHQo8sh.png",
          efeito: "À descobrir 02.",
          icone: "https://imgur.com/lKXdgwT.png",
          detalhes: "Esta chave é um teste da alinezinha2"},
@@ -2539,7 +2575,10 @@
         document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
         document.querySelector("#retangulo-efeitos img").src = chave.icone;
         document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
-    
+
+        // Atualiza a imagem no Item-Imagem
+        document.querySelector(".item-imagem img").src = chave.item;
+        
         // Atualiza Destaque dos Círculos
         atualizarDestaqueCirculo(chaveAtual + 1);
     }
