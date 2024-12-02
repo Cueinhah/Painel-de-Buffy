@@ -647,7 +647,7 @@
 
         /* Janela Flutuante - Estado Civil */
         .janela-estado-civil {
-            position: fixed;
+            position: absolute;
             top: 40%; 
             left: 30%;
             transform: translate(-50%, -20%);
@@ -655,7 +655,7 @@
             height: 250px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             background-image: url('https://imgur.com/suxlLBi.png'); 
-            background-size: cover;
+            background-size: 120%;
             background-position: center;
             border: 2px solid #1E90FF;
             border-radius: 20px;
@@ -752,7 +752,7 @@
             cursor: pointer;
         }
 
-        .botao-expandir-isaac {
+       .botao-expandir-isaac {
             position: absolute;
             top: 10px;
             right: 50px;
@@ -766,7 +766,7 @@
         .botao-musica-isaac {
             position: absolute;
             top: 10px;
-            left: 10px;
+            right: 10px;
             z-index: 20;
         }
         
@@ -785,8 +785,8 @@
         .janela-musica-isaac {
             display: none;
             position: absolute;
-            top: 50px;
-            left: 20px;
+            top: 10px;
+            right: 70px;
             width: 250px;
             height: 250px;
             background-color: rgba(0, 0, 0, 0.85);
@@ -1579,7 +1579,7 @@
                 <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
                 <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
                 
-                <!-- Ícone de Música no canto superior esquerdo -->
+                <!-- Ícone de Música -->
                 <div class="botao-musica-isaac" onclick="toggleJanelaMusica()">
                     <div class="circulo-botao-musica-isaac">
                         <span class="texto-botao-musica-isaac">🎶</span>
