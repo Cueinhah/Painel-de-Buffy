@@ -1577,10 +1577,10 @@
         <div class="janela-estado-civil" id="janelaEstadoCivil">
             <div class="conteudo-janela-isaac">
                 <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
-                <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
+                <button class="botao-expandir" onclick="expandirJanelaIsaac('janelaEstadoCivil')">❐</button>
                 
                 <!-- Ícone de Música -->
-                <div class="botao-musica-isaac" onclick="toggleJanelaMusica()">
+                <div class="botao-musica-isaac" onclick="toggleJanelaMusicaIsaac()">
                     <div class="circulo-botao-musica-isaac">
                         <span class="texto-botao-musica-isaac">🎶</span>
                     </div>
@@ -2575,14 +2575,14 @@
         janela.style.display = "none"; // Oculta a janela
     }
 
-    function toggleJanelaMusica() {
-        const janelaMusica = document.getElementById("janelaMusicaIsaac");
-        janelaMusica.style.display = janelaMusica.style.display === "none" ? "block" : "none";
+    function toggleJanelaMusicaIsaac() {
+        const janelaMusicaIsaac = document.getElementById("janelaMusicaIsaac");
+        janelaMusicaIsaac.style.display = janelaMusicaIsaac.style.display === "none" ? "block" : "none";
     }
     
-    function expandirJanela(id) {
-        const janela = document.getElementById(id);
-        janela.classList.toggle("janela-expandida");
+    function expandirJanelaIsaac(id) {
+        const janelaIsaac = document.getElementById(id);
+        janela.classList.toggle("janela-expandida-Isaac");
     }
     
     // Define o estado inicial
