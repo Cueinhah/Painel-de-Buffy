@@ -673,13 +673,13 @@
             height: 100%;
         }
 
-        .janela-expandida-Isaac .conteudo-janela-isaac {
+        .janela-expandida .conteudo-janela-isaac {
             background-color: rgba(0, 0, 0, 0.9); 
             height: 100%;
         }
 
         .janela-estado-civil .botao-fechar,
-        .janela-estado-civil .botao-expandir-isaac {
+        .janela-estado-civil .botao-expandir {
             position: absolute;
             top: 10px;
         }
@@ -693,7 +693,7 @@
             cursor: pointer;
         }
 
-        .janela-estado-civil .botao-expandir-isaac {
+        .janela-estado-civil .botao-expandir {
             right: 20px;
             background: none;
             border: none;
@@ -787,9 +787,9 @@
         
         .janela-musica-isaac {
             display: none;
-            position: fixed;
-            top: 50px;
-            left: 70px;
+            position: absolute;
+            top: 300px;
+            left: 100px;
             width: 250px;
             height: 250px;
             background-color: rgba(0, 0, 0, 0.85);
@@ -1580,7 +1580,7 @@
         <div class="janela-estado-civil" id="janelaEstadoCivil">
             <div class="conteudo-janela-isaac">
                 <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
-                <button class="botao-expandir" onclick="expandirJanelaIsaac('janelaEstadoCivil')">❐</button>
+                <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
                 
                 <!-- Ícone de Música -->
                 <div class="botao-musica-isaac" onclick="toggleJanelaMusicaIsaac()">
@@ -2583,9 +2583,9 @@
         janelaMusicaIsaac.style.display = janelaMusicaIsaac.style.display === "none" ? "block" : "none";
     }
     
-    function expandirJanelaIsaac(id) {
-        const janelaIsaac = document.getElementById(id);
-        janela.classList.toggle("janela-expandida-Isaac");
+    function expandirJanela(id) {
+        const janela = document.getElementById(id);
+        janela.classList.toggle("janela-expandida");
     }
     
     // Define o estado inicial
