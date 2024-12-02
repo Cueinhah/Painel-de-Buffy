@@ -665,7 +665,7 @@
             display: none; 
         }
         
-        .janela-estado-civil .conteudo-janela {
+        .janela-estado-civil .conteudo-janela-isaac {
             background-color: rgba(0, 0, 0, 0.9); /* Sobreposição preta */
             color: #FFFFFF;
             padding: 20px;
@@ -673,7 +673,7 @@
             height: 100%;
         }
 
-        .janela-expandida .conteudo-janela {
+        .janela-expandida .conteudo-janela-isaac {
             height: 100%; /* Garante que a sobreposição cubra toda a expansão */
         }
         
@@ -747,12 +747,12 @@
             scrollbar-width: none; /* Para navegadores Firefox */
         }
 
-        .texto-clicavel {
+        .texto-clicavel-isaac {
             text-decoration: underline;
             cursor: pointer;
         }
 
-        .botao-expandir {
+        .botao-expandir-isaac {
             position: absolute;
             top: 10px;
             right: 50px;
@@ -763,14 +763,14 @@
             font-size: 18px;
         }
         
-        .botao-musica {
+        .botao-musica-isaac {
             position: absolute;
             top: 10px;
             left: 10px;
             z-index: 20;
         }
         
-        .circulo-botao-musica {
+        .circulo-botao-musica-isaac {
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -782,7 +782,7 @@
             cursor: pointer;
         }
         
-        .janela-musica {
+        .janela-musica-isaac {
             display: none;
             position: absolute;
             top: 50px;
@@ -1575,19 +1575,19 @@
 
         <!-- Janela Flutuante para Estado Civil -->
         <div class="janela-estado-civil" id="janelaEstadoCivil">
-            <div class="conteudo-janela">
+            <div class="conteudo-janela-isaac">
                 <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
                 <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
                 
                 <!-- Ícone de Música no canto superior esquerdo -->
-                <div class="botao-musica" onclick="toggleJanelaMusica()">
-                    <div class="circulo-botao-musica">
-                        <span class="texto-botao-musica">🎶</span>
+                <div class="botao-musica-isaac" onclick="toggleJanelaMusica()">
+                    <div class="circulo-botao-musica-isaac">
+                        <span class="texto-botao-musica-isaac">🎶</span>
                     </div>
                 </div>
         
                 <!-- Bloco com Círculo e Informações Básicas -->
-                <div class="bloco-circulo">
+                <div class="bloco-circulo-isaac">
                     <div class="circulo-marido">
                         <img src="https://imgur.com/qXKnN34.png" alt="Foto do Marido">
                     </div>
@@ -1613,7 +1613,7 @@
         </div>
         
         <!-- Janela de Música -->
-        <div class="janela-musica" id="janelaMusica">
+        <div class="janela-musica-isaac" id="janelaMusicaIsaac">
             <h3>Música do Marido:</h3>
             <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283"></iframe>
         </div>
@@ -2576,7 +2576,7 @@
     }
 
     function toggleJanelaMusica() {
-        const janelaMusica = document.getElementById("janelaMusica");
+        const janelaMusica = document.getElementById("janelaMusicaIsaac");
         janelaMusica.style.display = janelaMusica.style.display === "none" ? "block" : "none";
     }
     
