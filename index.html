@@ -676,17 +676,31 @@
         .janela-expandida-Isaac .conteudo-janela-isaac {
             height: 100%; /* Garante que a sobreposição cubra toda a expansão */
         }
-        
-        .janela-estado-civil .botao-fechar {
+
+        .janela-estado-civil .botao-fechar,
+        .janela-estado-civil .botao-expandir {
             position: absolute;
             top: 10px;
+        }
+        
+        .janela-estado-civil .botao-fechar {
+            right: 35px;
+            background: none;
+            border: none;
+            color: #1E90FF;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .janela-estado-civil .botao-expandir-isaac {
             right: 10px;
             background: none;
             border: none;
-            color: #1E90FF; /* Azul do botão */
-            font-size: 18px;
+            color: #FFD700;
+            font-size: 16px;
             cursor: pointer;
         }
+        
         
         /* Círculo com a Foto do Marido */
         .circulo-marido {
@@ -750,16 +764,6 @@
         .texto-clicavel-isaac {
             text-decoration: underline;
             cursor: pointer;
-        }
-
-       .botao-expandir-isaac {
-            position: absolute;
-            padding: 2px 5px;
-            background: none;
-            border: none;
-            color: #FFD700;
-            cursor: pointer;
-            font-size: 16px;
         }
         
         .botao-musica-isaac {
