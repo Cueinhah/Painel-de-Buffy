@@ -747,6 +747,51 @@
             cursor: pointer;
         }
 
+        .botao-expandir {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            background: none;
+            border: none;
+            color: #FFD700;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .botao-musica {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 20;
+        }
+        
+        .circulo-botao-musica {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        
+        .janela-musica {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 70px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #A020F0;
+            border-radius: 10px;
+            padding: 15px;
+            color: #FFFFFF;
+            z-index: 1000;
+        }
+        
         /* Categoria de Chaves */
         .container-chave {
             display: flex;
@@ -1527,6 +1572,15 @@
         <div class="janela-estado-civil" id="janelaEstadoCivil">
             <div class="conteudo-janela">
                 <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
+                <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
+                
+                <!-- Ícone de Música -->
+                <div class="botao-musica" onclick="toggleJanelaMusica()">
+                    <div class="circulo-botao-musica">
+                        <span class="texto-botao-musica">🎶</span>
+                    </div>
+                </div>
+        
                 <!-- Bloco com Círculo e Informações Básicas -->
                 <div class="bloco-circulo">
                     <div class="circulo-marido">
@@ -1538,6 +1592,7 @@
                         <p><strong>Local do Casamento:</strong> Elkhorn - Mana River</p>
                     </div>
                 </div>
+                
                 <!-- Bloco com Informações Detalhadas -->
                 <div class="detalhes-marido">
                     <p><strong>Missões em Conjunto:</strong></p>
@@ -1550,6 +1605,12 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        
+        <!-- Janela de Música -->
+        <div class="janela-musica" id="janelaMusica">
+            <h3>Música do Marido:</h3>
+            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283"></iframe>
         </div>
 
         <div class="linha-separadora"></div>
@@ -2509,6 +2570,16 @@
         janela.style.display = "none"; // Oculta a janela
     }
 
+    function toggleJanelaMusica() {
+        const janelaMusica = document.getElementById("janelaMusica");
+        janelaMusica.style.display = janelaMusica.style.display === "none" ? "block" : "none";
+    }
+    
+    function expandirJanela(id) {
+        const janela = document.getElementById(id);
+        janela.classList.toggle("janela-expandida");
+    }
+    
     // Define o estado inicial
     let chaveAtual = 0;
     
