@@ -1636,14 +1636,7 @@
             <div class="conteudo-janela-isaac">
                 <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
                 <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
-                
-                <!-- Ícone de Música -->
-                <div class="botao-musica-isaac" onclick="toggleJanelaMusicaIsaac()">
-                    <div class="circulo-botao-musica-isaac">
-                        <span class="texto-botao-musica-isaac">🎶</span>
-                    </div>
-                </div>
-        
+            
                 <!-- Bloco com Círculo e Informações Básicas -->
                 <div class="bloco-circulo-isaac">
                     <div class="circulo-marido">
@@ -1678,7 +1671,14 @@
             </div>
         </div>
         
-        <!-- Janela de Música -->
+        <!-- Botão de Música -->
+        <div class="botao-musica" onclick="toggleJanelaMusicaIsaac()">
+            <div class="circulo-botao-musica-isaac">
+                <span class="texto-botao-musica">🎶</span>
+            </div>
+        </div>
+    
+        <!-- Janela de Música Isaac -->
         <div class="janela-musica-isaac" id="janelaMusicaIsaac">
             <h3>Memória Base</h3>
             <div class="player-container">
@@ -1690,7 +1690,7 @@
                     <p id="descricao-musica">Aqui você pode adicionar um texto descritivo.</p>
                 </div>
                 <audio id="audio-player" controls>
-                    <source src="https://drive.google.com/uc?export=download&id=10ggNveBIqd9iOm3FzqAybeVSlVVNUPtN" type="audio/mpeg">
+                    <source src="https://drive.google.com/uc?export=download&id=SEU_ID_DE_ARQUIVO" type="audio/mpeg">
                     Seu navegador não suporta o elemento de áudio.
                 </audio>
                 <div class="player-timeline">
@@ -2658,11 +2658,6 @@
         const janela = document.getElementById("janelaEstadoCivil");
         janela.style.display = "none"; // Oculta a janela
     }
-
-    function toggleJanelaMusicaIsaac() {
-        const janelaMusicaIsaac = document.getElementById("janelaMusicaIsaac");
-        janelaMusicaIsaac.style.display = janelaMusicaIsaac.style.display === "none" ? "block" : "none";
-    }
     
     function expandirJanela(id) {
         const janela = document.getElementById(id);
@@ -2671,6 +2666,11 @@
 
     function fecharJanelaMusicaIsaac() {
         document.getElementById('janelaMusicaIsaac').style.display = 'none';
+    }
+
+    function toggleJanelaMusicaIsaac() {
+        const janela = document.getElementById('janelaMusicaIsaac');
+        janela.style.display = (janela.style.display === 'none' || !janela.style.display) ? 'block' : 'none';
     }
     
     document.addEventListener("DOMContentLoaded", function () {
