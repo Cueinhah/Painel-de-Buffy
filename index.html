@@ -787,13 +787,12 @@
             top: 190px;
             left: 40px;
             width: 250px;
-            height: 250px;
             background-color: rgba(0, 0, 0, 0.85);
-            border: 2px solid #A020F0;
+            border: 2px solid #FFD700;
             border-radius: 10px;
             padding: 15px;
             color: #FFFFFF;
-            z-index: 10; 
+            z-index: 1000;
         }
 
         .janela-musica-isaac h3 {
@@ -801,13 +800,60 @@
             font-size: 16px;
             text-align: center;
         }
-
-        .janela-musica-isaac iframe {
+        
+        .player-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .player-cover img {
             width: 100%;
-            height: 80%;
+            border-radius: 10px;
+        }
+        
+        .player-info h4 {
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #FFD700;
+        }
+        
+        .player-info p {
+            font-size: 12px;
+            color: #AAAAAA;
+        }
+        
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .player-timeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        #progress-bar {
+            flex-grow: 1;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        #tempo-atual, #tempo-total {
+            font-size: 12px;
+            color: #FFD700;
+        }
+        
+        .botao-fechar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
             border: none;
-            background-color: #333;
-            border-radius: 5px;
+            color: #FFD700;
+            font-size: 16px;
+            cursor: pointer;
         }
         
         /* Categoria de Chaves */
@@ -1634,8 +1680,26 @@
         
         <!-- Janela de Música -->
         <div class="janela-musica-isaac" id="janelaMusicaIsaac">
-            <h3>Memória Base:</h3>
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH&color=%23a020f0&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/aline-santos-42416271" title="Buffy le Fay Pendragon" target="_blank" style="color: #cccccc; text-decoration: none;">Buffy le Fay Pendragon</a> · <a href="https://soundcloud.com/aline-santos-42416271/buffy-the-last-shot/s-lg9054r5PuH" title="Buffy The Last Shot" target="_blank" style="color: #cccccc; text-decoration: none;">Buffy The Last Shot</a></div>
+            <h3>Memória Base</h3>
+            <div class="player-container">
+                <div class="player-cover">
+                    <img src="https://imgur.com/capa-musica.png" alt="Capa da Música" id="capa-musica">
+                </div>
+                <div class="player-info">
+                    <h4 id="nome-musica">Título da Música</h4>
+                    <p id="descricao-musica">Aqui você pode adicionar um texto descritivo.</p>
+                </div>
+                <audio id="audio-player" controls>
+                    <source src="https://drive.google.com/file/d/10ggNveBIqd9iOm3FzqAybeVSlVVNUPtN/view?usp=sharing" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+                <div class="player-timeline">
+                    <span id="tempo-atual">00:00</span>
+                    <input type="range" id="progress-bar" value="0" max="100">
+                    <span id="tempo-total">00:00</span>
+                </div>
+            </div>
+            <button class="botao-fechar" onclick="fecharJanelaMusica()">✖︎</button>
         </div>
 
         <div class="linha-separadora"></div>
@@ -2604,6 +2668,34 @@
         const janela = document.getElementById(id);
         janela.classList.toggle("janela-expandida");
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("audio-player");
+        const progressBar = document.getElementById("progress-bar");
+        const tempoAtual = document.getElementById("tempo-atual");
+        const tempoTotal = document.getElementById("tempo-total");
+    
+        audio.addEventListener("loadedmetadata", () => {
+            const duracao = formatarTempo(audio.duration);
+            tempoTotal.textContent = duracao;
+        });
+    
+        audio.addEventListener("timeupdate", () => {
+            const tempo = formatarTempo(audio.currentTime);
+            tempoAtual.textContent = tempo;
+            progressBar.value = (audio.currentTime / audio.duration) * 100;
+        });
+    
+        progressBar.addEventListener("input", () => {
+            audio.currentTime = (progressBar.value / 100) * audio.duration;
+        });
+    
+        function formatarTempo(segundos) {
+            const minutos = Math.floor(segundos / 60);
+            const restoSegundos = Math.floor(segundos % 60);
+            return `${minutos}:${restoSegundos < 10 ? "0" : ""}${restoSegundos}`;
+        }
+    });
     
     // Define o estado inicial
     let chaveAtual = 0;
