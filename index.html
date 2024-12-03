@@ -1636,7 +1636,38 @@
             <div class="conteudo-janela-isaac">
                 <button class="botao-fechar" onclick="fecharJanelaEstadoCivil()">✖︎</button>
                 <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
+
+                <!-- Botão de Música -->
+                <div class="botao-musica" onclick="toggleJanelaMusicaIsaac()">
+                    <div class="circulo-botao-musica-isaac">
+                        <span class="texto-botao-musica">🎶</span>
+                    </div>
+                </div>
             
+                <!-- Janela de Música Isaac -->
+                <div class="janela-musica-isaac" id="janelaMusicaIsaac">
+                    <h3>Memória Base</h3>
+                    <div class="player-container">
+                        <div class="player-cover">
+                            <img src="https://imgur.com/RXdNW0v.png" alt="Capa da Música" id="capa-musica">
+                        </div>
+                        <div class="player-info">
+                            <h4 id="nome-musica">Título da Música</h4>
+                            <p id="descricao-musica">Aqui você pode adicionar um texto descritivo.</p>
+                        </div>
+                        <audio id="audio-player" controls>
+                            <source src="https://drive.google.com/uc?export=download&id=SEU_ID_DE_ARQUIVO" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <div class="player-timeline">
+                            <span id="tempo-atual">00:00</span>
+                            <input type="range" id="progress-bar" value="0" max="100">
+                            <span id="tempo-total">00:00</span>
+                        </div>
+                    </div>
+                    <button class="botao-fechar-musica-isaac" onclick="fecharJanelaMusicaIsaac()">✖︎</button>
+                </div>
+                
                 <!-- Bloco com Círculo e Informações Básicas -->
                 <div class="bloco-circulo-isaac">
                     <div class="circulo-marido">
@@ -1669,37 +1700,6 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        
-        <!-- Botão de Música -->
-        <div class="botao-musica" onclick="toggleJanelaMusicaIsaac()">
-            <div class="circulo-botao-musica-isaac">
-                <span class="texto-botao-musica">🎶</span>
-            </div>
-        </div>
-    
-        <!-- Janela de Música Isaac -->
-        <div class="janela-musica-isaac" id="janelaMusicaIsaac">
-            <h3>Memória Base</h3>
-            <div class="player-container">
-                <div class="player-cover">
-                    <img src="https://imgur.com/RXdNW0v.png" alt="Capa da Música" id="capa-musica">
-                </div>
-                <div class="player-info">
-                    <h4 id="nome-musica">Título da Música</h4>
-                    <p id="descricao-musica">Aqui você pode adicionar um texto descritivo.</p>
-                </div>
-                <audio id="audio-player" controls>
-                    <source src="https://drive.google.com/uc?export=download&id=SEU_ID_DE_ARQUIVO" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-                <div class="player-timeline">
-                    <span id="tempo-atual">00:00</span>
-                    <input type="range" id="progress-bar" value="0" max="100">
-                    <span id="tempo-total">00:00</span>
-                </div>
-            </div>
-            <button class="botao-fechar-musica-isaac" onclick="fecharJanelaMusicaIsaac()">✖︎</button>
         </div>
 
         <div class="linha-separadora"></div>
