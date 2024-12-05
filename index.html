@@ -297,8 +297,8 @@
             <button class="seta" onclick="scrollCarrossel(1)">❯</button>
         </div>
 
-        <div class="janela-flutuante" id="janelaTitulo1" style="display: none;">
-            <div class="janela-botoes">
+        <div class="janela-titulos" id="janelaTitulo1" style="display: none;">
+            <div class="janela-titulos-botoes">
                 <button class="botao-expandir" onclick="expandirJanelaTitulo(1)">❐</button>
                 <button class="botao-fechar" onclick="fecharJanelaTitulo(1)">✖︎</button>
             </div>
@@ -308,8 +308,8 @@
             </div>
         </div>
 
-        <div class="janela-flutuante" id="janelaTitulo2" style="display: none;">
-            <div class="janela-botoes">
+        <div class="janela-titulos" id="janelaTitulo2" style="display: none;">
+            <div class="janela-titulos-botoes">
                 <button class="botao-expandir" onclick="expandirJanelaTitulo(1)">❐</button>
                 <button class="botao-fechar" onclick="fecharJanelaTitulo(1)">✖︎</button>
             </div>
@@ -1151,7 +1151,7 @@
     
     function expandirJanelaTitulo(id) {
         const janela = document.getElementById(`janelaTitulo${id}`);
-        janela.classList.toggle('janela-expandida');
+        janela.classList.toggle('janela-titulos');
     }
     
      // Atributos - Função para atualizar a barra de atributo com valor e total
