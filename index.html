@@ -984,17 +984,34 @@
 </div>
 
 <script>
+    // Buffy Música - Função para abrir e fechar a janela de música
+    function toggleJanelaMusica() {
+        const janela = document.getElementById('janelaMusica');
+
+        if (janela.style.display === 'none' || janela.style.display === '') {
+            janela.style.display = 'block'; // Abre a janela
+        } else {
+            janela.style.display = 'none'; // Fecha a janela
+        }
+    }
+
+    // Buffy Música - Inicia o player assim que a página carrega, mantendo a música tocando mesmo ao fechar a janela
+    document.addEventListener("DOMContentLoaded", function() {
+        const playerMusica = document.querySelector("#janelaMusica iframe");
+        playerMusica.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH&color=%23a020f0&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
+    });
+    
     // Barra de Experiência
     function updateExpBar(percentage) {
     var progressBar = document.getElementById('expBar');
     progressBar.style.width = percentage + '%';
   
-    // Texto bonitinho
+    //  Barra de Experiência - Texto bonitinho
     var textSpan = document.querySelector('.barra-texto');
         textSpan.textContent = '1303 - ' + percentage + '%'; // Define o texto
     }
 
-    // Inicializa a barra com 50% como exemplo
+    //  Barra de Experiência - Porcentagem
     updateExpBar(73);
 
     // Classes - Texto retraído
@@ -1003,12 +1020,375 @@
         expandido.style.display = expandido.style.display === 'none' ? 'block' : 'none';
     }
 
-    // Carrossel - Movimentação das Setas
+    // Estado Civil
+    function abrirJanelaEstadoCivil() {
+        const janela = document.getElementById("janelaEstadoCivil");
+        const textoCasada = document.querySelector(".texto-clicavel-isaac");
+        const rect = textoCasada.getBoundingClientRect();
+        const offsetX = window.pageXOffset || document.documentElement.scrollLeft;
+        const offsetY = window.pageYOffset || document.documentElement.scrollTop;
+    
+        // Define a posição da janela flutuante
+        janela.style.left = `${rect.right + offsetX + 10}px`; // Ajuste para evitar sobreposição
+        janela.style.top = `${rect.top + offsetY}px`;
+        janela.style.display = "block"; // Torna a janela visível
+    }
+
+    function fecharJanelaEstadoCivil() {
+        const janela = document.getElementById("janelaEstadoCivil");
+        janela.style.display = "none"; // Oculta a janela
+    }
+    
+    function expandirJanela(id) {
+        const janela = document.getElementById(id);
+        janela.classList.toggle("janela-expandida");
+    }
+
+    function fecharJanelaMusicaIsaac() {
+        document.getElementById('janelaMusicaIsaac').style.display = 'none';
+    }
+
+    function toggleJanelaMusicaIsaac() {
+        const janela = document.getElementById('janelaMusicaIsaac');
+        janela.style.display = (janela.style.display === 'none' || !janela.style.display) ? 'block' : 'none';
+    }
+    
+    // Inicia o player assim que a página carrega, mantendo a música tocando mesmo ao fechar a janela
+    document.addEventListener("DOMContentLoaded", function() {
+        const playerMusica = document.querySelector("#janelaMusicaIsaac iframe");
+        playerMusica.src = "https://drive.google.com/file/d/10ggNveBIqd9iOm3FzqAybeVSlVVNUPtN/preview";
+    });
+    
+    // Fama/Moral - Barra de Progresso e Estado
+    function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
+        const barra = document.getElementById(idBarra);
+        const texto = document.getElementById(idTexto);
+        
+        // Atualiza a largura da barra e o texto central com a porcentagem
+        barra.style.width = `${porcentagem}%`;
+        texto.textContent = `${porcentagem}%`;
+
+        // Define cor baseada na porcentagem
+        let cor;
+        if (porcentagem <= 20) {
+            cor = 'darkred';
+        } else if (porcentagem <= 40) {
+            cor = '#FF9100';
+        } else if (porcentagem <= 60) {
+            cor = '#00D19A';
+        } else if (porcentagem <= 80) {
+            cor = '#D622EF';
+        } else {
+            cor = '#6222EF';
+        }
+        barra.style.backgroundColor = cor;
+
+        // Atualiza o status apenas se o ID de status for fornecido
+        if (idStatus) {
+            const status = document.getElementById(idStatus);
+            let textoStatus;
+
+            if (porcentagem <= 20) {
+                textoStatus = 'Infame - Condenado - Vilão - Corrupto';
+            } else if (porcentagem <= 40) {
+                textoStatus = 'Desprezado - Mal-Visto - Suspeito - Anti-Herói';
+            } else if (porcentagem <= 60) {
+                textoStatus = 'Ambíguo - Neutro - Indiferente - Equilibrado';
+            } else if (porcentagem <= 80) {
+                textoStatus = 'Respeitado - Admirado - Herói - Protetor';
+            } else {
+                textoStatus = 'Renomado - Lendário - Venerado - Salvador';
+            }
+
+            status.textContent = textoStatus;
+        }
+    }
+
+    // Autoestima - Atualiza apenas a cor e porcentagem
+    atualizarBarra('barra-autoestima', 'texto-autoestima', 91);
+
+    // Fama / Moral - Atualiza cor, porcentagem e status
+    atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
+    
+    // Títulos - Movimentação das Setas
     function scrollCarrossel(direcao) {
         const carrossel = document.querySelector('.carrossel-imagens');
         const scrollAmount = 50; // Ajuste conforme necessário
         carrossel.scrollLeft += direcao * scrollAmount;
     }
+
+     // Atributos - Função para atualizar a barra de atributo com valor e total
+    function toggleCheckbox(element) {
+        element.classList.toggle("checked");
+    }
+
+    function atualizarAtributoAtual(atributo, total, porcentagem) {
+        const valorAtual = Math.floor((porcentagem / 100) * total);
+        document.getElementById(`texto-${atributo}`).innerText = `${valorAtual} / ${total}`;
+        document.getElementById(`barra-${atributo}`).style.width = `${porcentagem}%`;
+    }
+
+    // Atributos - Definindo valores e porcentagens iniciais para cada atributo
+    const atributos = {
+        hp: { total: 4024763, porcentagem: 100 },
+        mp: { total: 675157, porcentagem: 100 },
+        agi: { total: 522434, porcentagem: 100 },
+        def: { total: 1210293, porcentagem: 100 },
+        res: { total: 303776, porcentagem: 100 },
+        spd: { total: 836877, porcentagem: 100 },
+        int: { total: 353947, porcentagem: 100 },
+        atk: { total: 1701508, porcentagem: 100 },
+        smp: { total: 9314172, porcentagem: 20.26 },
+        unknown: { total: 100, porcentagem: 47.19 }
+    };
+
+    // Atributos - Atualizando os valores e porcentagens das barras
+    for (let atributo in atributos) {
+        const { total, porcentagem } = atributos[atributo];
+        atualizarAtributoAtual(atributo, total, porcentagem);
+    }
+    
+    // Selos - Define o estado inicial
+    let chaveAtual = 0;
+    
+    // Selos - Dados das chaves
+    const chaves = [
+        { id: 0,
+         nome: "Key of Souls",
+         descricao: "Nenhuma informação sobre a chave Key of Souls está disponível.",
+         item: "https://imgur.com/zHQo8sh.png",
+         efeito: "À descobrir 01.",
+         icone: "https://imgur.com/zHQo8sh.png",
+         detalhes: "Esta chave é um teste da alinezinha1"},
+        
+        { id: 1,
+         nome: "Key of Dreams",
+         descricao: "Nenhuma informação sobre a chave Key of Dreams está disponível.",
+         item: "https://imgur.com/lKXdgwT.png",
+         efeito: "À descobrir 02.",
+         icone: "https://imgur.com/lKXdgwT.png",
+         detalhes: "Esta chave é um teste da alinezinha2"},
+        
+        { id: 2,
+         nome: "Key of Infinite Moon Mansion",
+         descricao: "Nenhuma informação sobre a chave Key of Infinite Moon Mansion está disponível.",
+         item: "https://imgur.com/Hf705GX.png",
+         efeito: "À descobrir 03.",
+         icone: "https://imgur.com/Hf705GX.png",
+         detalhes: "Esta chave é um teste da alinezinha3"},
+        
+        { id: 3,
+         nome: "Key of Desires",
+         descricao: "Nenhuma informação sobre a chave Key of Desires está disponível.",
+         item: "https://imgur.com/L2bLSl2.png",
+         efeito: "À descobrir 04.",
+         icone: "https://imgur.com/L2bLSl2.png",
+         detalhes: "Esta chave é um teste da alinezinha4"},
+        
+        { id: 4,
+         nome: "Key of Soul World",
+         descricao: "Nenhuma informação sobre a chave Key of Soul World está disponível.",
+         item: "https://imgur.com/X1zPnlJ.png",
+         efeito: "À descobrir 05.",
+         icone: "https://imgur.com/X1zPnlJ.png",
+         detalhes: "Esta chave é um teste da alinezinha5"},
+        
+        { id: 5,
+         nome: "Key of Pendragon",
+         descricao: "Nenhuma informação sobre a chave Key of Pendragon está disponível.",
+         item: "https://imgur.com/QaNq2NX.png",
+         efeito: "À descobrir 06.",
+         icone: "https://imgur.com/QaNq2NX.png",
+         detalhes: "Esta chave é um teste da alinezinha6"},
+        
+        { id: 6,
+         nome: "Key Pinnacle of Flames",
+         descricao: "Nenhuma informação sobre a chave Key Pinnacle of Flames está disponível.",
+         item: "https://imgur.com/46Dh8W2.png",
+         efeito: "À descobrir 07.",
+         icone: "https://imgur.com/46Dh8W2.png",
+         detalhes: "Esta chave é um teste da alinezinha7"},
+        
+        { id: 7,
+         nome: "Key of Isaac's Heart",
+         descricao: "Nenhuma informação sobre a chave Key of Isaac's Heart está disponível.",
+         item: "https://imgur.com/Y1PI48e.png",
+         efeito: "À descobrir 08.",
+         icone: "https://imgur.com/Y1PI48e.png",
+         detalhes: "Esta chave é um teste da alinezinha8"},
+    ];
+    
+    // Selos - Atualiza os detalhes do retângulo com base na chave selecionada
+    function navegar(direcao) {
+        chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
+        const chave = chaves[chaveAtual];
+    
+        // Atualiza Retângulo Item
+        document.getElementById("titulo-item").textContent = chave.nome;
+        document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
+
+        // Atualiza a imagem no Item-Imagem
+        document.querySelector(".item-imagem img").src = chave.item;
+        
+        // Atualiza Retângulo Efeitos
+        document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
+        document.querySelector("#retangulo-efeitos img").src = chave.icone;
+        document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
+        
+        // Atualiza Destaque dos Círculos
+        atualizarDestaqueCirculo(chaveAtual + 1);
+    }
+    
+    // Selos - Atualiza o destaque dourado nos círculos pequenos
+    function atualizarDestaqueCirculo(id) {
+        document.querySelectorAll(".circulo-pequeno").forEach((circulo, index) => {
+            if (index + 1 === id) {
+                circulo.style.boxShadow = "0 0 10px 3px #FFD700"; // Adiciona o destaque
+            } else {
+                circulo.style.boxShadow = "none"; // Remove o destaque
+            }
+        });
+    }
+    
+    // Selos - Previne caixas de texto editáveis e comportamento indesejado
+    document.querySelectorAll(".titulo-item, .titulo-efeito, .descricao-detalhada").forEach(elemento => {
+        elemento.contentEditable = "false"; // Impede edição
+    });
+
+  // Selos - Define o estado inicial dos círculos (ativo ou inativo)
+    const estadosIniciais = {
+        circulo1: true,  // Ativo
+        circulo2: false, // Inativo
+        circulo3: true,  // Ativo
+        circulo4: false, // Inativo
+        circulo5: true,  // Ativo
+        circulo6: false, // Inativo
+        circulo7: true,  // Ativo
+        circulo8: false  // Inativo
+    };
+    
+    // Selos - Aplica os estados iniciais ao carregar a página
+    document.addEventListener("DOMContentLoaded", function () {
+        for (const [id, ativo] of Object.entries(estadosIniciais)) {
+            const circulo = document.getElementById(id);
+            if (ativo) {
+                circulo.classList.add('ativo');
+            } else {
+                circulo.classList.remove('ativo');
+            }
+        }
+    });
+    
+    // Selos - Funções para alternar o estado de cada círculo
+    function toggleCirculo1() {
+        toggleEstado('circulo1');
+    }
+    
+    function toggleCirculo2() {
+        toggleEstado('circulo2');
+    }
+    
+    function toggleCirculo3() {
+        toggleEstado('circulo3');
+    }
+    
+    function toggleCirculo4() {
+        toggleEstado('circulo4');
+    }
+    
+    function toggleCirculo5() {
+        toggleEstado('circulo5');
+    }
+    
+    function toggleCirculo6() {
+        toggleEstado('circulo6');
+    }
+    
+    function toggleCirculo7() {
+        toggleEstado('circulo7');
+    }
+    
+    function toggleCirculo8() {
+        toggleEstado('circulo8');
+    }
+    
+    // Selos - Função genérica para alternar estado
+    function toggleEstado(id) {
+        const circulo = document.getElementById(id);
+        circulo.classList.toggle('ativo');
+    }
+    
+    // Bençãos e Maldições - Controla a posição do carrossel
+    let posicaoCarrossel = 0;
+
+    function moverCarrossel(direcao) {
+        const carrossel = document.querySelector('.carrossel-diamantes');
+        const itens = carrossel.querySelectorAll('.diamante-item');
+    
+        // Remove a classe 'ativo' de todos os itens
+        itens.forEach(item => item.classList.remove('ativo'));
+    
+        // Atualiza a posição
+        posicaoCarrossel = (posicaoCarrossel + direcao + itens.length) % itens.length;
+    
+        // Adiciona a classe 'ativo' ao novo item central
+        itens[posicaoCarrossel].classList.add('ativo');
+    
+        // Faz o scroll horizontal para manter o item central visível
+        const tamanhoItem = itens[posicaoCarrossel].offsetWidth + 10; // Inclui o gap
+        carrossel.scrollLeft = posicaoCarrossel * tamanhoItem - (carrossel.clientWidth - tamanhoItem) / 2;
+    }
+
+    // Bençãos e Maldições - Diamante do Meio
+    document.addEventListener("DOMContentLoaded", () => {
+        const diamantes = document.querySelectorAll('.diamante-item');
+        const meio = Math.floor(diamantes.length / 2);
+        diamantes[meio].classList.add('ativo');
+    });
+
+    
+    // Bençãos e Maldições - Abrir Janela Flutuante
+    function abrirJanela(idJanela) {
+        console.log(`Janela ${idJanela} aberta`); // Para teste
+        const janela = document.getElementById(idJanela);
+        janela.style.display = 'block';
+    }
+
+    // Bençãos e Maldições - Fechar Janela Flutuante
+    function fecharJanela(idJanela) {
+        const janela = document.getElementById(idJanela);
+        janela.style.display = 'none';
+    }
+
+    // Bençãos e Maldições - Expandir ou Reduzir Janela
+    function expandirJanela(idJanela) {
+        const janela = document.getElementById(idJanela);
+        janela.classList.toggle('janela-expandida');
+    }
+
+    // Bençãos e Maldições - Tornar a Janela Arrastável
+    document.querySelectorAll('.janela-bencao').forEach((janela) => {
+        let isDragging = false, startX, startY;
+
+        janela.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX - janela.offsetLeft;
+            startY = e.clientY - janela.offsetTop;
+            janela.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                janela.style.left = `${e.clientX - startX}px`;
+                janela.style.top = `${e.clientY - startY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            janela.style.cursor = 'move';
+        });
+    });
 
     // Necessidades Básicas - Barra de Progresso e Estado
     function atualizarStatusBasicas(grupoId, porcentagem) {
@@ -1103,387 +1483,7 @@
     atualizarStatusTemporarias('grupo-tedio', 01);
     atualizarStatusTemporarias('grupo-raiva', 02);
     atualizarStatusTemporarias('grupo-desgaste', 01);
-
-    // Função para atualizar a barra com porcentagem, cor e, opcionalmente, status
-    function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
-        const barra = document.getElementById(idBarra);
-        const texto = document.getElementById(idTexto);
-        
-        // Atualiza a largura da barra e o texto central com a porcentagem
-        barra.style.width = `${porcentagem}%`;
-        texto.textContent = `${porcentagem}%`;
-
-        // Define cor baseada na porcentagem
-        let cor;
-        if (porcentagem <= 20) {
-            cor = 'darkred';
-        } else if (porcentagem <= 40) {
-            cor = '#FF9100';
-        } else if (porcentagem <= 60) {
-            cor = '#00D19A';
-        } else if (porcentagem <= 80) {
-            cor = '#D622EF';
-        } else {
-            cor = '#6222EF';
-        }
-        barra.style.backgroundColor = cor;
-
-        // Atualiza o status apenas se o ID de status for fornecido
-        if (idStatus) {
-            const status = document.getElementById(idStatus);
-            let textoStatus;
-
-            if (porcentagem <= 20) {
-                textoStatus = 'Infame - Condenado - Vilão - Corrupto';
-            } else if (porcentagem <= 40) {
-                textoStatus = 'Desprezado - Mal-Visto - Suspeito - Anti-Herói';
-            } else if (porcentagem <= 60) {
-                textoStatus = 'Ambíguo - Neutro - Indiferente - Equilibrado';
-            } else if (porcentagem <= 80) {
-                textoStatus = 'Respeitado - Admirado - Herói - Protetor';
-            } else {
-                textoStatus = 'Renomado - Lendário - Venerado - Salvador';
-            }
-
-            status.textContent = textoStatus;
-        }
-    }
-
-    // Atualiza apenas a cor e porcentagem para Autoestima
-    atualizarBarra('barra-autoestima', 'texto-autoestima', 91);
-
-    // Atualiza cor, porcentagem e status para Fama / Moral
-    atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
-
-    // Estado Civil
-    function abrirJanelaEstadoCivil() {
-        const janela = document.getElementById("janelaEstadoCivil");
-        const textoCasada = document.querySelector(".texto-clicavel-isaac");
-        const rect = textoCasada.getBoundingClientRect();
-        const offsetX = window.pageXOffset || document.documentElement.scrollLeft;
-        const offsetY = window.pageYOffset || document.documentElement.scrollTop;
     
-        // Define a posição da janela flutuante
-        janela.style.left = `${rect.right + offsetX + 10}px`; // Ajuste para evitar sobreposição
-        janela.style.top = `${rect.top + offsetY}px`;
-        janela.style.display = "block"; // Torna a janela visível
-    }
-
-    function fecharJanelaEstadoCivil() {
-        const janela = document.getElementById("janelaEstadoCivil");
-        janela.style.display = "none"; // Oculta a janela
-    }
-    
-    function expandirJanela(id) {
-        const janela = document.getElementById(id);
-        janela.classList.toggle("janela-expandida");
-    }
-
-    function fecharJanelaMusicaIsaac() {
-        document.getElementById('janelaMusicaIsaac').style.display = 'none';
-    }
-
-    function toggleJanelaMusicaIsaac() {
-        const janela = document.getElementById('janelaMusicaIsaac');
-        janela.style.display = (janela.style.display === 'none' || !janela.style.display) ? 'block' : 'none';
-    }
-    
-    // Inicia o player assim que a página carrega, mantendo a música tocando mesmo ao fechar a janela
-    document.addEventListener("DOMContentLoaded", function() {
-        const playerMusica = document.querySelector("#janelaMusicaIsaac iframe");
-        playerMusica.src = "https://drive.google.com/file/d/10ggNveBIqd9iOm3FzqAybeVSlVVNUPtN/preview";
-    });
-    
-    // Define o estado inicial
-    let chaveAtual = 0;
-    
-    // Dados das chaves
-    const chaves = [
-        { id: 0,
-         nome: "Key of Souls",
-         descricao: "Nenhuma informação sobre a chave Key of Souls está disponível.",
-         item: "https://imgur.com/zHQo8sh.png",
-         efeito: "À descobrir 01.",
-         icone: "https://imgur.com/zHQo8sh.png",
-         detalhes: "Esta chave é um teste da alinezinha1"},
-        
-        { id: 1,
-         nome: "Key of Dreams",
-         descricao: "Nenhuma informação sobre a chave Key of Dreams está disponível.",
-         item: "https://imgur.com/lKXdgwT.png",
-         efeito: "À descobrir 02.",
-         icone: "https://imgur.com/lKXdgwT.png",
-         detalhes: "Esta chave é um teste da alinezinha2"},
-        
-        { id: 2,
-         nome: "Key of Infinite Moon Mansion",
-         descricao: "Nenhuma informação sobre a chave Key of Infinite Moon Mansion está disponível.",
-         item: "https://imgur.com/Hf705GX.png",
-         efeito: "À descobrir 03.",
-         icone: "https://imgur.com/Hf705GX.png",
-         detalhes: "Esta chave é um teste da alinezinha3"},
-        
-        { id: 3,
-         nome: "Key of Desires",
-         descricao: "Nenhuma informação sobre a chave Key of Desires está disponível.",
-         item: "https://imgur.com/L2bLSl2.png",
-         efeito: "À descobrir 04.",
-         icone: "https://imgur.com/L2bLSl2.png",
-         detalhes: "Esta chave é um teste da alinezinha4"},
-        
-        { id: 4,
-         nome: "Key of Soul World",
-         descricao: "Nenhuma informação sobre a chave Key of Soul World está disponível.",
-         item: "https://imgur.com/X1zPnlJ.png",
-         efeito: "À descobrir 05.",
-         icone: "https://imgur.com/X1zPnlJ.png",
-         detalhes: "Esta chave é um teste da alinezinha5"},
-        
-        { id: 5,
-         nome: "Key of Pendragon",
-         descricao: "Nenhuma informação sobre a chave Key of Pendragon está disponível.",
-         item: "https://imgur.com/QaNq2NX.png",
-         efeito: "À descobrir 06.",
-         icone: "https://imgur.com/QaNq2NX.png",
-         detalhes: "Esta chave é um teste da alinezinha6"},
-        
-        { id: 6,
-         nome: "Key Pinnacle of Flames",
-         descricao: "Nenhuma informação sobre a chave Key Pinnacle of Flames está disponível.",
-         item: "https://imgur.com/46Dh8W2.png",
-         efeito: "À descobrir 07.",
-         icone: "https://imgur.com/46Dh8W2.png",
-         detalhes: "Esta chave é um teste da alinezinha7"},
-        
-        { id: 7,
-         nome: "Key of Isaac's Heart",
-         descricao: "Nenhuma informação sobre a chave Key of Isaac's Heart está disponível.",
-         item: "https://imgur.com/Y1PI48e.png",
-         efeito: "À descobrir 08.",
-         icone: "https://imgur.com/Y1PI48e.png",
-         detalhes: "Esta chave é um teste da alinezinha8"},
-    ];
-    
-    // Atualiza os detalhes do retângulo com base na chave selecionada
-    function navegar(direcao) {
-        chaveAtual = (chaveAtual + direcao + chaves.length) % chaves.length;
-        const chave = chaves[chaveAtual];
-    
-        // Atualiza Retângulo Item
-        document.getElementById("titulo-item").textContent = chave.nome;
-        document.querySelector("#retangulo-item .descricao-detalhada").textContent = chave.descricao;
-
-        // Atualiza a imagem no Item-Imagem
-        document.querySelector(".item-imagem img").src = chave.item;
-        
-        // Atualiza Retângulo Efeitos
-        document.querySelector("#retangulo-efeitos .titulo-efeito").textContent = chave.efeito;
-        document.querySelector("#retangulo-efeitos img").src = chave.icone;
-        document.querySelector("#retangulo-efeitos .detalhes-detalhados").textContent = chave.detalhes;
-        
-        // Atualiza Destaque dos Círculos
-        atualizarDestaqueCirculo(chaveAtual + 1);
-    }
-    
-    // Atualiza o destaque dourado nos círculos pequenos
-    function atualizarDestaqueCirculo(id) {
-        document.querySelectorAll(".circulo-pequeno").forEach((circulo, index) => {
-            if (index + 1 === id) {
-                circulo.style.boxShadow = "0 0 10px 3px #FFD700"; // Adiciona o destaque
-            } else {
-                circulo.style.boxShadow = "none"; // Remove o destaque
-            }
-        });
-    }
-    
-    // Previne caixas de texto editáveis e comportamento indesejado
-    document.querySelectorAll(".titulo-item, .titulo-efeito, .descricao-detalhada").forEach(elemento => {
-        elemento.contentEditable = "false"; // Impede edição
-    });
-
-  // Define o estado inicial dos círculos (ativo ou inativo)
-    const estadosIniciais = {
-        circulo1: true,  // Ativo
-        circulo2: false, // Inativo
-        circulo3: true,  // Ativo
-        circulo4: false, // Inativo
-        circulo5: true,  // Ativo
-        circulo6: false, // Inativo
-        circulo7: true,  // Ativo
-        circulo8: false  // Inativo
-    };
-    
-    // Aplica os estados iniciais ao carregar a página
-    document.addEventListener("DOMContentLoaded", function () {
-        for (const [id, ativo] of Object.entries(estadosIniciais)) {
-            const circulo = document.getElementById(id);
-            if (ativo) {
-                circulo.classList.add('ativo');
-            } else {
-                circulo.classList.remove('ativo');
-            }
-        }
-    });
-    
-    // Funções para alternar o estado de cada círculo
-    function toggleCirculo1() {
-        toggleEstado('circulo1');
-    }
-    
-    function toggleCirculo2() {
-        toggleEstado('circulo2');
-    }
-    
-    function toggleCirculo3() {
-        toggleEstado('circulo3');
-    }
-    
-    function toggleCirculo4() {
-        toggleEstado('circulo4');
-    }
-    
-    function toggleCirculo5() {
-        toggleEstado('circulo5');
-    }
-    
-    function toggleCirculo6() {
-        toggleEstado('circulo6');
-    }
-    
-    function toggleCirculo7() {
-        toggleEstado('circulo7');
-    }
-    
-    function toggleCirculo8() {
-        toggleEstado('circulo8');
-    }
-    
-    // Função genérica para alternar estado
-    function toggleEstado(id) {
-        const circulo = document.getElementById(id);
-        circulo.classList.toggle('ativo');
-    }
-    
-    // Controla a posição do carrossel
-    let posicaoCarrossel = 0;
-
-    function moverCarrossel(direcao) {
-        const carrossel = document.querySelector('.carrossel-diamantes');
-        const itens = carrossel.querySelectorAll('.diamante-item');
-    
-        // Remove a classe 'ativo' de todos os itens
-        itens.forEach(item => item.classList.remove('ativo'));
-    
-        // Atualiza a posição
-        posicaoCarrossel = (posicaoCarrossel + direcao + itens.length) % itens.length;
-    
-        // Adiciona a classe 'ativo' ao novo item central
-        itens[posicaoCarrossel].classList.add('ativo');
-    
-        // Faz o scroll horizontal para manter o item central visível
-        const tamanhoItem = itens[posicaoCarrossel].offsetWidth + 10; // Inclui o gap
-        carrossel.scrollLeft = posicaoCarrossel * tamanhoItem - (carrossel.clientWidth - tamanhoItem) / 2;
-    }
-
-    // Diamante do Meio
-    document.addEventListener("DOMContentLoaded", () => {
-        const diamantes = document.querySelectorAll('.diamante-item');
-        const meio = Math.floor(diamantes.length / 2);
-        diamantes[meio].classList.add('ativo');
-    });
-
-    
-    // Abrir Janela Flutuante
-    function abrirJanela(idJanela) {
-        console.log(`Janela ${idJanela} aberta`); // Para teste
-        const janela = document.getElementById(idJanela);
-        janela.style.display = 'block';
-    }
-
-    // Fechar Janela Flutuante
-    function fecharJanela(idJanela) {
-        const janela = document.getElementById(idJanela);
-        janela.style.display = 'none';
-    }
-
-    // Expandir ou Reduzir Janela
-    function expandirJanela(idJanela) {
-        const janela = document.getElementById(idJanela);
-        janela.classList.toggle('janela-expandida');
-    }
-
-    // Tornar a Janela Arrastável
-    document.querySelectorAll('.janela-bencao').forEach((janela) => {
-        let isDragging = false, startX, startY;
-
-        janela.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.clientX - janela.offsetLeft;
-            startY = e.clientY - janela.offsetTop;
-            janela.style.cursor = 'grabbing';
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                janela.style.left = `${e.clientX - startX}px`;
-                janela.style.top = `${e.clientY - startY}px`;
-            }
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-            janela.style.cursor = 'move';
-        });
-    });
-
-    // Função para atualizar a barra de atributo com valor e total
-    function toggleCheckbox(element) {
-        element.classList.toggle("checked");
-    }
-
-    function atualizarAtributoAtual(atributo, total, porcentagem) {
-        const valorAtual = Math.floor((porcentagem / 100) * total);
-        document.getElementById(`texto-${atributo}`).innerText = `${valorAtual} / ${total}`;
-        document.getElementById(`barra-${atributo}`).style.width = `${porcentagem}%`;
-    }
-
-    // Definindo valores e porcentagens iniciais para cada atributo
-    const atributos = {
-        hp: { total: 4024763, porcentagem: 100 },
-        mp: { total: 675157, porcentagem: 100 },
-        agi: { total: 522434, porcentagem: 100 },
-        def: { total: 1210293, porcentagem: 100 },
-        res: { total: 303776, porcentagem: 100 },
-        spd: { total: 836877, porcentagem: 100 },
-        int: { total: 353947, porcentagem: 100 },
-        atk: { total: 1701508, porcentagem: 100 },
-        smp: { total: 9314172, porcentagem: 20.26 },
-        unknown: { total: 100, porcentagem: 47.19 }
-    };
-
-    // Atualizando os valores e porcentagens das barras
-    for (let atributo in atributos) {
-        const { total, porcentagem } = atributos[atributo];
-        atualizarAtributoAtual(atributo, total, porcentagem);
-    }
-
-    // Função para abrir e fechar a janela de música
-    function toggleJanelaMusica() {
-        const janela = document.getElementById('janelaMusica');
-
-        if (janela.style.display === 'none' || janela.style.display === '') {
-            janela.style.display = 'block'; // Abre a janela
-        } else {
-            janela.style.display = 'none'; // Fecha a janela
-        }
-    }
-
-    // Inicia o player assim que a página carrega, mantendo a música tocando mesmo ao fechar a janela
-    document.addEventListener("DOMContentLoaded", function() {
-        const playerMusica = document.querySelector("#janelaMusica iframe");
-        playerMusica.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1961843283%3Fsecret_token%3Ds-lg9054r5PuH&color=%23a020f0&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
-    });
-
 </script>
 
 </body>
