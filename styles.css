@@ -1328,7 +1328,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: green;
+            background-color: #00994a;
             transition: width 0.3s ease;
         }
 
@@ -1341,7 +1341,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: blue;
+            background-color: #1167b5;
             transition: width 0.3s ease;
         }
 
@@ -1354,7 +1354,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: yellow;
+            background-color: #a9a400;
             transition: width 0.3s ease;
         }
 
@@ -1367,7 +1367,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: purple;
+            background-color: #554dd8;
             transition: width 0.3s ease;
         }
 
@@ -1380,7 +1380,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: gray;
+            background-color: #686868;
             transition: width 0.3s ease;
         }
 
@@ -1394,7 +1394,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: magenta;
+            background-color: #994fd1;
             transition: width 0.3s ease;
         }
 
@@ -1407,7 +1407,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: orange;
+            background-color: #da500b;
             transition: width 0.3s ease;
         }
 
@@ -1420,7 +1420,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: red;
+            background-color: #e52c2c;
             transition: width 0.3s ease;
         }
 
@@ -1433,7 +1433,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: brown;
+            background-color: #845035;
             transition: width 0.3s ease;
         }
 
@@ -1446,7 +1446,7 @@
                 transparent 30px
             );
             height: 100%;
-            background-color: cyan;
+            background-color: black;
             transition: width 0.3s ease;
         }
 
