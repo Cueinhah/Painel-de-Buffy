@@ -354,7 +354,7 @@
             padding: 10px;
             overflow-x: auto; 
             scrollbar-width: none; 
-            gap: 05px;    
+            gap: -55px;    
         }
 
         .carrossel-imagens::-webkit-scrollbar {
