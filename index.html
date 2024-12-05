@@ -1148,6 +1148,34 @@
         const janela = document.getElementById(`janelaTitulo${id}`);
         janela.style.display = 'none';
     }
+
+    function expandirJanela(idJanela) {
+        const janela = document.getElementById(`janelaTitulo${id}`);
+        janela.classList.toggle('janela-expandida');
+    }
+
+    document.querySelectorAll('.janela-titulos').forEach((janela) => {
+        let isDragging = false, startX, startY;
+
+        janela.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX - janela.offsetLeft;
+            startY = e.clientY - janela.offsetTop;
+            janela.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                janela.style.left = `${e.clientX - startX}px`;
+                janela.style.top = `${e.clientY - startY}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            janela.style.cursor = 'move';
+        });
+    });
     
      // Atributos - Função para atualizar a barra de atributo com valor e total
     function toggleCheckbox(element) {
