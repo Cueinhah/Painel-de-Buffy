@@ -351,9 +351,10 @@
         .carrossel-imagens {
             display: flex;
             width: 900px;
-            padding: 10px; 
+            padding: 10px;
             overflow-x: auto; 
             scrollbar-width: none; 
+            gap: 05px;    
         }
 
         .carrossel-imagens::-webkit-scrollbar {
