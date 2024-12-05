@@ -352,7 +352,7 @@
             display: flex;
             width: 900px;
             padding: 10px;
-            overflow-x: visible;
+            overflow-x: auto;
             scrollbar-width: none;   
         }
 
