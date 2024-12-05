@@ -405,6 +405,32 @@
             cursor: pointer;
         }
 
+        .janela-flutuante {
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 15px;
+            color: #FFFFFF;
+            z-index: 1000;
+        }
+        
+        .janela-botoes {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .janela-expandida {
+            width: 600px;
+            height: auto;
+        }
+
         /* Necessidades Básicas */
         .necessidades-basicas-container {
             display: flex;
