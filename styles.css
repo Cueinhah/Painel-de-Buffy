@@ -821,50 +821,34 @@
             cursor: pointer;
         }
 
-        .janela-musica-isaac {
-            display: none; 
-            position: absolute;
-            top: 190px;
-            left: 40px;
-            width: 250px;
-            background-color: rgba(0, 0, 0, 0.85);
-            border: 2px solid #FFD700;
-            border-radius: 10px;
-            padding: 15px;
-            color: #FFFFFF;
+        /* Player Música */
+        .player-musica-isaac {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);    
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://imgur.com/jHwtm72.png');
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #1E90FF;
+            border-radius: 20px;
+            color: #FFF;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
             z-index: 1000;
         }
 
-        .janela-musica-isaac h3 {
+        .player-musica-isaac h3 {
             margin-top: 0;
             font-size: 16px;
             text-align: center;
-        }
-        
-        .player-container {
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        .player-cover img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        
-        .player-info h4 {
-            margin: 10px 0 5px;
-            font-size: 16px;
-            color: #FFD700;
-        }
-        
-        .player-info p {
-            font-size: 12px;
-            color: #AAAAAA;
-        }
-
-        audio {
-            width: 100%;
-            margin-top: 10px;
         }
 
         .botao-fechar-musica-isaac {
@@ -873,11 +857,137 @@
             right: 10px;
             background: none;
             border: none;
-            color: #FFD700;
-            font-size: 16px;
+            color: #FFF;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .menu-musica-isaac {
+            position: relative;
+            width: 100%;
+        }
+
+        .botao-menu-isaac {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .lista-musicas-isaac {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            width: 180px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid #FFF;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1100;
+        }
+
+        .lista-musicas-isaac p {
+            margin: 0;
+            padding: 5px 10px;
+            color: #FFF;
             cursor: pointer;
         }
         
+        .lista-musicas-isaac p:hover {
+            background-color: rgba(30, 144, 255, 0.8);
+        }   
+
+        .capa-musica-isaac {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 10px solid #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .capa-musica-isaac img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .info-controles-isaac {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+        
+        .controles-isaac {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .botao-controle-isaac {
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .info-musica-isaac {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .botao-favoritar-isaac {
+            background: none;
+            border: none;
+            color: #FFF;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .nome-musica-isaac {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .autor-musica-isaac {
+            font-size: 14px;
+            color: #BBB;
+        }
+        
+        /* Linha de Tempo */
+        .linha-tempo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+        }
+        
+        #progress-bar {
+            flex-grow: 1;
+            cursor: pointer;
+        }
+        
+        #tempo-atual, #tempo-total {
+            font-size: 12px;
+            color: #FFF;
+        }
+
         /* Categoria de Chaves */
         .container-chave {
             display: flex;
