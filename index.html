@@ -1139,35 +1139,41 @@
     // Fama / Moral - Atualiza cor, porcentagem e status
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
     
-    // Títulos
+    // Títulos - Carrossel Automático
     let carrosselInterval;
     const carrossel = document.querySelector('.carrossel-imagens');
     const carrosselContainer = document.querySelector('.carrossel-titulos');
     
+    // Inicia o carrossel com movimento automático
     function iniciarCarrossel() {
         carrosselInterval = setInterval(() => {
-            carrossel.scrollLeft += 1; // Move um pixel por vez para criar movimento suave
+            // Move o carrossel suavemente
+            carrossel.scrollLeft += 1;
             if (carrossel.scrollLeft >= carrossel.scrollWidth - carrossel.offsetWidth) {
                 carrossel.scrollLeft = 0; // Reinicia quando atingir o final
             }
-        }, 90); // Velocidade do movimento
+        }, 30); // Velocidade ajustável
     }
     
+    // Pausa o movimento do carrossel
     function pausarCarrossel() {
         clearInterval(carrosselInterval);
     }
     
+    // Eventos para pausa e retomada do movimento
     carrosselContainer.addEventListener('mouseover', pausarCarrossel);
     carrosselContainer.addEventListener('mouseout', iniciarCarrossel);
     
+    // Gerenciar cliques nas bolinhas do carrossel
     document.querySelectorAll('.titulo-item').forEach((item) => {
         item.addEventListener('click', (e) => {
-            pausarCarrossel();
+            pausarCarrossel(); // Pausa o carrossel ao clicar
             const id = e.currentTarget.getAttribute('onclick').match(/\d+/)[0];
-            abrirJanelaTitulo(id);
+            abrirJanelaTitulo(id); // Abre a janela flutuante associada
         });
     });
     
+    // Função para abrir a janela flutuante
     function abrirJanelaTitulo(id) {
         const janela = document.getElementById(`janelaTitulo${id}`);
         if (janela) {
@@ -1175,44 +1181,47 @@
         }
     }
     
+    // Função para fechar a janela flutuante
     function fecharJanelaTitulo(id) {
         const janela = document.getElementById(`janelaTitulo${id}`);
         if (janela) {
             janela.style.display = 'none';
-            iniciarCarrossel();
+            iniciarCarrossel(); // Reinicia o carrossel ao fechar a janela
         }
     }
     
-    // Inicia o carrossel automaticamente ao carregar a página
-    document.addEventListener('DOMContentLoaded', iniciarCarrossel);
-    
+    // Expande ou minimiza a janela flutuante
     function expandirJanelaTitulo(id) {
         const janela = document.getElementById(`janelaTitulo${id}`);
         janela.classList.toggle('janela-expandida');
     }
-
+    
+    // Movimentação manual das janelas flutuantes
     document.querySelectorAll('.janela-titulos').forEach((janela) => {
         let isDragging = false, startX, startY;
-
+    
         janela.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.clientX - janela.offsetLeft;
             startY = e.clientY - janela.offsetTop;
             janela.style.cursor = 'grabbing';
         });
-
+    
         document.addEventListener('mousemove', (e) => {
             if (isDragging) {
                 janela.style.left = `${e.clientX - startX}px`;
                 janela.style.top = `${e.clientY - startY}px`;
             }
         });
-
+    
         document.addEventListener('mouseup', () => {
             isDragging = false;
             janela.style.cursor = 'move';
         });
     });
+    
+    // Inicia o carrossel automaticamente ao carregar a página
+    document.addEventListener('DOMContentLoaded', iniciarCarrossel);
     
      // Atributos - Função para atualizar a barra de atributo com valor e total
     function toggleCheckbox(element) {
