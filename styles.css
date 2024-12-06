@@ -367,7 +367,7 @@
             display: flex;
             gap: 20px;
             animation: moverCarrossel linear infinite;   
-            overflow-x: auto;
+            overflow: visible;
             scrollbar-width: none;       
         }
 
