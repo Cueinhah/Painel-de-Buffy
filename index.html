@@ -297,7 +297,7 @@
             <button class="seta" onclick="scrollCarrossel(1)">❯</button>
         </div>
         
-        <div class="janela-titulos" id="janelaTitulo11">
+        <div class="janela-titulos" id="janelaTitulo11" style="display: none;">
             <div class="janela-botoes">
                 <button class="botao-expandir" onclick="expandirJanelaTitulo(11)">❐</button>
                 <button class="botao-fechar" onclick="fecharJanelaTitulo(11)">✖︎</button>
@@ -1141,23 +1141,53 @@
     // Fama / Moral - Atualiza cor, porcentagem e status
     atualizarBarra('barra-fama', 'texto-fama', 94, 'status-fama');
     
-    // Títulos - Movimentação das Setas
-    function scrollCarrossel(direcao) {
-        const carrossel = document.querySelector('.carrossel-imagens');
-        const scrollAmount = 50; // Ajuste conforme necessário
-        carrossel.scrollLeft += direcao * scrollAmount;
+    // Títulos
+    let carrosselInterval;
+    const carrossel = document.querySelector('.carrossel-imagens');
+    const carrosselContainer = document.querySelector('.carrossel-titulos');
+    
+    function iniciarCarrossel() {
+        carrosselInterval = setInterval(() => {
+            carrossel.scrollLeft += 1; // Move um pixel por vez para criar movimento suave
+            if (carrossel.scrollLeft >= carrossel.scrollWidth - carrossel.offsetWidth) {
+                carrossel.scrollLeft = 0; // Reinicia quando atingir o final
+            }
+        }, 30); // Velocidade do movimento
     }
-
+    
+    function pausarCarrossel() {
+        clearInterval(carrosselInterval);
+    }
+    
+    carrosselContainer.addEventListener('mouseover', pausarCarrossel);
+    carrosselContainer.addEventListener('mouseout', iniciarCarrossel);
+    
+    document.querySelectorAll('.titulo-item').forEach((item) => {
+        item.addEventListener('click', (e) => {
+            pausarCarrossel();
+            const id = e.currentTarget.getAttribute('onclick').match(/\d+/)[0];
+            abrirJanelaTitulo(id);
+        });
+    });
+    
     function abrirJanelaTitulo(id) {
         const janela = document.getElementById(`janelaTitulo${id}`);
-        janela.style.display = 'block';
+        if (janela) {
+            janela.style.display = 'block';
+        }
     }
     
     function fecharJanelaTitulo(id) {
         const janela = document.getElementById(`janelaTitulo${id}`);
-        janela.style.display = 'none';
+        if (janela) {
+            janela.style.display = 'none';
+            iniciarCarrossel();
+        }
     }
-
+    
+    // Inicia o carrossel automaticamente ao carregar a página
+    document.addEventListener('DOMContentLoaded', iniciarCarrossel);
+    
     function expandirJanelaTitulo(id) {
         const janela = document.getElementById(`janelaTitulo${id}`);
         janela.classList.toggle('janela-expandida');
