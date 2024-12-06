@@ -358,6 +358,7 @@
             position: absolute;
             left: 0;
             width: 100vw;   
+            max-width: 995px;     
             margin: 0;    
             overflow: hidden; 
             z-index: 10;    
