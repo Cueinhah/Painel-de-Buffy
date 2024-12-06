@@ -351,22 +351,28 @@
         }
 
         /* Títulos */
-        .carrossel {
+        .carrossel-titulos {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 100%;
+            max-width: 995px; 
+            overflow: hidden; 
         }
 
         .carrossel-imagens {
             display: flex;
-            width: 900px;
-            padding: 10px;
-            overflow-x: auto;
-            scrollbar-width: none;   
+            gap: 20px;
+            animation: moverCarrossel linear infinite;
         }
 
-        .carrossel-imagens::-webkit-scrollbar {
-            display: none; 
+        @keyframes moverCarrossel {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         .titulo-item {
@@ -380,7 +386,8 @@
         }
 
         .titulo-item:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
+            animation-play-state: paused;    
         }
 
         .circulo-carrossel {
@@ -404,14 +411,6 @@
             font-size: 12px;
             font-weight: bold;
             text-align: center;
-        }
-
-        .seta {
-            background: none;
-            border: none;
-            color: #FFD700;
-            font-size: 20px;
-            cursor: pointer;
         }
 
         .janela-titulos {
