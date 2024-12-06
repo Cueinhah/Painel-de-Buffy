@@ -364,6 +364,12 @@
             display: flex;
             gap: 20px;
             animation: moverCarrossel linear infinite;
+            overflow-x: auto;
+            scrollbar-width: none;       
+        }
+
+        .carrossel-imagens::-webkit-scrollbar {
+            display: none; 
         }
 
         @keyframes moverCarrossel {
