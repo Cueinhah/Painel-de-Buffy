@@ -357,7 +357,8 @@
             justify-content: center;
             position: absolute;
             width: 100vw;   
-            max-width: 995px;        
+            max-width: 995px;   
+            margin-bottom: 20px;    
             overflow: hidden;    
             z-index: 10;    
         }
