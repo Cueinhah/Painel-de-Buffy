@@ -355,15 +355,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            max-width: 995px; 
+            position: absolute;
+            left: 0;
+            width: 100vw;   
+            margin: 0;    
             overflow: hidden; 
+            z-index: 10;    
         }
 
         .carrossel-imagens {
             display: flex;
             gap: 20px;
             animation: moverCarrossel linear infinite;
+            overflow: visible;     
             overflow-x: auto;
             scrollbar-width: none;       
         }
@@ -392,8 +396,9 @@
         }
 
         .titulo-item:hover {
-            transform: scale(1.1);
-            animation-play-state: paused;    
+            transform: scale(1.2);
+            animation-play-state: paused;  
+            z-index: 20;    
         }
 
         .circulo-carrossel {
