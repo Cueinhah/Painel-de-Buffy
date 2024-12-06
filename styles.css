@@ -357,9 +357,8 @@
             justify-content: center;
             position: absolute;
             width: 100vw;   
-            max-width: 995px;     
-            margin: 0;    
-            overflow: hidden; 
+            max-width: 995px;       
+            overflow-x: visible;
             z-index: 10;    
         }
 
@@ -367,7 +366,7 @@
             display: flex;
             gap: 20px;
             animation: moverCarrossel linear infinite;   
-            overflow-x: auto;
+            overflow-x: visible;
             scrollbar-width: none;       
         }
 
