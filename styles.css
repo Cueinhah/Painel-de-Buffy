@@ -355,12 +355,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100vw; /* Expande o carrossel para a largura total da viewport */
-            position: absolute; /* Permite que o carrossel ignore o contexto do background2 */
-            left: 0; /* Garante alinhamento com o viewport */
-            margin: 0 auto; /* Para centralizar horizontalmente */
+            width: 100%; /* Ajusta à largura do background2 */
+            max-width: 995px; /* Limita a largura máxima */
+            overflow: hidden; /* Mantém o corte de elementos fora do carrossel */
+            margin: 0 auto; /* Centraliza horizontalmente */
+            position: relative; /* Padrão relativo */
             z-index: 10;
-            margin-top: -175px; /* Ajuste fino vertical, se necessário */
+            margin-top: -175px; /* Ajuste fino para centralização vertical, se necessário */
         }
 
         .carrossel-imagens {
