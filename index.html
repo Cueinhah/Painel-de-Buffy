@@ -211,11 +211,6 @@
                 <audio id="audio-player" controls>
                     <source src="assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3" type="audio/mpeg">
                 </audio>
-                <div class="player-timeline">
-                    <span id="tempo-atual">00:00</span>
-                    <input type="range" id="progress-bar" value="0" max="100">
-                    <span id="tempo-total">00:00</span>
-                </div>
             </div>
             <button class="botao-fechar-musica-isaac" onclick="fecharJanelaMusicaIsaac()">✖︎</button>
         </div>
@@ -1087,9 +1082,6 @@
     
     document.addEventListener("DOMContentLoaded", function () {
         const audio = document.getElementById("audio-player");
-        const progressBar = document.getElementById("progress-bar");
-        const tempoAtual = document.getElementById("tempo-atual");
-        const tempoTotal = document.getElementById("tempo-total");
     
         audio.addEventListener("loadedmetadata", () => {
             const duracao = formatarTempo(audio.duration);
@@ -1101,16 +1093,6 @@
             tempoAtual.textContent = tempo;
             progressBar.value = (audio.currentTime / audio.duration) * 100;
         });
-    
-        progressBar.addEventListener("input", () => {
-            audio.currentTime = (progressBar.value / 100) * audio.duration;
-        });
-    
-        function formatarTempo(segundos) {
-            const minutos = Math.floor(segundos / 60);
-            const restoSegundos = Math.floor(segundos % 60);
-            return `${minutos}:${restoSegundos < 10 ? "0" : ""}${restoSegundos}`;
-        }
     });
     
     // Fama/Moral - Barra de Progresso e Estado
