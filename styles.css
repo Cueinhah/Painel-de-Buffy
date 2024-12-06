@@ -359,7 +359,7 @@
             max-width: 995px; /* Limita a largura máxima */
             overflow: hidden; /* Mantém o corte de elementos fora do carrossel */
             margin: 0 auto; /* Centraliza horizontalmente */
-            position: relative; /* Padrão relativo */
+            position: absolute; /* Padrão relativo */
             z-index: 10;
             margin-top: -175px; /* Ajuste fino para centralização vertical, se necessário */
         }
