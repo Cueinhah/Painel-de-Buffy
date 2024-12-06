@@ -197,23 +197,57 @@
         </div>
 
         <!-- Janela de Música Isaac -->
-        <div class="janela-musica-isaac" id="janelaMusicaIsaac">
-            <h3>Memória Base:</h3>
-            <div class="player-container">
-                <div class="player-cover">
-                    <img src="https://imgur.com/RXdNW0v.png" alt="Capa da Música" id="capa-musica">
+        <div class="player-musica-isaac" id="playerMusicaIsaac">
+            <!-- Botão de fechar -->
+            <button class="botao-fechar-musica-isaac" onclick="fecharPlayer()">✖︎</button>
+        
+            <!-- Lista de Música (≡) -->
+            <div class="menu-musica-isaac">
+                <button class="botao-menu-isaac" onclick="toggleLista()">≡</button>
+                <div class="lista-musicas-isaac" id="listaMusicas">
+                    <p>Música 1</p>
+                    <p>Música 2</p>
+                    <p>Música 3</p>
                 </div>
-                <div class="player-info">
-                    <h4 id="nome-musica">Crying Alone / Nowhere</h4>
-                    <h4 id="nome-musica">Memory Breaker</h4>
-                    <p id="descricao-musica">Kurae Radiânthia Pendragon Isaac</p>
-                </div>
-                <audio id="audio-player" controls>
-                    <source src="assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3" type="audio/mpeg">
-                </audio>
             </div>
-            <button class="botao-fechar-musica-isaac" onclick="fecharJanelaMusicaIsaac()">✖︎</button>
+        
+            <!-- Círculo com imagem -->
+            <div class="capa-musica-isaac">
+                <img src="https://imgur.com/RXdNW0v.png" alt="Capa da Música">
+            </div>
+        
+            <!-- Informações e Controles -->
+            <div class="info-controles-isaac">
+                <!-- Controles de Música -->
+                <div class="controles-isaac">
+                    <button class="botao-controle-isaac" onclick="retroceder10s()">⏪</button>
+                    <button class="botao-controle-isaac" onclick="playPause()">⏯️</button>
+                    <button class="botao-controle-isaac" onclick="avancar10s()">⏩</button>
+                </div>
+                <!-- Informações da Música -->
+                <div class="info-musica-isaac">
+                    <button class="botao-favoritar-isaac" onclick="favoritarMusica()">❤️</button>
+                    <div>
+                        <p class="nome-musica-isaac">Crying Alone / Nowhere</p>
+                        <p class="autor-musica-isaac">Memory Breaker - Kurae Radiânthia Pendragon Isaac</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Linha de Progresso -->
+            <div class="linha-tempo">
+                <span id="tempo-atual">00:00</span>
+                <input type="range" id="progress-bar" value="0" max="100">
+                <span id="tempo-total">00:00</span>
+            </div>
+        
+            <!-- Elemento de Áudio -->
+            <audio id="audio-player">
+                <source src="assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
         </div>
+
         
         <div class="linha-separadora"></div>
 
