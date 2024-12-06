@@ -357,12 +357,11 @@
             justify-content: center;
             left: -50;   
             width: 100%;
-            max-width: 995px; 
+            max-width: 2000px; 
             overflow: hidden; 
             margin: 0 auto; 
-            position: absolute; 
+            position: relative; 
             z-index: 10;
-            margin-top: -175px; 
         }
 
         .carrossel-imagens {
@@ -391,6 +390,7 @@
             flex-direction: column;
             align-items: center;
             transition: transform 0.3s; 
+            margin-right: 20px;    
             z-index: 1;  
         }
 
