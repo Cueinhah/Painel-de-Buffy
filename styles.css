@@ -427,8 +427,8 @@
             font-size: 25px;
             font-weight: bold;
             text-align: center;
-            margin-top: -40px;
-            margin-bottom: 100px;  
+            margin-top: 0px;
+            margin-bottom: 300px;  
         }
 
         .janela-titulos {
