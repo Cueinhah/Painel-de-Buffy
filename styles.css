@@ -421,6 +421,15 @@
             text-align: center;
         }
 
+        .texto-titulo {
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;    
+        }
+
         .janela-titulos {
             display: none;
             position: absolute;
