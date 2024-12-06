@@ -355,7 +355,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            rigth: 100px;    
+            left: -50;   
             width: 100%;
             max-width: 995px; 
             overflow: hidden; 
