@@ -360,7 +360,7 @@
             max-width: 995px;      
             overflow: hidden;    
             z-index: 10;  
-            margin-top: -200px;    
+            margin-top: -150px;    
         }
 
         .carrossel-imagens {
@@ -429,7 +429,7 @@
             font-weight: bold;
             text-align: center;
             margin-top: 0px;
-            margin-bottom: 250px;  
+            margin-bottom: 200px;  
         }
 
         .janela-titulos {
