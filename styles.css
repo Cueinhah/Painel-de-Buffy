@@ -357,7 +357,7 @@
             justify-content: center;
             left: -50;   
             width: 100%;
-            max-width: 2000px; 
+            max-width: 995px; 
             overflow: hidden; 
             margin: 0 auto; 
             position: relative; 
@@ -421,15 +421,6 @@
             font-size: 12px;
             font-weight: bold;
             text-align: center;
-        }
-
-        .texto-titulo {
-            font-family: Arial;
-            color: #FFFFFF;
-            font-size: 25px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 200px;  
         }
 
         .janela-titulos {
