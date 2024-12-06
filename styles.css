@@ -84,6 +84,15 @@
             text-align: left;
         }
 
+        .texto-brilhante {
+            font-family: Arial;
+            color: #1E90FF;
+            text-shadow: 0 0 5px #1E90FF;    
+            font-size: 13px;
+            font-weight: bold;    
+            text-align: left;
+        }
+
         .ver-tudo {
             font-family: Arial;
             color: #FFD700;
