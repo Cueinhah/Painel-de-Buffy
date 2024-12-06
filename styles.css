@@ -355,12 +355,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            rigth: 20px;    
             width: 100%;
             max-width: 995px; 
             overflow: hidden; 
             margin: 0 auto; 
-            position: auto; 
-            z-index: 10000;
+            position: absolute; 
+            z-index: 10;
             margin-top: -175px; 
         }
 
