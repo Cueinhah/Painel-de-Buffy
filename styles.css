@@ -393,6 +393,7 @@
             transition: transform 0.3s; 
             margin-right: 20px;    
             z-index: 1;  
+            overflow: visible;     
         }
 
         .titulo-item:hover {
