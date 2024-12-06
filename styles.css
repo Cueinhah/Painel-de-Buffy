@@ -358,7 +358,7 @@
             position: absolute;
             width: 100vw;   
             max-width: 995px;       
-            overflow-x: auto;
+            overflow-x: hidden;
             z-index: 10;    
         }
 
