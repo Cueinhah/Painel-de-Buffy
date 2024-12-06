@@ -356,7 +356,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            max-width: 995px; 
+            max-width: 100vh; 
             overflow: hidden; 
         }
 
