@@ -355,12 +355,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            width: 100vw;   
-            max-width: 995px;      
-            overflow: hidden;    
-            z-index: 10;  
-            margin-top: -175px;    
+            width: 100%; /* Ajusta à largura do background2 */
+            max-width: 995px; /* Limita a largura máxima */
+            overflow: hidden; /* Mantém o corte de elementos fora do carrossel */
+            margin: 0 auto; /* Centraliza horizontalmente */
+            position: relative; /* Padrão relativo */
+            z-index: 10;
+            margin-top: -175px; /* Ajuste fino para centralização vertical, se necessário */
         }
 
         .carrossel-imagens {
