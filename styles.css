@@ -366,8 +366,7 @@
         .carrossel-imagens {
             display: flex;
             gap: 20px;
-            animation: moverCarrossel linear infinite;
-            overflow: visible;     
+            animation: moverCarrossel linear infinite;   
             overflow-x: auto;
             scrollbar-width: none;       
         }
