@@ -360,6 +360,7 @@
             max-width: 995px; 
             overflow: hidden; 
             margin: 0 auto; 
+            top: 20px;    
             position: relative; 
             z-index: 10;
         }
