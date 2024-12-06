@@ -359,7 +359,8 @@
             width: 100vw;   
             max-width: 995px;      
             overflow: hidden;    
-            z-index: 10;    
+            z-index: 10;  
+            margin-top: -150px;    
         }
 
         .carrossel-imagens {
