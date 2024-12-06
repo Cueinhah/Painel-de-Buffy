@@ -358,8 +358,7 @@
             position: absolute;
             width: 100vw;   
             max-width: 995px;        
-            overflow: hidden; 
-            bottom: 20px;    
+            overflow: hidden;    
             z-index: 10;    
         }
 
