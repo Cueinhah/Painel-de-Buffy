@@ -827,9 +827,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);    
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://imgur.com/jHwtm72.png');
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://imgur.com/jHwtm72.png');
             background-size: cover;
             background-position: center;
             border: 2px solid #1E90FF;
@@ -869,12 +869,12 @@
 
         .botao-menu-isaac {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 5px;
+            left: 5px;
             background: none;
             border: none;
             color: #FFF;
-            font-size: 18px;
+            font-size: 25px;
             cursor: pointer;
         }
 
@@ -904,10 +904,10 @@
         }   
 
         .capa-musica-isaac {
-            width: 150px;
-            height: 150px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            border: 10px solid #000;
+            border: 20px solid #000;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -965,7 +965,7 @@
         }
         
         .autor-musica-isaac {
-            font-size: 14px;
+            font-size: 12px;
             color: #BBB;
         }
         
