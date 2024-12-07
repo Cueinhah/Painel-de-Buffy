@@ -1103,13 +1103,13 @@
         janela.classList.toggle("janela-expandida");
     }
 
-    // Elementos do Player
-    const playerMusica = document.getElementById('playerMusicaIsaac');
-    const audio = document.getElementById('audio-player');
+   // Elementos do Player
+    const playerMusica = document.querySelector('.player-musica-isaac');
+    const audio = document.querySelector('audio');
     const progressBar = document.getElementById('progress-bar');
     const tempoAtual = document.getElementById('tempo-atual');
     const tempoTotal = document.getElementById('tempo-total');
-    const listaMusicas = document.getElementById('listaMusicasIsaac');
+    const listaMusicas = document.querySelector('.lista-musicas-isaac');
     let musicaTocando = false;
     
     // Função para fechar o player
@@ -1122,11 +1122,7 @@
     
     // Função para abrir/fechar a lista de músicas
     function toggleLista() {
-        if (listaMusicas.style.display === 'block') {
-            listaMusicas.style.display = 'none';
-        } else {
-            listaMusicas.style.display = 'block';
-        }
+        listaMusicas.style.display = (listaMusicas.style.display === 'block') ? 'none' : 'block';
     }
     
     // Função para retroceder 10 segundos
@@ -1193,7 +1189,7 @@
         listaMusicas.style.display = 'none'; // Esconde a lista de músicas inicialmente
         atualizarBotaoPlay();
     });
-    
+        
     // Fama/Moral - Barra de Progresso e Estado
     function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
         const barra = document.getElementById(idBarra);
