@@ -1103,6 +1103,16 @@
         janela.classList.toggle("janela-expandida");
     }
 
+    function togglePlayerMusicaIsaac() {
+        const janela = document.getElementById('PlayerMusicaIsaac');
+
+        if (janela.style.display === 'none' || janela.style.display === '') {
+            janela.style.display = 'block'; // Abre a janela
+        } else {
+            janela.style.display = 'none'; // Fecha a janela
+        }
+    }
+    
    // Elementos do Player
     const playerMusica = document.querySelector('.player-musica-isaac');
     const audio = document.querySelector('audio');
