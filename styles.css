@@ -840,7 +840,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 15px;
+            padding: 20px;
             box-sizing: border-box;
             z-index: 1000;
         }
@@ -869,8 +869,8 @@
 
         .botao-menu-isaac {
             position: absolute;
-            top: 5px;
-            left: 5px;
+            top: 0px;
+            left: 0px;
             background: none;
             border: none;
             color: #FFF;
@@ -904,10 +904,10 @@
         }   
 
         .capa-musica-isaac {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 20px solid #000;
+            border: 25px solid #000;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -922,7 +922,7 @@
 
         audio {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 0px;
         }
 
         .info-controles-isaac {
