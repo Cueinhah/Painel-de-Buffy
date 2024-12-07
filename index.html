@@ -220,16 +220,16 @@
             <div class="info-controles-isaac">
                 <!-- Controles de Música -->
                 <div class="controles-isaac">
-                    <button class="botao-controle-isaac" onclick="retroceder10s()">⏪</button>
-                    <button class="botao-controle-isaac" onclick="playPause()">⏯️</button>
-                    <button class="botao-controle-isaac" onclick="avancar10s()">⏩</button>
+                    <button class="botao-controle-isaac" onclick="retroceder10s()">|◁ </button>
+                    <button class="botao-controle-isaac" onclick="playPause()">►</button>
+                    <button class="botao-controle-isaac" onclick="avancar10s()">▷|</button>
                 </div>
                 <!-- Informações da Música -->
                 <div class="info-musica-isaac">
-                    <button class="botao-favoritar-isaac" onclick="favoritarMusica()">❤️</button>
+                    <button class="botao-favoritar-isaac" onclick="favoritarMusica()">🤍</button>
                     <div>
-                        <p class="nome-musica-isaac">Crying Alone / Nowhere</p>
-                        <p class="autor-musica-isaac">Memory Breaker - Kurae Radiânthia Pendragon Isaac</p>
+                        <p class="nome-musica-isaac">Crying Alone / Nowhere - Memory Breaker</p>
+                        <p class="autor-musica-isaac">Kurae Radiânthia Pendragon Isaac</p>
                     </div>
                 </div>
             </div>
@@ -1150,7 +1150,7 @@
     // Atualiza o botão de play/pause
     function atualizarBotaoPlay() {
         const botaoPlay = document.querySelector('.botao-controle-isaac:nth-child(2)');
-        botaoPlay.textContent = musicaTocando ? '⏸️' : '⏯️';
+        botaoPlay.textContent = musicaTocando ? '▌▌' : '►';
     }
     
     // Atualiza o progresso e tempo
@@ -1181,7 +1181,7 @@
     function favoritarMusica() {
         const botaoFavoritar = document.querySelector('.botao-favoritar-isaac');
         botaoFavoritar.classList.toggle('favoritado');
-        botaoFavoritar.textContent = botaoFavoritar.classList.contains('favoritado') ? '💖' : '❤️';
+        botaoFavoritar.textContent = botaoFavoritar.classList.contains('favoritado') ? '💖' : '🤍';
     }
     
     // Evento para iniciar o player ao carregar a página
