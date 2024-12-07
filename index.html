@@ -156,9 +156,9 @@
                 <button class="botao-expandir" onclick="expandirJanela('janelaEstadoCivil')">❐</button>
 
                 <!-- Botão de Música -->
-                <div class="botao-musica" onclick="toggleplayermusicaisaac()">
+                <div class="botao-musica-isaac" onclick="togglePlayerMusicaIsaac()">
                     <div class="circulo-botao-musica-isaac">
-                        <span class="texto-botao-musica">🎶</span>
+                        <span class="texto-botao-musica-isaac">🎶</span>
                     </div>
                 </div>
                 
@@ -1104,12 +1104,12 @@
     }
 
     function togglePlayerMusicaIsaac() {
-        const janela = document.getElementById('PlayerMusicaIsaac');
+        const player = document.getElementById('PlayerMusicaIsaac');
 
-        if (janela.style.display === 'none' || janela.style.display === '') {
-            janela.style.display = 'block'; // Abre a janela
+        if (player.style.display === 'none' || player.style.display === '') {
+            player.style.display = 'block'; // Abre a janela
         } else {
-            janela.style.display = 'none'; // Fecha a janela
+            player.style.display = 'none'; // Fecha a janela
         }
     }
     
