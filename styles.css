@@ -829,7 +829,7 @@
             transform: translate(-50%, -50%);    
             width: 400px;
             height: 350px;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://imgur.com/jHwtm72.png');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://imgur.com/jHwtm72.png');
             background-size: cover;
             background-position: center;
             border: 2px solid #1E90FF;
@@ -840,7 +840,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 20px;
+            padding: 15px;
             box-sizing: border-box;
             z-index: 1000;
         }
