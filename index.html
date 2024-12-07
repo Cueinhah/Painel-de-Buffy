@@ -23,7 +23,7 @@
         <!-- Arte de Título: Taxa de Assimilação -->
         <div class="titulo-assimilacao">
             <div class="bloco-retangular">
-                <span class="texto-titulo">Taxa de Assimilação:</span>
+                <span class="texto-titulo">aaaaTaxa de Assimilação:</span>
                 <span class="texto-porcentagem">52.81%</span>
             </div>
         </div>
@@ -197,25 +197,57 @@
         </div>
 
         <!-- Janela de Música Isaac -->
-        <div class="janela-musica-isaac" id="janelaMusicaIsaac">
-            <h3>Memória Base:</h3>
-            <div class="player-container">
-                <div class="player-cover">
-                    <img src="https://imgur.com/RXdNW0v.png" alt="Capa da Música" id="capa-musica">
+        <div class="player-musica-isaac" id="playerMusicaIsaac">
+            <!-- Botão de fechar -->
+            <button class="botao-fechar-musica-isaac" onclick="fecharPlayer()">✖︎</button>
+        
+            <!-- Lista de Música (≡) -->
+            <div class="menu-musica-isaac">
+                <button class="botao-menu-isaac" onclick="toggleLista()">≡</button>
+                <div class="lista-musicas-isaac" id="listaMusicas">
+                    <p>Música 1</p>
+                    <p>Música 2</p>
+                    <p>Música 3</p>
                 </div>
-                <div class="player-info">
-                    <h4 id="nome-musica">Crying Alone / Nowhere</h4>
-                    <h4 id="nome-musica">Memory Breaker</h4>
-                    <p id="descricao-musica">Kurae Radiânthia Pendragon Isaac</p>
-                </div>
-                <div class="player-frame">
-                    <iframe src="assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3" width="100%" height="60" scrolling="no" frameborder="no" allow="autoplay"></iframe>
-                    <div style="margin-top: 10px; background-color: transparent; border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"></div>
-                </div>
-                
             </div>
-            <button class="botao-fechar-musica-isaac" onclick="fecharJanelaMusicaIsaac()">✖︎</button>
+        
+            <!-- Círculo com imagem -->
+            <div class="capa-musica-isaac">
+                <img src="https://imgur.com/RXdNW0v.png" alt="Capa da Música">
+            </div>
+        
+            <!-- Informações e Controles -->
+            <div class="info-controles-isaac">
+                <!-- Controles de Música -->
+                <div class="controles-isaac">
+                    <button class="botao-controle-isaac" onclick="retroceder10s()">⏪</button>
+                    <button class="botao-controle-isaac" onclick="playPause()">⏯️</button>
+                    <button class="botao-controle-isaac" onclick="avancar10s()">⏩</button>
+                </div>
+                <!-- Informações da Música -->
+                <div class="info-musica-isaac">
+                    <button class="botao-favoritar-isaac" onclick="favoritarMusica()">❤️</button>
+                    <div>
+                        <p class="nome-musica-isaac">Crying Alone / Nowhere</p>
+                        <p class="autor-musica-isaac">Memory Breaker - Kurae Radiânthia Pendragon Isaac</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Linha de Progresso -->
+            <div class="linha-tempo">
+                <span id="tempo-atual">00:00</span>
+                <input type="range" id="progress-bar" value="0" max="100">
+                <span id="tempo-total">00:00</span>
+            </div>
+        
+            <!-- Elemento de Áudio -->
+            <audio id="audio-player">
+                <source src="assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
         </div>
+
         
         <div class="linha-separadora"></div>
 
@@ -325,8 +357,6 @@
                 <p><span class='subtitulo'>Habilidade Desbloqueada - Teia do Destino:</span> <span class='texto'>No nível 2, você pode manipular sutilmente os fios do destino, tecendo e alterando pequenos aspectos das vidas das pessoas ao seu redor para alinhar-se com seus objetivos ou propósitos maiores.</span></p>  
             </div>
         </div>
-        
-        <div class="linha-separadora"></div>
 
         <!-- Atributos -->
         <h2 class="titulo2">Atributos</h2>
@@ -1073,21 +1103,93 @@
         janela.classList.toggle("janela-expandida");
     }
 
-    function fecharJanelaMusicaIsaac() {
-        document.getElementById('janelaMusicaIsaac').style.display = 'none';
-    }
-
-    function toggleJanelaMusicaIsaac() {
-        const janela = document.getElementById('janelaMusicaIsaac');
-        janela.style.display = (janela.style.display === 'none' || !janela.style.display) ? 'block' : 'none';
+   // Elementos do Player
+    const playerMusica = document.querySelector('.player-musica-isaac');
+    const audio = document.querySelector('audio');
+    const progressBar = document.getElementById('progress-bar');
+    const tempoAtual = document.getElementById('tempo-atual');
+    const tempoTotal = document.getElementById('tempo-total');
+    const listaMusicas = document.querySelector('.lista-musicas-isaac');
+    let musicaTocando = false;
+    
+    // Função para fechar o player
+    function fecharPlayer() {
+        playerMusica.style.display = 'none';
+        audio.pause(); // Pausa a música ao fechar o player
+        musicaTocando = false;
+        atualizarBotaoPlay();
     }
     
-    // Inicia o player assim que a página carrega, mantendo a música tocando mesmo ao fechar a janela
-    document.addEventListener("DOMContentLoaded", function() {
-        const playerMusica = document.querySelector("#janelaMusicaIsaac iframe");
-        playerMusica.src = "assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3";
+    // Função para abrir/fechar a lista de músicas
+    function toggleLista() {
+        listaMusicas.style.display = (listaMusicas.style.display === 'block') ? 'none' : 'block';
+    }
+    
+    // Função para retroceder 10 segundos
+    function retroceder10s() {
+        audio.currentTime = Math.max(0, audio.currentTime - 10);
+    }
+    
+    // Função para avançar 10 segundos
+    function avancar10s() {
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+    }
+    
+    // Função para play/pause
+    function playPause() {
+        if (musicaTocando) {
+            audio.pause();
+            musicaTocando = false;
+        } else {
+            audio.play();
+            musicaTocando = true;
+        }
+        atualizarBotaoPlay();
+    }
+    
+    // Atualiza o botão de play/pause
+    function atualizarBotaoPlay() {
+        const botaoPlay = document.querySelector('.botao-controle-isaac:nth-child(2)');
+        botaoPlay.textContent = musicaTocando ? '⏸️' : '⏯️';
+    }
+    
+    // Atualiza o progresso e tempo
+    audio.addEventListener('timeupdate', () => {
+        const tempo = formatarTempo(audio.currentTime);
+        tempoAtual.textContent = tempo;
+        progressBar.value = (audio.currentTime / audio.duration) * 100;
     });
     
+    // Sincroniza o progresso da barra com o tempo do áudio
+    progressBar.addEventListener('input', () => {
+        audio.currentTime = (progressBar.value / 100) * audio.duration;
+    });
+    
+    // Formata o tempo em minutos e segundos
+    function formatarTempo(segundos) {
+        const minutos = Math.floor(segundos / 60);
+        const restoSegundos = Math.floor(segundos % 60);
+        return `${minutos}:${restoSegundos < 10 ? '0' : ''}${restoSegundos}`;
+    }
+    
+    // Atualiza o tempo total quando os metadados da música são carregados
+    audio.addEventListener('loadedmetadata', () => {
+        tempoTotal.textContent = formatarTempo(audio.duration);
+    });
+    
+    // Função para favoritar a música
+    function favoritarMusica() {
+        const botaoFavoritar = document.querySelector('.botao-favoritar-isaac');
+        botaoFavoritar.classList.toggle('favoritado');
+        botaoFavoritar.textContent = botaoFavoritar.classList.contains('favoritado') ? '💖' : '❤️';
+    }
+    
+    // Evento para iniciar o player ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        listaMusicas.style.display = 'none'; // Esconde a lista de músicas inicialmente
+        atualizarBotaoPlay();
+    });
+        
     // Fama/Moral - Barra de Progresso e Estado
     function atualizarBarra(idBarra, idTexto, porcentagem, idStatus = null) {
         const barra = document.getElementById(idBarra);
