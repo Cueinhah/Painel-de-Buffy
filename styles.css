@@ -827,7 +827,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);    
-            width: 350px;
+            width: 450px;
             height: 350px;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://imgur.com/jHwtm72.png');
             background-size: cover;
@@ -934,7 +934,7 @@
         
         .controles-isaac {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
         
         .botao-controle-isaac {
