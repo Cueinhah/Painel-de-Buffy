@@ -934,14 +934,14 @@
         
         .controles-isaac {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
         
         .botao-controle-isaac {
             background: none;
             border: none;
             color: #FFF;
-            font-size: 20px;
+            font-size: 10px;
             cursor: pointer;
         }
         
