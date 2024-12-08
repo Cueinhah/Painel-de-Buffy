@@ -196,8 +196,8 @@
             </div>
         </div>
 
-        <!-- Janela de Música Isaac -->
-        <div class="player-musica-isaac" id="playerMusicaIsaac">
+        <!-- Player de Música Isaac -->
+        <div class="player-musica-isaac" id="playerMusicaIsaac" style="display: none;">
             <!-- Botão de fechar -->
             <button class="botao-fechar-musica-isaac" onclick="fecharPlayer()">✖︎</button>
         
@@ -247,7 +247,6 @@
                 Seu navegador não suporta o elemento de áudio.
             </audio>
         </div>
-
         
         <div class="linha-separadora"></div>
 
@@ -1104,11 +1103,13 @@
         const estadoCivil = document.getElementById('janelaEstadoCivil');
     
         if (player.style.display === 'none' || player.style.display === '') {
-            // Abre o player e mantém a janela de estado civil visível
-            player.style.display = 'block';
+            // Abre o player e ajusta o layout
+            player.style.display = 'flex';
             estadoCivil.style.zIndex = '900'; // Reduz o índice para que o player fique visível acima
+            centralizarElementosPlayer(); // Garantir alinhamento correto
         } else {
-            player.style.display = 'none'; // Fecha o player
+            // Fecha o player
+            player.style.display = 'none';
             estadoCivil.style.zIndex = '1000'; // Restaura o índice original
         }
     }
@@ -1122,6 +1123,20 @@
         audio.pause(); // Pausa a música ao fechar o player
         musicaTocando = false;
         atualizarBotaoPlay();
+    }
+    
+    function centralizarElementosPlayer() {
+        const capaMusica = document.querySelector('.capa-musica-isaac');
+        const player = document.querySelector('.player-musica-isaac');
+    
+        // Garantir que a capa esteja centralizada
+        capaMusica.style.margin = 'auto';
+    
+        // Resetar distorções, se houver
+        player.style.display = 'flex';
+        player.style.flexDirection = 'column';
+        player.style.alignItems = 'center';
+        player.style.justifyContent = 'space-between';
     }
     
     // Função para abrir/fechar a lista de músicas
