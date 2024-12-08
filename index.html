@@ -1079,7 +1079,7 @@
         expandido.style.display = expandido.style.display === 'none' ? 'block' : 'none';
     }
 
-    // Estado Civil
+  // Estado Civil
     function abrirJanelaEstadoCivil() {
         const janela = document.getElementById("janelaEstadoCivil");
         const textoCasada = document.querySelector(".texto-clicavel-isaac");
@@ -1092,39 +1092,33 @@
         janela.style.top = `${rect.top + offsetY}px`;
         janela.style.display = "block"; // Torna a janela visível
     }
-
+    
     function fecharJanelaEstadoCivil() {
         const janela = document.getElementById("janelaEstadoCivil");
         janela.style.display = "none"; // Oculta a janela
     }
     
-    function expandirJanela(id) {
-        const janela = document.getElementById(id);
-        janela.classList.toggle("janela-expandida");
-    }
-
+    // Player de Música Isaac
     function togglePlayerMusicaIsaac() {
-        const player = document.getElementById('PlayerMusicaIsaac');
-
+        const player = document.getElementById('playerMusicaIsaac');
+        const estadoCivil = document.getElementById('janelaEstadoCivil');
+    
         if (player.style.display === 'none' || player.style.display === '') {
-            player.style.display = 'block'; // Abre a janela
+            // Abre o player e mantém a janela de estado civil visível
+            player.style.display = 'block';
+            estadoCivil.style.zIndex = '900'; // Reduz o índice para que o player fique visível acima
         } else {
-            player.style.display = 'none'; // Fecha a janela
+            player.style.display = 'none'; // Fecha o player
+            estadoCivil.style.zIndex = '1000'; // Restaura o índice original
         }
     }
     
-   // Elementos do Player
-    const playerMusica = document.querySelector('.player-musica-isaac');
-    const audio = document.querySelector('audio');
-    const progressBar = document.getElementById('progress-bar');
-    const tempoAtual = document.getElementById('tempo-atual');
-    const tempoTotal = document.getElementById('tempo-total');
-    const listaMusicas = document.querySelector('.lista-musicas-isaac');
-    let musicaTocando = false;
-    
-    // Função para fechar o player
     function fecharPlayer() {
-        playerMusica.style.display = 'none';
+        const player = document.getElementById('playerMusicaIsaac');
+        const estadoCivil = document.getElementById('janelaEstadoCivil');
+    
+        player.style.display = 'none'; // Fecha o player
+        estadoCivil.style.zIndex = '1000'; // Restaura o índice original
         audio.pause(); // Pausa a música ao fechar o player
         musicaTocando = false;
         atualizarBotaoPlay();
@@ -1132,8 +1126,17 @@
     
     // Função para abrir/fechar a lista de músicas
     function toggleLista() {
-        listaMusicas.style.display = (listaMusicas.style.display === 'block') ? 'none' : 'block';
+        const lista = document.getElementById('listaMusicas');
+        lista.style.display = (lista.style.display === 'block') ? 'none' : 'block';
     }
+    
+    // Controle do Player de Música
+    const playerMusica = document.querySelector('.player-musica-isaac');
+    const audio = document.querySelector('audio');
+    const progressBar = document.getElementById('progress-bar');
+    const tempoAtual = document.getElementById('tempo-atual');
+    const tempoTotal = document.getElementById('tempo-total');
+    let musicaTocando = false;
     
     // Função para retroceder 10 segundos
     function retroceder10s() {
@@ -1196,7 +1199,8 @@
     
     // Evento para iniciar o player ao carregar a página
     document.addEventListener('DOMContentLoaded', () => {
-        listaMusicas.style.display = 'none'; // Esconde a lista de músicas inicialmente
+        const lista = document.getElementById('listaMusicas');
+        lista.style.display = 'none'; // Esconde a lista de músicas inicialmente
         atualizarBotaoPlay();
     });
         
