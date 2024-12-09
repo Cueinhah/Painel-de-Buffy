@@ -1164,6 +1164,7 @@
     ];
     
     // Controle do Player de Música
+    const playerMusica = document.querySelector('.player-musica-isaac');
     const audio = document.querySelector('audio');
     const progressBar = document.getElementById('progress-bar');
     const tempoAtual = document.getElementById('tempo-atual');
@@ -1195,6 +1196,12 @@
     document.querySelectorAll('.lista-musicas-isaac p').forEach((item, index) => {
         item.addEventListener('click', () => selecionarMusica(index + 1));
     });
+    
+    // Função para abrir/fechar a lista de músicas
+    function toggleLista() {
+        const lista = document.getElementById('listaMusicas');
+        lista.style.display = (lista.style.display === 'block') ? 'none' : 'block';
+    }
     
     // Função para retroceder 10 segundos
     function retroceder10s() {
@@ -1271,6 +1278,9 @@
     document.addEventListener('DOMContentLoaded', () => {
         musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
         selecionarMusica(1); // Selecionar música 1 ao carregar a página
+        const lista = document.getElementById('listaMusicas');
+        lista.style.display = 'none'; // Esconde a lista de músicas inicialmente
+        atualizarBotaoPlay();
     });
         
     // Fama/Moral - Barra de Progresso e Estado
