@@ -959,6 +959,11 @@
             font-size: 20px;
             cursor: pointer;
         }
+
+        .botao-favoritar-isaac.favoritado {
+            color: #FFD700; 
+            font-size: 22px;
+        }
         
         .nome-musica-isaac {
             font-size: 16px;
