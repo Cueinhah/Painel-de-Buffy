@@ -1103,14 +1103,12 @@
         const estadoCivil = document.getElementById('janelaEstadoCivil');
     
         if (player.style.display === 'none' || player.style.display === '') {
-            // Abre o player e ajusta o layout
             player.style.display = 'flex';
-            estadoCivil.style.zIndex = '900'; // Reduz o índice para que o player fique visível acima
-            centralizarElementosPlayer(); // Garantir alinhamento correto
+            estadoCivil.style.zIndex = '900';
+            centralizarElementosPlayer();
         } else {
-            // Fecha o player
             player.style.display = 'none';
-            estadoCivil.style.zIndex = '1000'; // Restaura o índice original
+            estadoCivil.style.zIndex = '1000';
         }
     }
     
@@ -1118,9 +1116,9 @@
         const player = document.getElementById('playerMusicaIsaac');
         const estadoCivil = document.getElementById('janelaEstadoCivil');
     
-        player.style.display = 'none'; // Fecha o player
-        estadoCivil.style.zIndex = '1000'; // Restaura o índice original
-        audio.pause(); // Pausa a música ao fechar o player
+        player.style.display = 'none';
+        estadoCivil.style.zIndex = '1000';
+        audio.pause();
         musicaTocando = false;
         atualizarBotaoPlay();
     }
@@ -1129,10 +1127,7 @@
         const capaMusica = document.querySelector('.capa-musica-isaac');
         const player = document.querySelector('.player-musica-isaac');
     
-        // Garantir que a capa esteja centralizada
         capaMusica.style.margin = 'auto';
-    
-        // Resetar distorções, se houver
         player.style.display = 'flex';
         player.style.flexDirection = 'column';
         player.style.alignItems = 'center';
@@ -1145,25 +1140,77 @@
         lista.style.display = (lista.style.display === 'block') ? 'none' : 'block';
     }
     
+    // Lista de músicas com informações
+    const listaDeMusicas = [
+        {
+            id: 1,
+            nome: "Crying Alone / Nowhere",
+            autor: "Kurae Radiânthia Pendragon Isaac",
+            capa: "https://imgur.com/RXdNW0v.png",
+            background: "https://imgur.com/jHwtm72.png",
+            link: "assets/musicas/Crying Alone - Nowhere - Memory Breaker.mp3",
+        },
+        {
+            id: 2,
+            nome: "Música 2",
+            autor: "Artista 2",
+            capa: "https://imgur.com/ExemploCapa2.png",
+            background: "https://imgur.com/ExemploBackground2.png",
+            link: "assets/musicas/Musica2.mp3",
+        },
+        {
+            id: 3,
+            nome: "Música 3",
+            autor: "Artista 3",
+            capa: "https://imgur.com/ExemploCapa3.png",
+            background: "https://imgur.com/ExemploBackground3.png",
+            link: "assets/musicas/Musica3.mp3",
+        },
+    ];
+    
+    // Selecionar música da lista
+    function selecionarMusica(id) {
+        const musicaSelecionada = listaDeMusicas.find((musica) => musica.id === id);
+    
+        if (musicaSelecionada) {
+            document.querySelector('.nome-musica-isaac').textContent = musicaSelecionada.nome;
+            document.querySelector('.autor-musica-isaac').textContent = musicaSelecionada.autor;
+            document.querySelector('.capa-musica-isaac img').src = musicaSelecionada.capa;
+            document.querySelector('.player-musica-isaac').style.backgroundImage = 
+                `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('${musicaSelecionada.background}')`;
+            document.querySelector('#audio-player source').src = musicaSelecionada.link;
+    
+            const audio = document.querySelector('#audio-player');
+            audio.load();
+            audio.play();
+    
+            const botaoFavoritar = document.querySelector('.botao-favoritar-isaac');
+            const isFavoritado = localStorage.getItem(`favorito-${musicaSelecionada.id}`) === 'true';
+            botaoFavoritar.classList.toggle('favoritado', isFavoritado);
+            botaoFavoritar.textContent = isFavoritado ? '💖' : '🤍';
+        }
+    }
+    
+    // Adicionar eventos à lista de músicas
+    document.querySelectorAll('.lista-musicas-isaac p').forEach((item, index) => {
+        item.addEventListener('click', () => selecionarMusica(index + 1));
+    });
+    
     // Controle do Player de Música
-    const playerMusica = document.querySelector('.player-musica-isaac');
     const audio = document.querySelector('audio');
     const progressBar = document.getElementById('progress-bar');
     const tempoAtual = document.getElementById('tempo-atual');
     const tempoTotal = document.getElementById('tempo-total');
     let musicaTocando = false;
     
-    // Função para retroceder 10 segundos
     function retroceder10s() {
         audio.currentTime = Math.max(0, audio.currentTime - 10);
     }
     
-    // Função para avançar 10 segundos
     function avancar10s() {
         audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
     }
     
-    // Função para play/pause
     function playPause() {
         if (musicaTocando) {
             audio.pause();
@@ -1175,46 +1222,37 @@
         atualizarBotaoPlay();
     }
     
-    // Atualiza o botão de play/pause
     function atualizarBotaoPlay() {
         const botaoPlay = document.querySelector('.botao-controle-isaac:nth-child(2)');
         botaoPlay.textContent = musicaTocando ? 'II' : '►';
     }
     
-    // Atualiza o progresso e tempo
     audio.addEventListener('timeupdate', () => {
         const tempo = formatarTempo(audio.currentTime);
         tempoAtual.textContent = tempo;
         progressBar.value = (audio.currentTime / audio.duration) * 100;
     });
     
-    // Sincroniza o progresso da barra com o tempo do áudio
     progressBar.addEventListener('input', () => {
         audio.currentTime = (progressBar.value / 100) * audio.duration;
     });
     
-    // Formata o tempo em minutos e segundos
     function formatarTempo(segundos) {
         const minutos = Math.floor(segundos / 60);
         const restoSegundos = Math.floor(segundos % 60);
         return `${minutos}:${restoSegundos < 10 ? '0' : ''}${restoSegundos}`;
     }
     
-    // Atualiza o tempo total quando os metadados da música são carregados
     audio.addEventListener('loadedmetadata', () => {
         tempoTotal.textContent = formatarTempo(audio.duration);
     });
-
-    // Armazena as músicas favorizadas no localStorage
-    const storageKey = 'musicasFavoritadas'; // Nome da chave no localStorage
+    
+    const storageKey = 'musicasFavoritadas';
     let musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
     
-    // Elementos do player
     const botaoFavoritar = document.querySelector('.botao-favoritar-isaac');
-    const nomeMusica = document.querySelector('.nome-musica-isaac').textContent;
-    
-    // Atualiza o estado visual do botão de favoritar
     function atualizarFavoritoVisual() {
+        const nomeMusica = document.querySelector('.nome-musica-isaac').textContent;
         if (musicasFavoritadas[nomeMusica]) {
             botaoFavoritar.classList.add('favoritado');
             botaoFavoritar.textContent = '💖';
@@ -1224,29 +1262,17 @@
         }
     }
     
-    // Função para alternar o estado de favoritar
     function favoritarMusica() {
+        const nomeMusica = document.querySelector('.nome-musica-isaac').textContent;
         musicasFavoritadas[nomeMusica] = !musicasFavoritadas[nomeMusica];
         atualizarFavoritoVisual();
-        salvarEstadoFavoritado(); // Salva no localStorage
-    }
-    
-    // Salva o estado no localStorage
-    function salvarEstadoFavoritado() {
         localStorage.setItem(storageKey, JSON.stringify(musicasFavoritadas));
     }
     
-    // Recupera o estado ao carregar a página
     document.addEventListener('DOMContentLoaded', () => {
-        musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
-        atualizarFavoritoVisual();
-    });
-    
-    // Evento para iniciar o player ao carregar a página
-    document.addEventListener('DOMContentLoaded', () => {
-        const lista = document.getElementById('listaMusicas');
-        lista.style.display = 'none'; // Esconde a lista de músicas inicialmente
         atualizarBotaoPlay();
+        atualizarFavoritoVisual();
+        document.getElementById('listaMusicas').style.display = 'none';
     });
         
     // Fama/Moral - Barra de Progresso e Estado
