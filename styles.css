@@ -817,7 +817,7 @@
         
         .botao-musica-isaac {
             position: absolute;
-            top: 50%;
+            top: 5px;
             left: calc(100px + 10px); /* Ajusta para ficar ao lado da foto */
             transform: translateY(-50%);
             font-size: 20px;
