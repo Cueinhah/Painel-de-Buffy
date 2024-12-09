@@ -907,7 +907,7 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 25px solid #640b0b;
+            border: 25px solid #000;
             margin: auto; 
             overflow: hidden;
             display: flex;
