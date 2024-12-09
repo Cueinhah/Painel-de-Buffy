@@ -821,17 +821,14 @@
             cursor: pointer;
         }
 
-        /* Player Música */
+       /* Player Música */
         .player-musica-isaac {
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);    
+            transform: translate(-50%, -50%);
             width: 400px;
             height: 350px;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('assets/Imagens Isaac/sac1.jpg');
-            background-size: cover;
-            background-position: center;
             border: 2px solid #1E90FF;
             border-radius: 20px;
             color: #FFF;
