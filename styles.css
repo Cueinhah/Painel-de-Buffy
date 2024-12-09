@@ -818,7 +818,7 @@
         .botao-musica-isaac {
             position: absolute;
             top: 20px;
-            left: calc(50px + 5px); 
+            left: 20px; 
             transform: translateY(-50%);
             font-size: 20px;
             color: #1E90FF;
