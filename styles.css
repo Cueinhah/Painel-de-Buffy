@@ -907,7 +907,7 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 25px solid #000;
+            border: 25px solid #640b0b;
             margin: auto; 
             overflow: hidden;
             display: flex;
@@ -958,11 +958,6 @@
             color: #FFF;
             font-size: 20px;
             cursor: pointer;
-        }
-
-        .botao-favoritar-isaac.favoritado {
-            color: #FFD700; 
-            font-size: 22px;
         }
         
         .nome-musica-isaac {
