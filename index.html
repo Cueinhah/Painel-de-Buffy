@@ -1204,13 +1204,43 @@
     audio.addEventListener('loadedmetadata', () => {
         tempoTotal.textContent = formatarTempo(audio.duration);
     });
+
+    // Armazena as músicas favorizadas no localStorage
+    const storageKey = 'musicasFavoritadas'; // Nome da chave no localStorage
+    let musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
     
-    // Função para favoritar a música
-    function favoritarMusica() {
-        const botaoFavoritar = document.querySelector('.botao-favoritar-isaac');
-        botaoFavoritar.classList.toggle('favoritado');
-        botaoFavoritar.textContent = botaoFavoritar.classList.contains('favoritado') ? '💖' : '🤍';
+    // Elementos do player
+    const botaoFavoritar = document.querySelector('.botao-favoritar-isaac');
+    const nomeMusica = document.querySelector('.nome-musica-isaac').textContent;
+    
+    // Atualiza o estado visual do botão de favoritar
+    function atualizarFavoritoVisual() {
+        if (musicasFavoritadas[nomeMusica]) {
+            botaoFavoritar.classList.add('favoritado');
+            botaoFavoritar.textContent = '💖';
+        } else {
+            botaoFavoritar.classList.remove('favoritado');
+            botaoFavoritar.textContent = '🤍';
+        }
     }
+    
+    // Função para alternar o estado de favoritar
+    function favoritarMusica() {
+        musicasFavoritadas[nomeMusica] = !musicasFavoritadas[nomeMusica];
+        atualizarFavoritoVisual();
+        salvarEstadoFavoritado(); // Salva no localStorage
+    }
+    
+    // Salva o estado no localStorage
+    function salvarEstadoFavoritado() {
+        localStorage.setItem(storageKey, JSON.stringify(musicasFavoritadas));
+    }
+    
+    // Recupera o estado ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+        musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
+        atualizarFavoritoVisual();
+    });
     
     // Evento para iniciar o player ao carregar a página
     document.addEventListener('DOMContentLoaded', () => {
