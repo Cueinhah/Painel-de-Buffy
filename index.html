@@ -1180,7 +1180,7 @@
             document.querySelector('.autor-musica-isaac').textContent = musicaSelecionada.autor;
             document.querySelector('.capa-musica-isaac img').src = musicaSelecionada.capa;
             document.querySelector('.player-musica-isaac').style.backgroundImage = 
-                `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('${musicaSelecionada.background}')`;
+                `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('${musicaSelecionada.background}')`;
             document.querySelector('#audio-player source').src = musicaSelecionada.link;
     
             audio.load();
@@ -1273,10 +1273,23 @@
     audio.addEventListener('loadedmetadata', () => {
         tempoTotal.textContent = formatarTempo(audio.duration);
     });
+
+    // Atualizar nomes na lista de músicas
+    function atualizarListaMusicas() {
+        const listaContainer = document.getElementById('listaMusicas');
+        listaContainer.innerHTML = ''; // Limpa a lista antes de recriá-la
+    
+        listaDeMusicas.forEach((musica) => {
+            const item = document.createElement('p');
+            item.textContent = musica.nome; // Nome sincronizado
+            item.addEventListener('click', () => selecionarMusica(musica.id)); // Seleciona a música ao clicar
+            listaContainer.appendChild(item);
+        });
     
     // Carregar música inicial
     document.addEventListener('DOMContentLoaded', () => {
         musicasFavoritadas = JSON.parse(localStorage.getItem(storageKey)) || {};
+        atualizarListaMusicas();
         selecionarMusica(1); // Selecionar música 1 ao carregar a página
         const lista = document.getElementById('listaMusicas');
         lista.style.display = 'none'; // Esconde a lista de músicas inicialmente
