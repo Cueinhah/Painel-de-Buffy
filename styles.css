@@ -935,7 +935,7 @@
         
         .controles-isaac {
             display: flex;
-            gap: 10px;
+            gap: 0px;
         }
         
         .botao-controle-isaac {
