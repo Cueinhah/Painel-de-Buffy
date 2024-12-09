@@ -935,7 +935,7 @@
         
         .controles-isaac {
             display: flex;
-            gap: 0px;
+            gap: 10px;
         }
         
         .botao-controle-isaac {
@@ -949,7 +949,7 @@
         .info-musica-isaac {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0px;
         }
         
         .botao-favoritar-isaac {
