@@ -688,9 +688,9 @@
             justify-content: space-between;
             gap: 5px;
             padding: 10px 15px;
-            background-color: #1A1A1A; /* Cinza azulado que parece preto */
+            width: 100px;     
+            background-color: #1A1A1A; 
             border: 1px solid #FFFFFF;
-            border-radius: 10px;
             font-family: Arial;
             color: #FFFFFF;
             font-size: 14px;
@@ -698,15 +698,15 @@
         }
         
         .retangulo-detalhes-profissao {
-            display: none; /* Escondido por padrão */
+            display: none; 
             padding: 10px 15px;
-            background-color: #1A1A1A; /* Mesmo estilo do retângulo principal */
+            width: 100px;     
+            background-color: #1A1A1A; 
             border: 1px solid #FFFFFF;
-            border-radius: 10px;
             font-family: Arial;
             color: #FFFFFF;
             font-size: 14px;
-            margin-top: -10px; /* Para parecer uma extensão */
+            margin-top: -20px; 
         }
         
         /* Botão para Expandir Profissão */
