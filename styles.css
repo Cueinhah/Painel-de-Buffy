@@ -580,7 +580,7 @@
             align-items: center; 
             max-width: 100%;
             overflow: hidden; 
-            margin-top: 0px;
+            margin-top: 50px;
             margin-bottom: 0px;
         }
 
@@ -680,15 +680,16 @@
             flex-direction: column;
             gap: 10px;
             justify-content: center; 
+            align-items: flex-start;    
         }
         
         .retangulo-texto {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 5px;
+            gap: 0px;
             padding: 10px 15px;
-            width: 230px; 
+            width: 240px; 
             height: 15px;    
             background-color: #1E1E2E;
             border: 1px solid #FFFFFF;
@@ -701,8 +702,8 @@
         .retangulo-detalhes-profissao {
             display: none; 
             padding: 10px 15px;
-            width: 230px; 
-            height: 15px;
+            width: 240px; 
+            height: 20px;
             background-color: #565686;
             font-family: Arial;
             color: #FFFFFF;
