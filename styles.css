@@ -776,7 +776,7 @@
 
         /* Balão de Pensamento */
         .balao-pensamento {
-            position: relative;
+            position: absolute;
             top: -10px; /* Posição ajustada para estar ao lado direito superior da foto */
             right: -20px;
             width: 80px;
@@ -790,12 +790,12 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             font-size: 20px;
             color: #333;
-            z-index: 1000;
+            z-index: 10;
         }
         
         .balao-pensamento:after {
             content: '';
-            position: relative;
+            position: absolute;
             bottom: -10px;
             left: 20px;
             width: 0;
