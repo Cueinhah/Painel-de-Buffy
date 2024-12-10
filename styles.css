@@ -790,12 +790,12 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             font-size: 20px;
             color: #333;
-            z-index: 10;
+            z-index: 1000;
         }
         
         .balao-pensamento:after {
             content: '';
-            position: absolute;
+            position: relative;
             bottom: -10px;
             left: 20px;
             width: 0;
