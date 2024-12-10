@@ -684,7 +684,7 @@
             gap: 5px;
             justify-content: flex-start;
             padding: 10px 15px;
-            width: 100%;
+            width: 230px;
             height: 15px;    
             background-color: #1E1E2E;
             border: 1px solid #FFFFFF;
@@ -696,7 +696,7 @@
         .retangulo-detalhes-profissao {
             display: none; 
             padding: 10px 15px;
-            width: 100%; 
+            width: 230px; 
             height: 15px;
             background-color: #565686;
             font-family: Arial;
