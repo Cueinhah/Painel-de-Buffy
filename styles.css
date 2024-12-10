@@ -575,14 +575,12 @@
         /* Características */
         .nova-secao {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
             gap: 50px;
-            padding: 0px;
-            align-items: center; 
-            max-width: 100%;
-            overflow: hidden; 
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
+            margin-top: 100px; 
+            margin-bottom: 50px; 
+        }    
 
         /* Bloco Direito - Autoestima e Fama/Moral */
         .bloco-direito {
@@ -686,17 +684,15 @@
         .retangulo-texto {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 5px;
-            padding: 10px 15px;    
-            width: 100%; 
-            height: 15px;    
+            justify-content: flex-start;
+            padding: 10px 15px;
+            width: 100%;
             background-color: #1E1E2E;
             border: 1px solid #FFFFFF;
-            font-family: Arial;
             color: #FFFFFF;
-            font-size: 14px;
-            position: relative;
+            font-family: Arial;
+            font-size: 14px;   
         }
         
         .retangulo-detalhes-profissao {
