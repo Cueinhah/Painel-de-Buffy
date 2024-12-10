@@ -1091,7 +1091,17 @@
         expandido.style.display = expandido.style.display === 'none' ? 'block' : 'none';
     }
 
-  // Estado Civil
+    // Caracteristicas
+    function toggleProfissao() {
+        const detalhes = document.getElementById('detalhesProfissao');
+        if (detalhes.style.display === 'none' || detalhes.style.display === '') {
+            detalhes.style.display = 'block';
+        } else {
+            detalhes.style.display = 'none';
+        }
+    }
+    
+    // Estado Civil
     function abrirJanelaEstadoCivil() {
         const janela = document.getElementById("janelaEstadoCivil");
         const textoCasada = document.querySelector(".texto-clicavel-isaac");
