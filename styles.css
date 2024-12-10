@@ -796,13 +796,13 @@
         .balao-pensamento:after {
             content: '';
             position: absolute;
-            bottom: -10px;
-            left: 15px;
+            bottom: -15px;
+            left: 10px;
             width: 0;
             height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #FFF; /* Cor igual ao fundo do balão */
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #FFF; /* Cor igual ao fundo do balão */
         }
         
         #pensamento-texto {
