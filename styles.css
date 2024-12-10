@@ -58,14 +58,7 @@
             text-align: center;
         }
 
-        .texto-pequeno {
-            font-family: Arial;
-            color: #FFFFFF;
-            font-size: 12px;
-            text-align: center;
-        }
-
-        .subtitulo {
+         .subtitulo {
             font-family: Arial;
             color: #FFFFFF;
             font-size: 14px;
@@ -73,15 +66,18 @@
             text-align: left;
         }
 
-        .subtitulo {
-            font-size: 15px;
-        }
-
         .texto {
             font-family: Arial;
             color: #FFFFFF;
             font-size: 13px;
             text-align: left;
+        }
+
+        .texto-pequeno {
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 12px;
+            text-align: center;
         }
 
         .texto-brilhante {
