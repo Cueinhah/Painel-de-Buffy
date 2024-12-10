@@ -777,12 +777,12 @@
         /* Balão de Pensamento */
         .balao-pensamento {
             position: absolute;
-            top: 10px; /* Posição ajustada para estar ao lado direito superior da foto */
+            top: 15px; 
             left: 100px;
             width: 60px;
             height: 40px;
             background-color: #FFF;
-            border: 1px solid #000;
+            border: 0px solid #000;
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -806,7 +806,7 @@
         }
         
         #pensamento-texto {
-            font-size: 24px; /* Ajuste do tamanho do texto/emoji */
+            font-size: 20px; 
             text-align: center;
         }
 
