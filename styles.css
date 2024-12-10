@@ -581,7 +581,7 @@
             max-width: 100%;
             overflow: hidden; 
             margin-top: 50px;
-            margin-bottom: 0px;
+            margin-bottom: 50px;
         }
 
         /* Bloco Direito - Autoestima e Fama/Moral */
@@ -675,7 +675,7 @@
 
         /* Bloco Esquerdo - Retângulos */
         .bloco-esquerdo {
-            flex: 1.2;
+            flex: 1.5;
             display: flex;
             flex-direction: column;
             gap: 10px;
