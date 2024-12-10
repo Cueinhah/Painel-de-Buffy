@@ -680,7 +680,8 @@
             flex-direction: column;
             gap: 10px;
             justify-content: center; 
-            align-items: center;    
+            align-items: flex-start;    
+            margin-top: 15px;        
         }
         
         .retangulo-texto {
