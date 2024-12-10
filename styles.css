@@ -688,8 +688,9 @@
             justify-content: space-between;
             gap: 5px;
             padding: 10px 15px;
-            width: 230px;     
-            background-color: #1A1A1A; 
+            width: 230px; 
+            height: 20px;    
+            background-color: #1E1E2E;
             border: 1px solid #FFFFFF;
             font-family: Arial;
             color: #FFFFFF;
@@ -700,8 +701,9 @@
         .retangulo-detalhes-profissao {
             display: none; 
             padding: 10px 15px;
-            width: 230px;     
-            background-color: #1A1A1A;
+            width: 230px; 
+            height: 20px;
+            background-color: #565686;
             font-family: Arial;
             color: #FFFFFF;
             font-size: 14px;
