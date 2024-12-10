@@ -777,8 +777,8 @@
         /* Balão de Pensamento */
         .balao-pensamento {
             position: absolute;
-            top: -10px; /* Posição ajustada para estar ao lado direito superior da foto */
-            right: -20px;
+            top: 10px; /* Posição ajustada para estar ao lado direito superior da foto */
+            left: 100px;
             width: 80px;
             height: 50px;
             background-color: #FFF;
