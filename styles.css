@@ -688,7 +688,7 @@
             justify-content: space-between;
             gap: 5px;
             padding: 10px 15px;
-            width: 250px;     
+            width: 230px;     
             background-color: #1A1A1A; 
             border: 1px solid #FFFFFF;
             font-family: Arial;
@@ -700,13 +700,12 @@
         .retangulo-detalhes-profissao {
             display: none; 
             padding: 10px 15px;
-            width: 250px;     
-            background-color: #1A1A1A; 
-            border: 1px solid #FFFFFF;
+            width: 230px;     
+            background-color: #1A1A1A;
             font-family: Arial;
             color: #FFFFFF;
             font-size: 14px;
-            margin-top: -20px; 
+            margin-top: -15px; 
         }
         
         /* Botão para Expandir Profissão */
