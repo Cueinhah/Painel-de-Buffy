@@ -683,7 +683,7 @@
             align-items: center;
             gap: 5px;
             justify-content: flex-start;
-            padding: 0px 15px;
+            padding: 10px 15px;
             width: 250px;
             height: 10px;    
             background-color: #1E1E2E;
@@ -695,7 +695,9 @@
         
         .retangulo-detalhes-profissao {
             display: none; 
-            align-items: center;    
+            align-items: center;
+            justify-content: flex-start;    
+            line-height: normal;    
             padding: 10px 15px;
             width: 250px; 
             height: 10px;
