@@ -673,7 +673,7 @@
             height: auto;
         }
 
-        /* Bloco Esquerdo - Textos */
+        /* Bloco Esquerdo - Retângulos */
         .bloco-esquerdo {
             flex: 1.2;
             display: flex;
@@ -681,11 +681,48 @@
             gap: 15px;
             justify-content: center; 
         }
-
-        .linha-texto {
+        
+        .retangulo-texto {
             display: flex;
             align-items: center;
-            gap: 5px; 
+            justify-content: space-between;
+            gap: 5px;
+            padding: 10px 15px;
+            background-color: #1A1A1A; /* Cinza azulado que parece preto */
+            border: 1px solid #FFFFFF;
+            border-radius: 10px;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .retangulo-detalhes-profissao {
+            display: none; /* Escondido por padrão */
+            padding: 10px 15px;
+            background-color: #1A1A1A; /* Mesmo estilo do retângulo principal */
+            border: 1px solid #FFFFFF;
+            border-radius: 10px;
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 14px;
+            margin-top: -10px; /* Para parecer uma extensão */
+        }
+        
+        /* Botão para Expandir Profissão */
+        .botao-expandir-profissao {
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+        
+        /* Animação ao Passar o Mouse na Foto */
+        .circulo-marido:hover {
+            transform: scale(1.1); /* Efeito pump */
+            transition: transform 0.3s ease-in-out;
         }
 
         /* Janela Flutuante - Estado Civil */
