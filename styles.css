@@ -696,13 +696,14 @@
         .retangulo-detalhes-profissao {
             display: none; 
             align-items: center;  
-            padding: 8px 15px;
+            padding: 10px 15px;
             width: 250px; 
             height: 10px;
             background-color: #63636E;
             font-family: Arial;
             color: #FFFFFF;
-            font-size: 12px;    
+            font-size: 12px;
+            top: -10px;    
             margin-top: -10px; 
         }
         
