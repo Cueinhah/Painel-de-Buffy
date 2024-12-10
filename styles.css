@@ -701,9 +701,8 @@
             background-color: #565686;
             font-family: Arial;
             color: #FFFFFF;
-            font-size: 12px;
-            font-top: -10px;     
-            margin-top: -10px; 
+            font-size: 12px;    
+            margin-top: 0px; 
         }
         
         /* Botão para Expandir Profissão */
