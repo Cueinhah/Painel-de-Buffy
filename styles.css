@@ -586,7 +586,7 @@
 
         /* Bloco Direito - Autoestima e Fama/Moral */
         .bloco-direito {
-            flex: 1.9;
+            flex: 1.5;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -601,7 +601,7 @@
             margin-top: 4px;
             font-weight: bold;
             justify-content: center;
-            width: 420px;
+            width: 100%;
             margin-left: 0;
             position: relative;
             display: flex;
@@ -611,7 +611,7 @@
         .status-fama::before {
             content: "";
             position: absolute;
-            width: 420px;
+            width: 100%;
             height: 20px;
             border: 1px solid white;
             top: 0px;
@@ -628,7 +628,7 @@
         }
 
         .barra-porcentagem {
-            width: 420px;
+            width: 100%;
             height: 20px;
             border: 1px solid #FFFFFF;
             position: relative;
