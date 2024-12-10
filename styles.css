@@ -688,7 +688,7 @@
             height: 8px;    
             background-color: #1E1E2E;
             border: 1px solid #FFFFFF;
-            color: #FFFFFF;
+            color: #A020F0;
             font-family: Arial;
             font-size: 12px;   
         }
@@ -701,7 +701,7 @@
             height: 8px;
             background-color: #63636E;
             font-family: Arial;
-            color: #FFFFFF;
+            color: #A020F0;
             font-size: 12px;
             margin-top: -10px; 
         }
@@ -710,7 +710,7 @@
         .botao-expandir-profissao {
             background: none;
             border: none;
-            color: #A020F0;
+            color: #FFD700;
             font-size: 12px;
             cursor: pointer;
             margin-left: auto;
