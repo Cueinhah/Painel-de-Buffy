@@ -104,26 +104,36 @@
         <div class="nova-secao">
             <!-- Textos - Estado Civil; Sexualidade e Profissão -->
             <div class="bloco-esquerdo">
-                <div class="linha-texto">
+                <!-- Estado Civil -->
+                <div class="retangulo-texto">
                     <span class="subtitulo">Estado Civil:</span>
                     <span class="texto texto-clicavel-isaac" onclick="abrirJanelaEstadoCivil()">Casada 💍</span>
                 </div>
-                <div class="linha-texto">
-                    <span class="subtitulo">Sexualidade:</span> <span class="texto">Bissexual</span>
+        
+                <!-- Sexualidade -->
+                <div class="retangulo-texto">
+                    <span class="subtitulo">Sexualidade:</span>
+                    <span class="texto">Bissexual</span>
                 </div>
-                <div class="linha-texto">
-                    <span class="subtitulo">Profissões:</span> <span class="texto">Caçadora (Nível 20),</span>
+        
+                <!-- Profissão com Detalhes Ocultos -->
+                <div class="retangulo-texto">
+                    <span class="subtitulo">Profissão:</span>
+                    <span class="texto">Caçadora (Nível 20),</span>
+                    <button class="botao-expandir-profissao" onclick="toggleProfissao()">▼</button>
                 </div>
-                <div class="linha-texto">
+        
+                <!-- Retângulo Oculto para Detalhes -->
+                <div class="retangulo-detalhes-profissao" id="detalhesProfissao">
                     <span class="texto">Vampire Hunter (0), Dominatrix (Nível 211)</span>
                 </div>
             </div>
-
+        
             <!-- Buffy Pixel Art -->
             <div class="bloco-centro">
                 <img src="https://i.imgur.com/AEbulNh.gif" alt="Imagem Central" class="imagem-central">
             </div>
-
+        
             <!-- Barras - Autoestima e Fama/Moral -->
             <div class="bloco-direito">
                 <!-- Barra de Autoestima -->
@@ -134,7 +144,7 @@
                         <span class="texto-barra" id="texto-autoestima">70%</span>
                     </div>
                 </div>
-
+        
                 <!-- Barra de Fama / Moral -->
                 <div>
                     <div class="titulo-barra">Fama / Moral</div>
