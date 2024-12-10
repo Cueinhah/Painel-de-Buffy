@@ -697,12 +697,12 @@
             display: none; 
             padding: 10px 15px;
             width: 100%; 
-            height: 20px;
+            height: 15px;
             background-color: #565686;
             font-family: Arial;
             color: #FFFFFF;
             font-size: 12px;
-            margin-top: -15px; 
+            margin-top: -20px; 
         }
         
         /* Botão para Expandir Profissão */
