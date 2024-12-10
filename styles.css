@@ -685,7 +685,7 @@
             justify-content: flex-start;
             padding: 10px 15px;
             width: 250px;
-            height: 15px;    
+            height: 10px;    
             background-color: #1E1E2E;
             border: 1px solid #FFFFFF;
             color: #FFFFFF;
@@ -697,7 +697,7 @@
             display: none; 
             padding: 10px 15px;
             width: 250px; 
-            height: 15px;
+            height: 10px;
             background-color: #565686;
             font-family: Arial;
             color: #FFFFFF;
