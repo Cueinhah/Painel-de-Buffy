@@ -1501,45 +1501,6 @@
             overflow: visible;
         }
 
-        .circulo-atributo {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 5px solid #1E90FF; /* Borda do círculo */
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Efeito líquido */
-        .liquido {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #00BFFF; /* Cor do líquido */
-            animation: liquido 3s infinite linear;
-            transition: height 0.3s ease;
-        }
-        
-        /* Efeito de bolhas (apenas visualização) */
-        @keyframes liquido {
-            0% {
-                height: 0%;
-            }
-            100% {
-                height: 100%;
-            }
-        }
-        
-        .atributo .conteudo-atributo {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
         .titulo-e-marcacao {
             display: flex;
             align-items: center;
