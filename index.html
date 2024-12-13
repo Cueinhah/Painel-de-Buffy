@@ -383,11 +383,7 @@
         <div class="atributos-container">
             <!-- Primeira linha de atributos: HP e MP -->
             <div class="atributo">
-                <div class="icone-atributo">
-                    <div class="circulo-atributo" id="circulo-hp">
-                        <div class="liquido" id="liquido-hp"></div>
-                    </div>
-                </div>
+                <div class="icone-atributo"><img src="https://i.imgur.com/25bxTGa.gif" alt="HP Icone"></div>
                 <div class="conteudo-atributo">
                     <div class="titulo-e-marcacao">
                         <div class="marcacao-atributo" onclick="toggleCheckbox(this)"></div>
@@ -399,6 +395,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="atributo">
                 <div class="icone-atributo"><img src="https://i.imgur.com/ZHuxhHW.gif" alt="MP Icone"></div>
                 <div class="conteudo-atributo">
@@ -1465,17 +1462,18 @@
     // Inicia o carrossel automaticamente ao carregar a página
     document.addEventListener('DOMContentLoaded', iniciarCarrossel);
     
-     // Função para atualizar o atributo com a porcentagem e o líquido dentro do círculo
+     // Atributos - Função para atualizar a barra de atributo com valor e total
+    function toggleCheckbox(element) {
+        element.classList.toggle("checked");
+    }
+
     function atualizarAtributoAtual(atributo, total, porcentagem) {
         const valorAtual = Math.floor((porcentagem / 100) * total);
         document.getElementById(`texto-${atributo}`).innerText = `${valorAtual} / ${total}`;
         document.getElementById(`barra-${atributo}`).style.width = `${porcentagem}%`;
-    
-        // Atualizando o nível do líquido no círculo
-        document.getElementById(`liquido-${atributo}`).style.height = `${porcentagem}%`;
     }
-    
-    // Definindo valores e porcentagens iniciais para cada atributo
+
+    // Atributos - Definindo valores e porcentagens iniciais para cada atributo
     const atributos = {
         hp: { total: 4024763, porcentagem: 100 },
         mp: { total: 675157, porcentagem: 100 },
@@ -1488,8 +1486,8 @@
         smp: { total: 9314172, porcentagem: 73.72381 },
         unknown: { total: 100, porcentagem: 47.19 }
     };
-    
-    // Atualizando os valores e porcentagens das barras e círculos
+
+    // Atributos - Atualizando os valores e porcentagens das barras
     for (let atributo in atributos) {
         const { total, porcentagem } = atributos[atributo];
         atualizarAtributoAtual(atributo, total, porcentagem);
