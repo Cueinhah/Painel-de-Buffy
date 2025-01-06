@@ -105,6 +105,7 @@
             <span class="texto">, Ninja </span> <span class="texto-brilhante2">(Nível 5)</span>
             <span class="texto">, Dungeon Master </span> <span class="texto-brilhante2">(Nível 944)</span>
             <span class="texto">, Ferreira mágica </span> <span class="texto-brilhante2">(Nível 21)</span></p>
+            <span class="texto">, Villainess </span> <span class="texto-brilhante2">(331)</span></p>
         <p><span class="subtitulo">Classe de Conjunto:</span> <span class="texto">D-Stro</span> <span class="texto-brilhante2">(2/3)</span></p>
 
         <div class="linha-separadora"></div>
@@ -342,6 +343,10 @@
                 <div class="titulo-item" onclick="abrirJanelaTitulo(17)">
                     <div class="circulo-carrossel" style="background-image: url('https://imgur.com/RnqhA1a.png');"></div>
                     <p class="texto-carrossel">Agressora de Primordiais</p>
+                </div>
+                <div class="titulo-item" onclick="abrirJanelaTitulo(17)">
+                    <div class="circulo-carrossel" style="background-image: url('https://imgur.com/RnqhA1a.png');"></div>
+                    <p class="texto-carrossel">Mãe Agressora</p>
                 </div>
             </div>
         </div>
@@ -1811,22 +1816,22 @@
     atualizarStatusBasicas('grupo-higiene', 100);
     atualizarStatusBasicas('grupo-banheiro', 100);
     atualizarStatusBasicas('grupo-sono', 100);
-    atualizarStatusBasicas('grupo-fome', 0);
-    atualizarStatusBasicas('grupo-sede', 0);
-    atualizarStatusBasicas('grupo-diversao', 41);
+    atualizarStatusBasicas('grupo-fome', 1);
+    atualizarStatusBasicas('grupo-sede', 1);
+    atualizarStatusBasicas('grupo-diversao', 54);
     atualizarStatusBasicas('grupo-social', 64);
     atualizarStatusBasicas('grupo-foco', 88);
-    atualizarStatusBasicas('grupo-felicidade', 11);
+    atualizarStatusBasicas('grupo-felicidade', 72);
     atualizarStatusBasicas('grupo-tesao', 1);
 
     // Exemplo de uso para Necessidades Temporárias
-    atualizarStatusTemporarias('grupo-enjoo', 36);
+    atualizarStatusTemporarias('grupo-enjoo', 53);
     atualizarStatusTemporarias('grupo-fadiga', 0);
-    atualizarStatusTemporarias('grupo-estresse', 52);
-    atualizarStatusTemporarias('grupo-ansiedade', 57);
-    atualizarStatusTemporarias('grupo-medo', 31);
+    atualizarStatusTemporarias('grupo-estresse', 32);
+    atualizarStatusTemporarias('grupo-ansiedade', 19);
+    atualizarStatusTemporarias('grupo-medo', 0);
     atualizarStatusTemporarias('grupo-tedio', 0);
-    atualizarStatusTemporarias('grupo-raiva', 63);
+    atualizarStatusTemporarias('grupo-raiva', 4);
     atualizarStatusTemporarias('grupo-desgaste', 1);
     
 </script>
