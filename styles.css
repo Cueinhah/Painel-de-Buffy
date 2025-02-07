@@ -1511,6 +1511,57 @@
             font-size: 14px;
         }
 
+        /* Blocos Filhos EA e Tutores EA */
+        .categoria-mae { 
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+        }
+        
+        /* Divisão entre os Blocos de Filhos e Tutores */
+        .filhos-tutores {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        } 
+        
+        /* Estilos para os Retângulos de Filhos e Tutores */ .retangulo {
+        border: 2px solid #1E90FF;
+        background-color: #1E1E2E;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+        width: 45%;
+        } 
+        
+        .titulo {
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        }
+        
+        /* Conteúdo dentro dos retângulos */ .conteudo {
+        color: #ffffff;
+        font-size: 14px;
+        }
+        
+        /* Setas entre os blocos Filhos e Tutores */ .setas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        } 
+        
+        .seta {
+        font-size: 30px;
+        color: white;
+        } 
+        
+        .bloco-esquerdo, .bloco-direito {
+        width: 45%;
+        } 
+
         /* Contêiner Atributos */
         .atributos-container {
             display: flex;
