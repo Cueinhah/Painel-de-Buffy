@@ -1530,8 +1530,8 @@
         .bloco-ea {
             border: 2px solid #1E90FF;
             background-color: #1E1E2E;
-            border-radius: 0px;
-            padding: 10px;
+            border-radius: 10px;
+            padding: 0px;
             width: 300px;
             text-align: center; 
             font-family: Arial;
