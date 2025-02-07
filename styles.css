@@ -1531,8 +1531,8 @@
             border: 2px solid #1E90FF;
             background-color: #1E1E2E;
             border-radius: 10px;
-            top: 0px;
-            bottom: 10px;  
+            margin-top: 0px;
+            margin-bottom: 10px;  
             width: 280px;
             text-align: center; 
             font-family: Arial;
