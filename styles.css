@@ -1481,7 +1481,7 @@
         
         .barra-ea {
             width: 100%;
-            max-width: 750px;
+            max-width: 800px;
             height: 20px;
             border: 1px solid white;
             background: linear-gradient(to right, #1E90FF, #A020F0);
@@ -1500,20 +1500,22 @@
         .titulos-ea {
             font-family: Arial;
             color: #FFFFFF;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 12px;
             display: flex;
             justify-content: space-between;
-            max-width: 750px;
+            max-width: 800px;
             margin: 10px auto 0 auto;
         }
         
         .titulo-ea-esquerda, 
-        .titulo-ea-central, 
         .titulo-ea-direita {
             color: white;
-            font-size: 14px;
         }
+
+        .titulo-ea-central {
+            color: white;
+            font-size: 14px;                
+            font-weight: bold;
 
         .container-ea {
             display: flex;
