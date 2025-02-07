@@ -743,7 +743,7 @@
         <div class="categoria-mae">
             <!-- Barra EA -->
             <div class="barra-ea">
-                <span class="texto-ea">EA:</span>
+                <span class="texto-ea" id="texto-ea">EA: 100%</span>
             </div>
             
             <!-- Títulos EA -->
@@ -1767,6 +1767,24 @@
         });
     });
 
+    // Barra EA
+    function atualizarEA(porcentagem) {
+        const barraEA = document.querySelector('.preenchimento-ea');
+        const textoEA = document.getElementById('texto-ea');
+    
+        // Garante que a porcentagem fique entre 0% e 100%
+        porcentagem = Math.max(0, Math.min(100, porcentagem));
+    
+        // Atualiza a largura da barra e o texto
+        barraEA.style.width = `${porcentagem}%`;
+        textoEA.textContent = `EA: ${porcentagem}%`;
+    }
+    
+    // Exemplo: Definir a porcentagem inicial para 100%
+    document.addEventListener('DOMContentLoaded', () => {
+        atualizarEA(100);
+    });
+    
     // Necessidades Básicas - Barra de Progresso e Estado
     function atualizarStatusBasicas(grupoId, porcentagem) {
         const fillBar = document.getElementById(`barra-progresso-${grupoId}`);
