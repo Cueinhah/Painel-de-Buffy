@@ -1511,56 +1511,38 @@
             font-size: 14px;
         }
 
-        /* Blocos Filhos EA e Tutores EA */
-        .categoria-mae { 
-        margin-top: 30px;
-        width: 100%;
-        text-align: center;
+        .container-ea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
         }
-        
-        /* Divisão entre os Blocos de Filhos e Tutores */
-        .filhos-tutores {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-        } 
-        
-        /* Estilos para os Retângulos de Filhos e Tutores */ .retangulo {
-        border: 2px solid #1E90FF;
-        background-color: #1E1E2E;
-        border-radius: 10px;
-        padding: 15px;
-        text-align: center;
-        width: 45%;
-        } 
-        
-        .titulo {
-        color: white;
-        font-weight: bold;
-        font-size: 16px;
+
+        .bloco-ea {               
+            border: 2px solid #1E90FF;
+            background-color: #1E1E2E;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-        
-        /* Conteúdo dentro dos retângulos */ .conteudo {
-        color: #ffffff;
-        font-size: 14px;
+
+        .item-ea {              
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            font-size: 16px;
         }
-        
-        /* Setas entre os blocos Filhos e Tutores */ .setas {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        } 
-        
+
         .seta {
-        font-size: 30px;
-        color: white;
-        } 
-        
-        .bloco-esquerdo, .bloco-direito {
-        width: 45%;
-        } 
+            font-size: 18px;
+            color: #1E90FF;
+            font-weight: bold;
+        }
 
         /* Contêiner Atributos */
         .atributos-container {
