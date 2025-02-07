@@ -1498,9 +1498,13 @@
         }
         
         .titulos-ea {
+            font-family: Arial;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
             display: flex;
             justify-content: space-between;
-            max-width: 995px;
+            max-width: 750px;
             margin: 10px auto 0 auto;
         }
         
