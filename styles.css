@@ -1472,6 +1472,45 @@
             height: 400px;
         }
 
+        /* CATEGORIA: MÃE */
+        .categoria-mae {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .barra-ea {
+            width: 100%;
+            max-width: 995px; /* Igual ao background2 */
+            height: 20px;
+            border: 1px solid white;
+            background: linear-gradient(to right, blue, purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .texto-ea {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .titulos-ea {
+            display: flex;
+            justify-content: space-between;
+            max-width: 995px;
+            margin: 10px auto 0 auto;
+        }
+        
+        .titulo-ea-esquerda, 
+        .titulo-ea-central, 
+        .titulo-ea-direita {
+            color: white;
+            font-size: 14px;
+        }
+
         /* Contêiner Atributos */
         .atributos-container {
             display: flex;
