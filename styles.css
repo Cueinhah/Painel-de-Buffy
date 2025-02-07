@@ -1484,18 +1484,29 @@
             max-width: 800px;
             height: 25px;
             border: 1px solid white;
-            background: linear-gradient(to right, #1E90FF, #A020F0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
             margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .preenchimento-ea {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, #1E90FF, #A020F0);
+            transition: width 0.5s ease-in-out;
         }
         
         .texto-ea {
+            position: relative;
             font-family: Arial;
             color: #FFFFFF;
             font-size: 13px;
             font-weight: bold;
+            text-align: center;
+            z-index: 2;
         }
         
         .titulos-ea {
