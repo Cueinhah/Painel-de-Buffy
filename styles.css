@@ -1842,13 +1842,11 @@
             padding: 10px;
             width: 200px;
             text-align: center;
-            font-family: Arial, sans-serif;
-            color: white;
         }
         
         /* Título dentro dos blocos */
-        .bloco-aether h3 {
-            margin-bottom: 10px;
+        .bloco-aether subtitulo {
+            margin-bottom: 05px;
         }
         
         /* Informações dentro dos blocos */
