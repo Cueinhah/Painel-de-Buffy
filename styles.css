@@ -1824,3 +1824,79 @@
             font-family: Arial;
             pointer-events: none;
         }
+
+        /* Estrutura Geral */
+        .container-aether {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        /* Blocos de Energia e Corpo */
+        .bloco-aether {
+            border: 2px solid #1E90FF;
+            background-color: #1E1E2E;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        
+        /* Título dentro dos blocos */
+        .bloco-aether h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Informações dentro dos blocos */
+        .info-energia {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        
+        /* Barra Aether */
+        .bloco-barra {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .barra-aether {
+            width: 400px;
+            height: 20px;
+            border: 1px solid #FFFFFF;
+            background: linear-gradient(to right, #0B0F29, #101840);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .tipo-aether {
+            margin-top: 5px;
+            font-size: 13px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Estilo para o lado esquerdo do Corpo Aether */
+        .bpm-info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .gif-bpm {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .temperatura-info {
+            font-size: 14px;
+        }
