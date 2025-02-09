@@ -793,12 +793,12 @@
             </div>
             <div class="conteudo-janela">
                 <h3>Kaito</h3>
-                <p><strong>Nome Completo:</strong> Kaito ???</p>
+                <p><strong>Nome Completo:</strong> Kurae Kaito Von Pendragon</p>
                 <p><strong>Idade:</strong> ??? anos</p>
                 <p><strong>Gênero:</strong> Masculino</p>
-                <p><strong>Raça:</strong> ???</p>
-                <p><strong>Pai:</strong> ???</p>
-                <p><strong>Mãe:</strong> Buffy</p>
+                <p><strong>Raça:</strong> Humano</p>
+                <p><strong>Pai:</strong> Kurae Isaac Radiânthia Pendragon</p>
+                <p><strong>Mãe:</strong> Buffy le fay Pendragon Karmelin</p>
             </div>
         </div>
         
@@ -810,12 +810,12 @@
             </div>
             <div class="conteudo-janela">
                 <h3>Twenty</h3>
-                <p><strong>Nome Completo:</strong> Twenty ???</p>
+                <p><strong>Nome Completo:</strong> Twenty Radiânthia Von Karmelin</p>
                 <p><strong>Idade:</strong> ??? anos</p>
-                <p><strong>Gênero:</strong> ???</p>
+                <p><strong>Gênero:</strong> Feminino</p>
                 <p><strong>Raça:</strong> ???</p>
-                <p><strong>Pai:</strong> ???</p>
-                <p><strong>Mãe:</strong> Buffy</p>
+                <p><strong>Pai:</strong> Kurae Isaac Radiânthia Pendragon</p>
+                <p><strong>Mãe:</strong> Buffy le fay Pendragon Karmelin</p>
             </div>
         </div>
         
@@ -1822,43 +1822,63 @@
         atualizarEA(53);
     });
 
-    // Função para abrir a janela do filho ao clicar no nome
+    // Abre a janela flutuante
     function abrirJanela(id) {
-        document.getElementById(id).style.display = 'block';
+        const janela = document.getElementById(id);
+        if (janela) {
+            janela.style.display = "block";
+            janela.style.top = "50%";  // Centraliza melhor a janela ao abrir
+            janela.style.left = "50%";
+            janela.style.transform = "translate(-50%, -50%)";
+        }
     }
     
-    // Função para fechar a janela ao clicar no botão "X"
+    // Fecha a janela flutuante
     function fecharJanela(id) {
-        document.getElementById(id).style.display = 'none';
+        const janela = document.getElementById(id);
+        if (janela) {
+            janela.style.display = "none";
+        }
     }
     
-    // Função para expandir/reduzir a janela
+    // Expande ou reduz a janela
     function expandirJanela(id) {
         const janela = document.getElementById(id);
-        janela.classList.toggle("janela-expandida");
+        if (janela) {
+            janela.classList.toggle("janela-expandida");
+        }
     }
     
-    // Permitir arrastar a janela pela tela
-    document.querySelectorAll(".janela-filhos").forEach(janela => {
+    // Permite arrastar a janela
+    document.querySelectorAll(".janela-filhos").forEach((janela) => {
         let isDragging = false;
         let offsetX, offsetY;
     
-        janela.addEventListener("mousedown", function (e) {
+        // Quando clicar na janela para mover
+        janela.addEventListener("mousedown", (event) => {
             isDragging = true;
-            offsetX = e.clientX - janela.getBoundingClientRect().left;
-            offsetY = e.clientY - janela.getBoundingClientRect().top;
-            janela.style.position = "absolute";
-            janela.style.zIndex = 1001;
+            offsetX = event.clientX - janela.getBoundingClientRect().left;
+            offsetY = event.clientY - janela.getBoundingClientRect().top;
+    
+            // Impede que o texto dentro da janela seja selecionado ao arrastar
+            event.preventDefault();
         });
     
-        document.addEventListener("mousemove", function (e) {
+        // Quando mover o mouse
+        document.addEventListener("mousemove", (event) => {
             if (isDragging) {
-                janela.style.left = `${e.clientX - offsetX}px`;
-                janela.style.top = `${e.clientY - offsetY}px`;
+                const x = event.clientX - offsetX;
+                const y = event.clientY - offsetY;
+                
+                // Atualiza a posição da janela
+                janela.style.left = `${x}px`;
+                janela.style.top = `${y}px`;
+                janela.style.transform = "none";  // Remove qualquer transformação aplicada antes
             }
         });
     
-        document.addEventListener("mouseup", function () {
+        // Quando soltar o botão do mouse, para de arrastar
+        document.addEventListener("mouseup", () => {
             isDragging = false;
         });
     });
