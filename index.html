@@ -787,21 +787,39 @@
         </div>
 </div>
 
-        <div class="janela-filhos" id="janelaFilhos1" style="display: none;">
+        <!-- Janela Flutuante para Kaito -->
+        <div class="janela-filhos" id="janelaKaito">
             <div class="janela-botoes">
-                <button class="botao-expandir" onclick="expandirJanelaFilhos(1)">❐</button>
-                <button class="botao-fechar" onclick="fecharJanelaFilhos(1)">✖︎</button>
+                <button class="botao-expandir" onclick="expandirJanela('janelaKaito')">❐</button>
+                <button class="botao-fechar" onclick="fecharJanela('janelaKaito')">✖</button>
             </div>
             <div class="conteudo-janela">
-                <h3>Título: Mother of Souls</h3>
-                <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
-                <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
-                <p><span class='subtitulo'>Modo:</span> <span class='texto'>[on]</span> <span class='texto-brilhante'>[off]</span></p>
-                <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título único conquistado por você, um marco em sua jornada em direção à posição de Deusa das Almas. À medida que você avança nos níveis deste título, diversas habilidades e vantagens relacionadas ao uso de almas serão liberadas.</span></p>
-                <p><span class='subtitulo'>Habilidade Desbloqueada - Aura da Alma:</span> <span class='texto'>No nível 1, você ganha a habilidade de emanar uma aura que fortalece as almas ao seu redor. Isso aumenta a resistência espiritual de seus aliados e enfraquece os espíritos malignos que se opõem a você.</span></p>
-                <p><span class='subtitulo'>Habilidade Desbloqueada - Comunhão Espiritual:</span> <span class='texto'>No nível 2, você poderá se comunicar diretamente com as almas, entendendo suas histórias e desejos. Isso pode ser útil para coletar informações, obter assistência espiritual e até mesmo persuadir almas a ajudarem em sua causa.</span></p>
+                <h3>Kaito</h3>
+                <p><strong>Nome Completo:</strong> Kaito ???</p>
+                <p><strong>Idade:</strong> ??? anos</p>
+                <p><strong>Gênero:</strong> Masculino</p>
+                <p><strong>Raça:</strong> ???</p>
+                <p><strong>Pai:</strong> ???</p>
+                <p><strong>Mãe:</strong> Buffy</p>
             </div>
-        </div>    
+        </div>
+        
+        <!-- Janela Flutuante para Twenty -->
+        <div class="janela-filhos" id="janelaTwenty">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanela('janelaTwenty')">❐</button>
+                <button class="botao-fechar" onclick="fecharJanela('janelaTwenty')">✖</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>Twenty</h3>
+                <p><strong>Nome Completo:</strong> Twenty ???</p>
+                <p><strong>Idade:</strong> ??? anos</p>
+                <p><strong>Gênero:</strong> ???</p>
+                <p><strong>Raça:</strong> ???</p>
+                <p><strong>Pai:</strong> ???</p>
+                <p><strong>Mãe:</strong> Buffy</p>
+            </div>
+        </div>
         
         <div class="linha-separadora"></div>
 
@@ -1806,53 +1824,46 @@
         atualizarEA(53);
     });
 
-    // Janela Flutuante Filhos
-    function abrirJanelaFilhos(id) {
-        const janela = document.getElementById(`janelaFilho${id}`);
-        if (janela) {
-            janela.style.display = 'block';
-        }
+    // Função para abrir a janela do filho ao clicar no nome
+    function abrirJanela(id) {
+        document.getElementById(id).style.display = 'block';
     }
     
-    // Função para fechar a janela flutuante
-    function fecharJanelaFilho(id) {
-        const janela = document.getElementById(`janelaFilho${id}`);
-        if (janela) {
-            janela.style.display = 'none';
-        }
+    // Função para fechar a janela ao clicar no botão "X"
+    function fecharJanela(id) {
+        document.getElementById(id).style.display = 'none';
     }
     
-    // Expande ou minimiza a janela flutuante
-    function expandirJanelaFilho(id) {
-        const janela = document.getElementById(`janelaFilho${id}`);
-        janela.classList.toggle('janela-expandida');
+    // Função para expandir/reduzir a janela
+    function expandirJanela(id) {
+        const janela = document.getElementById(id);
+        janela.classList.toggle("janela-expandida");
     }
     
-    // Movimentação manual das janelas flutuantes
-    document.querySelectorAll('.janela-filhos').forEach((janela) => {
-        let isDragging = false, startX, startY;
+    // Permitir arrastar a janela pela tela
+    document.querySelectorAll(".janela-filhos").forEach(janela => {
+        let isDragging = false;
+        let offsetX, offsetY;
     
-        janela.addEventListener('mousedown', (e) => {
+        janela.addEventListener("mousedown", function (e) {
             isDragging = true;
-            startX = e.clientX - janela.offsetLeft;
-            startY = e.clientY - janela.offsetTop;
-            janela.style.cursor = 'grabbing';
+            offsetX = e.clientX - janela.getBoundingClientRect().left;
+            offsetY = e.clientY - janela.getBoundingClientRect().top;
+            janela.style.position = "absolute";
+            janela.style.zIndex = 1001;
         });
     
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener("mousemove", function (e) {
             if (isDragging) {
-                janela.style.left = `${e.clientX - startX}px`;
-                janela.style.top = `${e.clientY - startY}px`;
+                janela.style.left = `${e.clientX - offsetX}px`;
+                janela.style.top = `${e.clientY - offsetY}px`;
             }
         });
     
-        document.addEventListener('mouseup', () => {
+        document.addEventListener("mouseup", function () {
             isDragging = false;
-            janela.style.cursor = 'move';
         });
     });
-
-    
     
     // Necessidades Básicas - Barra de Progresso e Estado
     function atualizarStatusBasicas(grupoId, porcentagem) {
