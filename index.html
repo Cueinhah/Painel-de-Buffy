@@ -760,7 +760,9 @@
         <div class="bloco-ea">
             <h3>Filhos</h3>
             <div class="item-ea">
-                <span class="nome-filho">Kurae Kaito Von Pendragon</span>
+                <div class="titulo-item" onclick="abrirJanelaFilhos(1)">
+                    <span class="nome-filho">Kurae Kaito Von Pendragon</span>
+                </div>
             </div>
             <div class="item-ea">
                 <span class="nome-filho">Twenty Radiânthia Von Karmelin</span>
@@ -783,7 +785,22 @@
                 <span class="nome-tutor">Code</span>
             </div>
         </div>
-    </div>
+
+        <div class="janela-titulos" id="janelaFilhos1" style="display: none;">
+            <div class="janela-botoes">
+                <button class="botao-expandir" onclick="expandirJanelaFilhos(1)">❐</button>
+                <button class="botao-fechar" onclick="fecharJanelaFilhos(1)">✖︎</button>
+            </div>
+            <div class="conteudo-janela">
+                <h3>Título: Mother of Souls</h3>
+                <p><span class='subtitulo'>Classe:</span> <span class='texto'>Mítico</span></p>
+                <p><span class='subtitulo'>Nível:</span> <span class='texto'>1</span></p>
+                <p><span class='subtitulo'>Modo:</span> <span class='texto'>[on]</span> <span class='texto-brilhante'>[off]</span></p>
+                <p><span class='subtitulo'>Descrição:</span> <span class='texto'>Este é um título único conquistado por você, um marco em sua jornada em direção à posição de Deusa das Almas. À medida que você avança nos níveis deste título, diversas habilidades e vantagens relacionadas ao uso de almas serão liberadas.</span></p>
+                <p><span class='subtitulo'>Habilidade Desbloqueada - Aura da Alma:</span> <span class='texto'>No nível 1, você ganha a habilidade de emanar uma aura que fortalece as almas ao seu redor. Isso aumenta a resistência espiritual de seus aliados e enfraquece os espíritos malignos que se opõem a você.</span></p>
+                <p><span class='subtitulo'>Habilidade Desbloqueada - Comunhão Espiritual:</span> <span class='texto'>No nível 2, você poderá se comunicar diretamente com as almas, entendendo suas histórias e desejos. Isso pode ser útil para coletar informações, obter assistência espiritual e até mesmo persuadir almas a ajudarem em sua causa.</span></p>
+            </div>
+        </div>    
         
         <div class="linha-separadora"></div>
 
@@ -1787,6 +1804,54 @@
     document.addEventListener('DOMContentLoaded', () => {
         atualizarEA(53);
     });
+
+    // Janela Flutuante Filhos
+    function abrirJanelaFilhos(id) {
+        const janela = document.getElementById(`janelaTitulo${id}`);
+        if (janela) {
+            janela.style.display = 'block';
+        }
+    }
+    
+    // Função para fechar a janela flutuante
+    function fecharJanelaTitulo(id) {
+        const janela = document.getElementById(`janelaTitulo${id}`);
+        if (janela) {
+            janela.style.display = 'none';
+        }
+    }
+    
+    // Expande ou minimiza a janela flutuante
+    function expandirJanelaTitulo(id) {
+        const janela = document.getElementById(`janelaTitulo${id}`);
+        janela.classList.toggle('janela-expandida');
+    }
+    
+    // Movimentação manual das janelas flutuantes
+    document.querySelectorAll('.janela-titulos').forEach((janela) => {
+        let isDragging = false, startX, startY;
+    
+        janela.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX - janela.offsetLeft;
+            startY = e.clientY - janela.offsetTop;
+            janela.style.cursor = 'grabbing';
+        });
+    
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                janela.style.left = `${e.clientX - startX}px`;
+                janela.style.top = `${e.clientY - startY}px`;
+            }
+        });
+    
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            janela.style.cursor = 'move';
+        });
+    });
+
+    
     
     // Necessidades Básicas - Barra de Progresso e Estado
     function atualizarStatusBasicas(grupoId, porcentagem) {
