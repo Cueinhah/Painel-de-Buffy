@@ -1873,12 +1873,12 @@
         .barra-aether {
             width: 400px;
             height: 20px;
-            border: 1px solid #FFFFFF;
-            background: linear-gradient(to right, #0B0F29, #101840);
+            border: 1px solid #1E90FF;
+            background: #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #000000;
             font-size: 14px;
             font-weight: bold;
         }
