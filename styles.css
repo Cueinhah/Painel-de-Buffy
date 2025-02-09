@@ -1507,6 +1507,7 @@
             font-weight: bold;
             text-align: center;
             z-index: 2;
+            line-height: 25px;
         }
         
         .titulos-ea {
