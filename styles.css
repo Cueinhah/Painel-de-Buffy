@@ -116,11 +116,11 @@
 
         /* Container do título flutuante */
         .titulo-assimilacao {
-            position: absolute; /* Flutua sobre o conteúdo */
-            top: 50px; /* Distância do topo */
-            left: 50%; /* Centraliza horizontalmente */
-            transform: translateX(-50%); /* Ajusta para o centro exato */
-            z-index: 10; /* Garante que fique acima de outros elementos */
+            position: absolute; 
+            top: 50px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            z-index: 10; 
         }
         
         /* Bloco retangular do título */
@@ -129,14 +129,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(145deg, #000000, #232323); /* Fundo em tons de marrom */
+            background: linear-gradient(145deg, #000000, #232323); 
             border: 1px solid #A020F0;
             animation: borda-brilhante 3s infinite;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra e efeito interno */
-            padding: 10px 30px; /* Espaçamento interno */
-            border-radius: 0; /* Sem bordas arredondadas */
-            min-width: 450px; /* Tamanho mínimo */
-            height: 40px; /* Altura fixa */
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1); 
+            padding: 10px 30px; 
+            border-radius: 0; 
+            min-width: 450px;
+            height: 40px;
         }
         
         /* Estilo do texto principal */
@@ -161,7 +161,7 @@
         /* Música Aura */
         .botao-musica {
             position: relative;
-            z-index: 20; /* Acima de outros elementos */
+            z-index: 20; 
         }
 
         .circulo-botao-musica {
@@ -219,7 +219,7 @@
         /* Cabeçalho - Foto da Doll */
         .cab-doll {
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            background-image: url('assets/imagens/BMPS21.png');
+            background-image: url('https://github.com/PrinnyXII/st/blob/main/rep/Buffy/vers%C3%A3o%20com%20missi%20pq%20sim.png?raw=true');
             background-repeat: no-repeat;    
             width: 300px; 
             height: 300px;
@@ -733,7 +733,7 @@
             width: 380px;
             height: 280px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            background-image: url('assets/Imagens Isaac/sac4.jpg'); 
+            background-image: url('https://github.com/Cueinhah/Painel-de-Buffy/blob/main/assets/Imagens%20Isaac/sac4.jpg?raw=true'); 
             background-size: 120%;
             background-position: center;
             border: 2px solid #1E90FF;
@@ -779,11 +779,11 @@
 
         /* Barra de Scroll Invisível */
         .janela-estado-civil::-webkit-scrollbar {
-            display: none; /* Esconde a barra */
+            display: none; 
         }
         
         .janela-estado-civil {
-            scrollbar-width: none; /* Para navegadores Firefox */
+            scrollbar-width: none; 
         }
         
         /* Círculo com a Foto do Marido */
@@ -851,7 +851,7 @@
         .info-marido h3 {
             margin: 15px 0 10px;
             font-size: 16px;
-            color: #1E90FF; /* Azul do texto */
+            color: #1E90FF;
         }
         
         .info-marido p {
@@ -1169,7 +1169,7 @@
         .janela-chave .quantidade {
             color: #1E90FF;
             font-weight: bold;
-            text-shadow: 0 0 5px #1E90FF; /* Efeito de brilho */
+            text-shadow: 0 0 5px #1E90FF; 
         }
         
         .circulo-pequeno:hover .janela-chave {
