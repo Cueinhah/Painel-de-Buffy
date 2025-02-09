@@ -743,6 +743,7 @@
         <div class="categoria-mae">
             <!-- Barra EA -->
             <div class="barra-ea">
+                <div class="preenchimento-ea" id="preenchimento-ea"></div>
                 <span class="texto-ea" id="texto-ea">EA: 100%</span>
             </div>
             
@@ -1769,14 +1770,16 @@
 
     // Barra EA
     function atualizarEA(porcentagem) {
-        const barraEA = document.querySelector('.preenchimento-ea');
+        const barraEA = document.getElementById('preenchimento-ea');
         const textoEA = document.getElementById('texto-ea');
     
         // Garante que a porcentagem fique entre 0% e 100%
         porcentagem = Math.max(0, Math.min(100, porcentagem));
     
-        // Atualiza a largura da barra e o texto
+        // Atualiza a largura da barra
         barraEA.style.width = `${porcentagem}%`;
+    
+        // Atualiza o texto dentro da barra
         textoEA.textContent = `EA: ${porcentagem}%`;
     }
     
