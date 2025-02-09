@@ -1839,13 +1839,13 @@
             border: 2px solid #1E90FF;
             background-color: #1E1E2E;
             border-radius: 10px;
-            padding: 10px;
+            padding: 0px 10px;
             width: 200px;
         }
         
         /* Título dentro dos blocos */
         .bloco-aether h3 {
-            margin-bottom: 05px;
+            margin-bottom: 10px;
             font-family: Arial;
             color: #FFFFFF;
             font-size: 14px;
@@ -1857,7 +1857,9 @@
         .info-energia {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            font-size: 13px;
+            font-family: Arial;
+            color: #FFFFFF;
         }
         
         /* Barra Aether */
