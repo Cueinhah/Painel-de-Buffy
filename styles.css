@@ -1567,6 +1567,40 @@
             font-weight: bold;
         }
 
+        .janela-filhos {
+            display: none;
+            position: absolute;
+            top: 700px;
+            left: 400px;
+            width: 400px;
+            height: 250px;
+            background-color: rgba(0, 0, 0, 0.85);
+            border: 2px solid #A020F0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            color: #FFFFFF;
+            z-index: 1000;
+            overflow: hidden;
+            overflow-y: auto;
+            cursor: move;
+            scrollbar-width: none; 
+            scrollbar-color: #A020F0 transparent; 
+        }
+
+        /* Para navegadores baseados em Webkit */
+        .janela-filhos::-webkit-scrollbar {
+            display: none;
+        }
+
+        .janela-filhos::-webkit-scrollbar-thumb {
+            background-color: #A020F0; 
+            border-radius: 4px; 
+        }
+
+        .janela-filhos::-webkit-scrollbar-track {
+            background-color: transparent; 
+        }
+
         /* Contêiner Atributos */
         .atributos-container {
             display: flex;
