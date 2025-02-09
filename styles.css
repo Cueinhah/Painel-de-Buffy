@@ -19,9 +19,10 @@
             background-image: url('https://imgur.com/jHwtm72.png'); 
             background-color: rgba(0, 0, 0, 0.85);
             background-blend-mode: overlay;
-            background-size: cover; 
+            background-size: auto; 
             background-position: center;
             background-repeat: no-repeat; 
+            background-attachment: fixed;    
             width: 100%;
             max-width: 995px; 
             box-sizing: border-box;
