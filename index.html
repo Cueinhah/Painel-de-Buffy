@@ -760,7 +760,7 @@
         <div class="bloco-ea">
             <h3>Filhos</h3>
             <div class="item-ea">
-                <div class="titulo-item" onclick="abrirJanelaFilhos(1)">
+                <div onclick="abrirJanelaFilhos(1)">
                     <span class="nome-filho">Kurae Kaito Von Pendragon</span>
                 </div>
             </div>
@@ -787,7 +787,7 @@
         </div>
 </div>
 
-        <div class="janela-titulos" id="janelaFilhos1" style="display: none;">
+        <div class="janela-filhos" id="janelaFilhos1" style="display: none;">
             <div class="janela-botoes">
                 <button class="botao-expandir" onclick="expandirJanelaFilhos(1)">❐</button>
                 <button class="botao-fechar" onclick="fecharJanelaFilhos(1)">✖︎</button>
@@ -1808,28 +1808,28 @@
 
     // Janela Flutuante Filhos
     function abrirJanelaFilhos(id) {
-        const janela = document.getElementById(`janelaTitulo${id}`);
+        const janela = document.getElementById(`janelaFilho${id}`);
         if (janela) {
             janela.style.display = 'block';
         }
     }
     
     // Função para fechar a janela flutuante
-    function fecharJanelaTitulo(id) {
-        const janela = document.getElementById(`janelaTitulo${id}`);
+    function fecharJanelaFilho(id) {
+        const janela = document.getElementById(`janelaFilho${id}`);
         if (janela) {
             janela.style.display = 'none';
         }
     }
     
     // Expande ou minimiza a janela flutuante
-    function expandirJanelaTitulo(id) {
-        const janela = document.getElementById(`janelaTitulo${id}`);
+    function expandirJanelaFilho(id) {
+        const janela = document.getElementById(`janelaFilho${id}`);
         janela.classList.toggle('janela-expandida');
     }
     
     // Movimentação manual das janelas flutuantes
-    document.querySelectorAll('.janela-titulos').forEach((janela) => {
+    document.querySelectorAll('.janela-filhos').forEach((janela) => {
         let isDragging = false, startX, startY;
     
         janela.addEventListener('mousedown', (e) => {
