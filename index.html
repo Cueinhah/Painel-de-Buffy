@@ -1822,66 +1822,28 @@
         atualizarEA(53);
     });
 
-    // Abre a janela flutuante
-    function abrirJanela(id) {
-        const janela = document.getElementById(id);
+
+    // Função para abrir a janela flutuante
+    function abrirJanelaFilho(id) {
+        const janela = document.getElementById(`janelaFilho${id}`);
         if (janela) {
-            janela.style.display = "block";
-            janela.style.top = "50%";  // Centraliza melhor a janela ao abrir
-            janela.style.left = "50%";
-            janela.style.transform = "translate(-50%, -50%)";
+            janela.style.display = 'block';
         }
     }
     
-    // Fecha a janela flutuante
-    function fecharJanela(id) {
-        const janela = document.getElementById(id);
+    // Função para fechar a janela flutuante
+    function fecharJanelaFilho(id) {
+        const janela = document.getElementById(`janelaFilho${id}`);
         if (janela) {
-            janela.style.display = "none";
+            janela.style.display = 'none';
         }
     }
     
-    // Expande ou reduz a janela
-    function expandirJanela(id) {
-        const janela = document.getElementById(id);
-        if (janela) {
-            janela.classList.toggle("janela-expandida");
-        }
+    // Expande ou minimiza a janela flutuante
+    function expandirJanelaFilho(id) {
+        const janela = document.getElementById(`janelaFilho${id}`);
+        janela.classList.toggle('janela-expandida');
     }
-    
-    // Permite arrastar a janela
-    document.querySelectorAll(".janela-filhos").forEach((janela) => {
-        let isDragging = false;
-        let offsetX, offsetY;
-    
-        // Quando clicar na janela para mover
-        janela.addEventListener("mousedown", (event) => {
-            isDragging = true;
-            offsetX = event.clientX - janela.getBoundingClientRect().left;
-            offsetY = event.clientY - janela.getBoundingClientRect().top;
-    
-            // Impede que o texto dentro da janela seja selecionado ao arrastar
-            event.preventDefault();
-        });
-    
-        // Quando mover o mouse
-        document.addEventListener("mousemove", (event) => {
-            if (isDragging) {
-                const x = event.clientX - offsetX;
-                const y = event.clientY - offsetY;
-                
-                // Atualiza a posição da janela
-                janela.style.left = `${x}px`;
-                janela.style.top = `${y}px`;
-                janela.style.transform = "none";  // Remove qualquer transformação aplicada antes
-            }
-        });
-    
-        // Quando soltar o botão do mouse, para de arrastar
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-        });
-    });
     
     // Necessidades Básicas - Barra de Progresso e Estado
     function atualizarStatusBasicas(grupoId, porcentagem) {
