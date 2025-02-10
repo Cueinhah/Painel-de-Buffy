@@ -1879,15 +1879,15 @@
             align-items: center;
             justify-content: center;
             color: #FFFFFF;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 13px;
+            font-family: Arial;    
         }
         
         .tipo-aether {
             margin-top: 5px;
             font-size: 13px;
-            color: white;
-            font-weight: bold;
+            font-family: Arial;
+            color: #FFFFFF;    
         }
         
         /* Estilo para o lado esquerdo do Corpo Aether */
@@ -1902,5 +1902,5 @@
         }
         
         .temperatura-info {
-            font-size: 14px;
+            font-size: 13px;
         }
