@@ -1898,11 +1898,7 @@
         }
         
         .gif-bpm {
-            width: 30px;   
             height: 40px;   
-            object-fit: cover; 
-            overflow: hidden; 
-            background-position: center;    
         }
         
         .temperatura-icone {
