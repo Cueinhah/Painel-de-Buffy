@@ -1897,19 +1897,13 @@
             gap: 5px;
         }
         
-        .gif-container {
+        .gif-bpm {
             width: 30px;  
             height: 40px;  
             display: flex;
-            align-items: center;  /* Centraliza verticalmente */
-            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; 
+            justify-content: center;
             overflow: hidden;  
-        }
-        
-        .gif-bpm {
-            width: 100%;  
-            height: auto;  
-            object-fit: cover;  
         }
         
         .temperatura-icone {
