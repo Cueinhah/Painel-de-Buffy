@@ -1901,6 +1901,10 @@
             width: 40px;
         }
         
+        .temperatura-icone {
+            font-size: 16px;
+        }
+
         .temperatura-info {
             font-size: 13px;
         }
